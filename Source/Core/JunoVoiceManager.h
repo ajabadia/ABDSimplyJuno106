@@ -51,4 +51,7 @@ private:
     
     // Finds the oldest voice to steal
     int findVoiceToSteal();
+    
+    // Analog Emulation
+    void initVariances();
 };

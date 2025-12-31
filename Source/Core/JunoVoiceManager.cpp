@@ -2,6 +2,23 @@
 
 JunoVoiceManager::JunoVoiceManager() {
     voiceTimestamps.fill(0);
+    initVariances();
+}
+
+void JunoVoiceManager::initVariances() {
+    juce::Random rng;
+    rng.setSeed(1984); // 1984: Release year of Juno-106 (Deterministic "Mojo")
+
+    for (int i = 0; i < MAX_VOICES; ++i) {
+        Voice::Variance v;
+        // Subtle analog deviations (Component tolerances)
+        v.filterCutoffScale = 1.0f + (rng.nextFloat() * 0.03f - 0.015f); // +/- 1.5%
+        v.filterResScale = 1.0f + (rng.nextFloat() * 0.10f - 0.05f);    // +/- 5% (Resonance varies more)
+        v.envTimeScale = 1.0f + (rng.nextFloat() * 0.04f - 0.02f);      // +/- 2%
+        v.pwOffset = rng.nextFloat() * 0.04f - 0.02f;                   // +/- 2% 
+        
+        voices[i].setVariance(v);
+    }
 }
 
 void JunoVoiceManager::prepare(double sampleRate, int maxBlockSize) {

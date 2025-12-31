@@ -19,6 +19,15 @@ class Voice {
 public:
     Voice();
     
+    // Analog Variance (Mojo)
+    struct Variance {
+        float filterCutoffScale = 1.0f; // +/- 5%
+        float filterResScale = 1.0f;    // +/- 5%
+        float envTimeScale = 1.0f;      // +/- 2%
+        float pwOffset = 0.0f;          // +/- 0.02
+    };
+    
+    void setVariance(const Variance& v) { variance = v; }
     void prepare(double sampleRate, int maxBlockSize);
     void noteOn(int midiNote, float velocity);
     void noteOff();
@@ -56,4 +65,6 @@ private:
     
     // Helper methods
     void updateHPF();
+    
+    Variance variance;
 };

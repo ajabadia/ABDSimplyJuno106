@@ -74,7 +74,7 @@ void Voice::updateParams(const SynthParams& p) {
     dco.setPulseLevel(p.pulseOn ? 1.0f : 0.0f); 
     dco.setSubLevel(p.subOscLevel);
     dco.setNoiseLevel(p.noiseLevel);
-    dco.setPWM(p.pwmAmount);
+    dco.setPWM(juce::jlimit(0.0f, 0.95f, p.pwmAmount + variance.pwOffset));
     dco.setPWMMode(static_cast<JunoDCO::PWMMode>(p.pwmMode));
     dco.setLFODepth(p.lfoToDCO);
     dco.setDrift(p.drift);
@@ -84,14 +84,14 @@ void Voice::updateParams(const SynthParams& p) {
     float decayTime = 0.0015f * std::pow(12.0f / 0.0015f, p.decay);
     float releaseTime = 0.0015f * std::pow(12.0f / 0.0015f, p.release);
 
-    adsr.setAttack(attackTime);
-    adsr.setDecay(decayTime);
+    adsr.setAttack(attackTime * variance.envTimeScale);
+    adsr.setDecay(decayTime * variance.envTimeScale);
     adsr.setSustain(p.sustain);
-    adsr.setRelease(releaseTime);
+    adsr.setRelease(releaseTime * variance.envTimeScale);
     adsr.setGateMode(p.vcaMode == 1);
     
     // IR3109 resonance: self oscillation push (Normalize 0-1 to internal range)
-    filter.setResonance(p.resonance * 1.05f); 
+    filter.setResonance(juce::jlimit(0.0f, 10.0f, p.resonance * 1.05f * variance.filterResScale)); 
     
     // Update HPF
     updateHPF();
@@ -172,7 +172,7 @@ void Voice::renderNextBlock(juce::AudioBuffer<float>& buffer, int startSample, i
             float benderModOctaves = params.benderValue * params.benderToVCF * 3.5f;
             
             float modulatedCutoff = baseCutoff * std::pow(2.0f, envModOctaves + lfoModOctaves + benderModOctaves);
-            modulatedCutoff = juce::jlimit(5.0f, static_cast<float>(sampleRate * 0.45), modulatedCutoff);
+            modulatedCutoff = juce::jlimit(5.0f, static_cast<float>(sampleRate * 0.45), modulatedCutoff * variance.filterCutoffScale);
             filter.setCutoffFrequencyHz(modulatedCutoff);
         }
         

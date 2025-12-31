@@ -1,0 +1,4938 @@
+﻿
+================================================================================
+FILE: .\Source\Core\FactoryPresets.h
+================================================================================
+#pragma once
+#include <vector>
+#include <string>
+
+struct FactoryPresetData {
+    const char* name;
+    unsigned char bytes[18];
+};
+
+static const FactoryPresetData junoFactoryPresets[] = {
+    {"Brass", {0x14, 0x31, 0x00, 0x66, 0x00, 0x23, 0x0D, 0x3A, 0x00, 0x56, 0x6C, 0x03, 0x31, 0x2D, 0x20, 0x00, 0x51, 0x11}},
+    {"Brass Swell", {0x06, 0x30, 0x00, 0x38, 0x00, 0x2B, 0x11, 0x1A, 0x00, 0x54, 0x4B, 0x40, 0x76, 0x26, 0x25, 0x46, 0x52, 0x19}},
+    {"Trumpet", {0x34, 0x2D, 0x08, 0x66, 0x00, 0x37, 0x22, 0x18, 0x01, 0x3B, 0x7F, 0x05, 0x42, 0x30, 0x10, 0x00, 0x32, 0x09}},
+    {"Flutes", {0x3C, 0x2B, 0x01, 0x00, 0x00, 0x37, 0x20, 0x0A, 0x0B, 0x29, 0x7F, 0x17, 0x51, 0x00, 0x12, 0x00, 0x32, 0x01}},
+    {"Moving Strings", {0x3F, 0x00, 0x00, 0x27, 0x00, 0x4D, 0x14, 0x04, 0x00, 0x6F, 0x22, 0x0D, 0x57, 0x58, 0x23, 0x0E, 0x1A, 0x10}},
+    {"Brass & Strings", {0x23, 0x00, 0x00, 0x38, 0x00, 0x4C, 0x11, 0x04, 0x00, 0x29, 0x4E, 0x2C, 0x42, 0x35, 0x2C, 0x17, 0x49, 0x18}},
+    {"Choir", {0x3B, 0x0E, 0x0D, 0x19, 0x00, 0x3B, 0x5E, 0x02, 0x00, 0x3E, 0x7F, 0x44, 0x0B, 0x7F, 0x30, 0x00, 0x4A, 0x09}},
+    {"Piano I", {0x14, 0x31, 0x00, 0x50, 0x00, 0x41, 0x0C, 0x0A, 0x00, 0x1B, 0x67, 0x00, 0x42, 0x00, 0x1E, 0x56, 0x2A, 0x11}},
+    {"Organ I", {0x36, 0x0F, 0x00, 0x35, 0x00, 0x2B, 0x4C, 0x0E, 0x01, 0x7F, 0x64, 0x00, 0x0A, 0x52, 0x00, 0x17, 0x29, 0x1C}},
+    {"Organ II", {0x2C, 0x0F, 0x00, 0x35, 0x00, 0x35, 0x4C, 0x0E, 0x01, 0x55, 0x4A, 0x00, 0x0A, 0x52, 0x00, 0x3A, 0x4A, 0x1C}},
+    {"Combo Organ", {0x4B, 0x15, 0x09, 0x39, 0x00, 0x3F, 0x46, 0x04, 0x00, 0x6D, 0x60, 0x00, 0x30, 0x2B, 0x2E, 0x3D, 0x2C, 0x0D}},
+    {"Calliope", {0x52, 0x28, 0x0B, 0x00, 0x00, 0x57, 0x1B, 0x11, 0x00, 0x38, 0x59, 0x07, 0x7F, 0x7F, 0x06, 0x30, 0x4A, 0x0B}},
+    {"Donald Pluck", {0x4C, 0x15, 0x09, 0x39, 0x00, 0x49, 0x69, 0x0F, 0x00, 0x4E, 0x52, 0x02, 0x05, 0x2B, 0x0A, 0x7F, 0x2C, 0x07}},
+    {"Celeste", {0x1C, 0x00, 0x00, 0x00, 0x00, 0x21, 0x18, 0x36, 0x00, 0x26, 0x60, 0x00, 0x2C, 0x00, 0x51, 0x0F, 0x2C, 0x19}},
+    {"Elect. Piano I", {0x3B, 0x00, 0x00, 0x00, 0x00, 0x10, 0x1F, 0x3D, 0x06, 0x23, 0x7F, 0x01, 0x55, 0x2B, 0x28, 0x00, 0x29, 0x01}},
+    {"Elect. Piano II", {0x00, 0x00, 0x00, 0x47, 0x00, 0x32, 0x45, 0x07, 0x00, 0x50, 0x66, 0x00, 0x44, 0x00, 0x16, 0x00, 0x49, 0x11}},
+    {"Clock Chimes", {0x3B, 0x00, 0x00, 0x00, 0x16, 0x2C, 0x7F, 0x00, 0x00, 0x7F, 0x68, 0x00, 0x30, 0x00, 0x33, 0x7F, 0x44, 0x1B}},
+    {"Steel Drums", {0x21, 0x35, 0x00, 0x20, 0x09, 0x47, 0x2E, 0x1A, 0x00, 0x7F, 0x7F, 0x00, 0x1A, 0x00, 0x25, 0x21, 0x4A, 0x1B}},
+    {"Xylophone", {0x00, 0x00, 0x00, 0x00, 0x00, 0x1D, 0x18, 0x36, 0x00, 0x33, 0x7F, 0x00, 0x1D, 0x1D, 0x26, 0x0F, 0x2C, 0x19}},
+    {"Brass III", {0x34, 0x14, 0x00, 0x23, 0x00, 0x42, 0x18, 0x0B, 0x00, 0x0C, 0x7F, 0x3A, 0x64, 0x5E, 0x25, 0x16, 0x52, 0x19}},
+    {"Fanfare", {0x2F, 0x00, 0x00, 0x46, 0x00, 0x2C, 0x00, 0x20, 0x00, 0x43, 0x21, 0x48, 0x68, 0x4B, 0x31, 0x32, 0x59, 0x18}},
+    {"Strings III", {0x30, 0x1B, 0x00, 0x66, 0x00, 0x47, 0x0E, 0x00, 0x00, 0x54, 0x49, 0x3F, 0x1F, 0x7F, 0x2D, 0x00, 0x1A, 0x10}},
+    {"Pizzacato", {0x3C, 0x12, 0x00, 0x66, 0x00, 0x42, 0x02, 0x05, 0x00, 0x2A, 0x7F, 0x00, 0x0B, 0x00, 0x0C, 0x00, 0x5A, 0x00}},
+    {"High Strings", {0x3A, 0x0E, 0x00, 0x66, 0x00, 0x54, 0x08, 0x02, 0x00, 0x47, 0x4D, 0x12, 0x2C, 0x7F, 0x28, 0x00, 0x0C, 0x08}},
+    {"Bass Clarinet", {0x34, 0x2D, 0x08, 0x00, 0x00, 0x30, 0x24, 0x19, 0x08, 0x3A, 0x68, 0x0B, 0x4B, 0x00, 0x19, 0x00, 0x29, 0x11}},
+    {"English Horn", {0x2F, 0x2D, 0x09, 0x66, 0x00, 0x46, 0x30, 0x07, 0x00, 0x1B, 0x7F, 0x08, 0x51, 0x1A, 0x10, 0x00, 0x2A, 0x01}},
+    {"Brass Ensemble", {0x34, 0x2D, 0x00, 0x66, 0x00, 0x2E, 0x2C, 0x1D, 0x01, 0x3B, 0x67, 0x10, 0x67, 0x61, 0x22, 0x1F, 0x52, 0x11}},
+    {"Guitar", {0x56, 0x3A, 0x00, 0x41, 0x00, 0x0C, 0x0F, 0x47, 0x00, 0x1E, 0x60, 0x00, 0x34, 0x36, 0x1F, 0x00, 0x39, 0x11}},
+    {"Koto", {0x5A, 0x1C, 0x00, 0x5E, 0x00, 0x28, 0x3A, 0x1D, 0x00, 0x4B, 0x7F, 0x00, 0x38, 0x00, 0x27, 0x02, 0x4A, 0x01}},
+    {"Dark Pluck", {0x1F, 0x00, 0x00, 0x57, 0x00, 0x26, 0x3D, 0x1B, 0x00, 0x47, 0x5A, 0x00, 0x34, 0x0F, 0x3F, 0x61, 0x0A, 0x19}},
+    {"Funky I", {0x04, 0x00, 0x00, 0x49, 0x00, 0x1F, 0x17, 0x33, 0x00, 0x29, 0x47, 0x00, 0x1E, 0x24, 0x02, 0x40, 0x59, 0x1D}},
+    {"Synth Bass I", {0x3A, 0x10, 0x01, 0x39, 0x32, 0x20, 0x00, 0x42, 0x00, 0x23, 0x4B, 0x00, 0x22, 0x00, 0x24, 0x66, 0x29, 0x19}},
+    {"Lead I", {0x48, 0x58, 0x12, 0x00, 0x00, 0x28, 0x61, 0x24, 0x00, 0x34, 0x63, 0x00, 0x2D, 0x31, 0x00, 0x00, 0x2A, 0x1D}},
+    {"Lead II", {0x18, 0x58, 0x00, 0x35, 0x00, 0x2D, 0x00, 0x2B, 0x00, 0x34, 0x38, 0x01, 0x17, 0x5B, 0x4B, 0x4F, 0x39, 0x14}},
+    {"Lead III", {0x56, 0x47, 0x15, 0x66, 0x00, 0x3C, 0x1F, 0x12, 0x01, 0x4C, 0x7F, 0x00, 0x42, 0x30, 0x0B, 0x00, 0x32, 0x15}},
+    {"Funky II", {0x04, 0x00, 0x00, 0x30, 0x00, 0x05, 0x17, 0x51, 0x00, 0x29, 0x64, 0x00, 0x1E, 0x27, 0x02, 0x39, 0x4A, 0x15}},
+    {"Synth Bass II", {0x5A, 0x15, 0x00, 0x00, 0x00, 0x2B, 0x00, 0x2F, 0x00, 0x00, 0x4E, 0x00, 0x25, 0x09, 0x16, 0x2D, 0x31, 0x1C}},
+    {"Funky III", {0x04, 0x00, 0x00, 0x09, 0x65, 0x26, 0x36, 0x2D, 0x00, 0x0A, 0x4F, 0x00, 0x18, 0x00, 0x02, 0x7F, 0x39, 0x1D}},
+    {"Thud Wah", {0x3E, 0x00, 0x00, 0x66, 0x08, 0x4E, 0x59, 0x22, 0x00, 0x00, 0x6A, 0x00, 0x00, 0x66, 0x2D, 0x20, 0x1A, 0x1A}},
+    {"Going Up", {0x00, 0x00, 0x00, 0x64, 0x1C, 0x4F, 0x7F, 0x25, 0x00, 0x41, 0x4B, 0x00, 0x6C, 0x12, 0x7F, 0x00, 0x22, 0x13}},
+    {"Piano II", {0x01, 0x00, 0x00, 0x48, 0x00, 0x2F, 0x00, 0x27, 0x00, 0x05, 0x4E, 0x00, 0x62, 0x00, 0x20, 0x73, 0x2A, 0x10}},
+    {"Clav.", {0x42, 0x0F, 0x01, 0x66, 0x00, 0x07, 0x0B, 0x56, 0x02, 0x00, 0x78, 0x00, 0x27, 0x30, 0x0E, 0x00, 0x49, 0x15}},
+    {"Frontier Organ", {0x4F, 0x0F, 0x03, 0x55, 0x00, 0x45, 0x36, 0x00, 0x00, 0x34, 0x7F, 0x00, 0x00, 0x7F, 0x00, 0x1D, 0x2A, 0x1C}},
+    {"Snare Drum", {0x34, 0x1B, 0x00, 0x00, 0x5B, 0x5E, 0x0B, 0x11, 0x00, 0x00, 0x65, 0x00, 0x19, 0x00, 0x1E, 0x40, 0x22, 0x11}},
+    {"Tom Toms", {0x3E, 0x10, 0x08, 0x00, 0x7F, 0x35, 0x04, 0x28, 0x00, 0x15, 0x65, 0x00, 0x1E, 0x0F, 0x28, 0x3A, 0x21, 0x18}},
+    {"Timpani", {0x00, 0x00, 0x00, 0x23, 0x7F, 0x19, 0x00, 0x36, 0x00, 0x18, 0x7F, 0x01, 0x38, 0x1A, 0x47, 0x2F, 0x21, 0x11}},
+    {"Shaker", {0x15, 0x47, 0x00, 0x3A, 0x7F, 0x59, 0x2D, 0x01, 0x11, 0x50, 0x7F, 0x0A, 0x09, 0x00, 0x00, 0x00, 0x22, 0x01}},
+    {"Synth Pad", {0x38, 0x00, 0x05, 0x2B, 0x00, 0x25, 0x00, 0x54, 0x00, 0x7F, 0x33, 0x00, 0x55, 0x4B, 0x3E, 0x25, 0x0A, 0x18}},
+    {"Sweep I", {0x4E, 0x00, 0x00, 0x66, 0x1C, 0x73, 0x28, 0x43, 0x00, 0x00, 0x61, 0x00, 0x3F, 0x7F, 0x52, 0x2A, 0x0C, 0x12}},
+    {"Pluck Sweep", {0x44, 0x30, 0x00, 0x44, 0x00, 0x3C, 0x6F, 0x09, 0x06, 0x62, 0x2D, 0x00, 0x5B, 0x00, 0x4D, 0x7D, 0x1A, 0x08}},
+    {"Repeater", {0x4D, 0x14, 0x09, 0x65, 0x00, 0x61, 0x1E, 0x38, 0x00, 0x39, 0x57, 0x0E, 0x00, 0x29, 0x00, 0x2C, 0x4A, 17}},
+    {"Sweep II", {0x58, 0x48, 0x0F, 0x61, 0x00, 0x42, 0x66, 0x44, 0x00, 0x46, 0x65, 0x00, 0x59, 0x35, 0x4E, 0x30, 0x4A, 0x19}},
+    {"Pluck Bell", {0x33, 0x00, 0x05, 0x11, 0x00, 0x27, 0x00, 0x31, 0x00, 0x7F, 0x31, 0x00, 0x55, 0x4B, 0x35, 0x31, 0x0C, 0x18}},
+    {"Dark Synth Piano", {0x7F, 0x00, 0x00, 0x00, 0x00, 0x38, 0x56, 0x06, 0x00, 0x47, 0x4F, 0x00, 0x2F, 0x00, 0x32, 0x7F, 0x1A, 0x1A}},
+    {"Sustainer", {0x47, 0x00, 0x05, 0x2E, 0x00, 0x27, 0x00, 0x54, 0x00, 0x7F, 0x39, 0x00, 0x55, 0x4B, 0x46, 0x31, 0x2A, 0x18}},
+    {"Wah Release", {0x59, 0x0E, 0x01, 0x19, 0x00, 0x48, 0x58, 0x13, 0x00, 0x42, 0x68, 0x00, 0x54, 0x00, 0x1D, 0x57, 0x0A, 0x13}},
+    {"Gong", {0x7F, 0x00, 0x00, 0x66, 0x38, 0x46, 0x6B, 0x05, 0x00, 0x48, 0x5B, 0x03, 0x30, 0x7F, 0x62, 0x00, 0x49, 0x13}},
+    {"Resonance Funk", {0x3B, 0x00, 0x00, 0x00, 0x00, 0x1A, 0x7F, 0x2D, 0x00, 0x59, 0x7F, 0x00, 0x13, 0x00, 0x16, 0x00, 0x21, 0x11}},
+    {"Drum Booms", {0x00, 0x00, 0x00, 0x66, 0x7F, 0x2A, 0x00, 0x22, 0x00, 0x3A, 0x7F, 0x00, 0x24, 0x0F, 0x31, 0x2E, 0x21, 0x19}},
+    {"Dust Storm", {0x00, 0x00, 0x00, 0x00, 0x7F, 0x34, 0x55, 0x00, 0x2C, 0x5E, 0x7F, 0x58, 0x5B, 0x1C, 0x55, 0x00, 0x21, 0x11}},
+    {"Rocket Men", {0x08, 0x20, 0x00, 0x66, 0x61, 0x49, 0x72, 0x08, 0x00, 0x38, 0x7F, 0x00, 0x59, 0x7F, 0x68, 0x00, 0x24, 0x03}},
+    {"Hand Claps", {0x3B, 0x00, 0x00, 0x00, 0x7F, 0x11, 0x58, 0x36, 0x00, 0x37, 0x7F, 0x01, 0x0B, 0x00, 0x08, 0x00, 0x21, 0x05}},
+    {"F X Sweep", {0x7F, 0x41, 0x74, 0x66, 0x7F, 0x47, 0x2C, 0x53, 0x00, 0x5E, 0x7F, 0x00, 0x5E, 0x00, 0x70, 0x7F, 0x29, 0x12}},
+    {"Caverns", {0x00, 0x00, 0x00, 0x66, 0x7F, 0x44, 0x76, 0x00, 0x00, 0x45, 0x6B, 0x00, 0x0D, 0x26, 0x2F, 0x00, 0x21, 0x08}},
+    {"Strings", {0x39, 0x2D, 0x00, 0x37, 0x00, 0x55, 0x00, 0x00, 0x00, 0x6C, 0x34, 0x3B, 0x20, 0x56, 0x28, 0x00, 0x1A, 0x18}},
+    {"Violin", {0x42, 0x2D, 0x14, 0x00, 0x00, 0x4D, 0x00, 0x00, 0x00, 0x78, 0x6E, 0x2B, 0x2D, 0x39, 0x1A, 0x00, 0x32, 0x18}},
+    {"Chorus Vibes", {0x48, 0x2D, 0x00, 0x00, 0x00, 0x0A, 0x00, 0x3B, 0x00, 0x17, 0x58, 0x00, 0x59, 0x2F, 0x4A, 0x00, 0x4A, 0x19}},
+    {"Organ 1", {0x2D, 0x2A, 0x00, 0x49, 0x00, 0x3C, 0x48, 0x0E, 0x00, 0x7F, 0x3A, 0x00, 0x00, 0x00, 0x00, 0x61, 0x0A, 0x1D}},
+    {"Harpsichord 1", {0x17, 0x00, 0x00, 0x36, 0x00, 0x7F, 0x7F, 0x5A, 0x00, 0x56, 0x7D, 0x00, 0x3C, 0x00, 0x1F, 0x23, 0x2C, 0x00}},
+    {"Recorder", {0x4E, 0x00, 0x00, 0x08, 0x00, 0x06, 0x00, 0x2E, 0x00, 0x7F, 0x7F, 0x05, 0x15, 0x7F, 0x1E, 0x00, 0x2A, 0x11}},
+    {"Perc. Pluck", {0x3E, 0x26, 0x08, 0x00, 0x00, 0x00, 0x00, 0x5A, 0x00, 0x49, 0x41, 0x00, 0x10, 0x4E, 0x74, 0x00, 0x4A, 0x19}},
+    {"Noise Sweep", {0x7F, 0x00, 0x00, 0x00, 0x7F, 0x02, 0x00, 0x4D, 0x00, 0x68, 0x5C, 0x0E, 0x4E, 0x6C, 0x78, 0x00, 0x21, 0x18}},
+    {"Space Chimes", {0x63, 0x00, 0x00, 0x00, 0x00, 0x46, 0x7F, 0x00, 0x00, 0x4A, 0x55, 0x00, 0x19, 0x00, 0x3C, 0x00, 0x4C, 0x18}},
+    {"Nylon Guitar", {0x48, 0x2D, 0x00, 0x1D, 0x00, 0x39, 0x00, 0x1A, 0x00, 0x19, 0x73, 0x00, 0x59, 0x00, 0x20, 0x00, 0x2A, 0x01}},
+    {"Orchestral Pad", {0x16, 0x2D, 0x00, 0x69, 0x00, 0x21, 0x00, 0x37, 0x00, 0x24, 0x00, 0x1D, 0x58, 0x32, 0x34, 0x7F, 0x1A, 0x18}},
+    {"Bright Pluck", {0x00, 0x00, 0x00, 0x3A, 0x00, 0x39, 0x00, 0x28, 0x00, 0x56, 0x68, 0x00, 0x19, 0x2A, 0x2C, 0x00, 0x2A, 0x11}},
+    {"Organ Bell", {0x4E, 0x00, 0x06, 0x44, 0x00, 0x3D, 0x00, 0x00, 0x00, 0x7F, 0x3E, 0x00, 0x00, 0x7F, 0x1A, 0x55, 0x5A, 0x19}},
+    {"Accordion", {0x00, 0x00, 0x00, 0x40, 0x00, 0x4D, 0x00, 0x0E, 0x00, 0x4A, 0x42, 0x08, 0x0B, 0x6E, 0x09, 0x50, 0x5A, 0x01}},
+    {"FX Rise 1", {0x74, 0x00, 0x00, 0x00, 0x00, 0x6C, 0x7F, 0x10, 0x7F, 0x40, 0x00, 0x00, 0x00, 0x7F, 0x54, 0x00, 0x44, 0x1A}},
+    {"FX Rise 2", {0x6C, 0x00, 0x00, 0x00, 0x00, 0x5E, 0x7F, 0x50, 0x17, 0x7F, 0x00, 0x00, 0x7F, 0x33, 0x47, 0x00, 0x02, 0x1A}},
+    {"Brass", {0x33, 0x7F, 0x00, 0x49, 0x00, 0x00, 0x00, 0x5E, 0x00, 0x7F, 0x48, 0x03, 0x2C, 0x33, 0x0B, 0x00, 0x52, 0x1C}},
+    {"Helicopter", {0x6A, 0x00, 0x00, 0x30, 0x00, 0x52, 0x05, 0x5D, 0x7F, 0x00, 0x48, 0x00, 0x00, 0x23, 0x4C, 0x7F, 0x0A, 0x1B}},
+    {"Lute", {0x34, 0x00, 0x02, 0x69, 0x00, 0x1D, 0x00, 0x23, 0x00, 0x56, 0x7F, 0x00, 0x30, 0x22, 0x57, 0x00, 0x2A, 0x19}},
+    {"Chorus Funk", {0x4D, 0x5E, 0x00, 0x49, 0x00, 0x2F, 0x22, 0x35, 0x00, 0x41, 0x2A, 0x00, 0x0B, 0x22, 0x00, 0x4F, 0x5A, 0x1D}},
+    {"Tomita", {0x4E, 0x00, 0x00, 0x69, 0x00, 0x31, 0x7D, 0x0F, 0x02, 0x7F, 0x39, 0x00, 0x0E, 0x4F, 0x00, 0x00, 0x24, 0x1F}},
+    {"FX Sweep 1", {0x7F, 0x00, 0x00, 0x00, 0x00, 0x3A, 0x7F, 0x10, 0x4C, 0x40, 0x00, 0x00, 0x00, 0x7F, 0x55, 0x00, 0x44, 0x18}},
+    {"Sharp Reed", {0x15, 0x00, 0x00, 0x49, 0x00, 0x21, 0x00, 0x35, 0x00, 0x41, 0x37, 0x02, 0x12, 0x70, 0x00, 0x00, 0x3C, 0x1C}},
+    {"Bass Pluck", {0x00, 0x00, 0x00, 0x3C, 0x00, 0x25, 0x1D, 0x1C, 0x00, 0x2B, 0x5C, 0x00, 0x2A, 0x23, 0x00, 0x00, 0x39, 0x18}},
+    {"Resonant Rise", {0x34, 0x00, 0x0F, 0x00, 0x00, 0x42, 0x6B, 0x1F, 0x00, 0x49, 0x3E, 0x00, 0x34, 0x27, 0x00, 0x00, 0x11, 0x1E}},
+    {"Harpsichord 2", {0x00, 0x00, 0x00, 0x69, 0x00, 0x7F, 0x5F, 0x00, 0x00, 0x7F, 0x6B, 0x00, 0x2D, 0x00, 0x00, 0x23, 0x3C, 0x11}},
+    {"Dark Ensemble", {0x00, 0x00, 0x00, 0x39, 0x00, 0x37, 0x00, 0x00, 0x00, 0x6B, 0x43, 0x15, 0x00, 0x7F, 0x23, 0x4B, 0x5A, 0x1B}},
+    {"Contact Wah", {0x4E, 0x00, 0x00, 0x51, 0x00, 0x3D, 0x65, 0x2E, 0x00, 0x7F, 0x7F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x2A, 0x17}},
+    {"Noise Sweep 2", {0x7F, 0x00, 0x00, 0x00, 0x7F, 0x7F, 0x00, 0x53, 0x00, 0x68, 0x74, 0x7F, 0x4F, 0x1A, 0x53, 0x00, 0x44, 0x1A}},
+    {"Glassy Wah", {0x00, 0x5E, 0x00, 0x1C, 0x00, 0x18, 0x22, 0x3D, 0x00, 0x41, 0x70, 0x06, 0x12, 0x32, 0x26, 0x00, 0x2A, 0x19}},
+    {"Phase Ensemble", {0x0B, 0x2D, 0x05, 0x69, 0x00, 0x4F, 0x00, 0x00, 0x00, 0x7F, 0x63, 0x54, 0x2D, 0x39, 0x31, 0x00, 0x0A, 0x18}},
+    {"Chorused Bell", {0x00, 0x0B, 0x00, 0x69, 0x00, 0x3B, 0x7F, 0x00, 0x00, 0x7F, 0x3E, 0x00, 0x3E, 0x00, 0x39, 0x65, 0x4C, 0x18}},
+    {"Clav.", {0x32, 0x0B, 0x00, 0x5B, 0x00, 0x20, 0x00, 0x3F, 0x00, 0x00, 0x6C, 0x00, 0x2B, 0x37, 0x00, 0x07, 0x29, 0x09}},
+    {"Organ 2", {0x51, 0x00, 0x00, 0x68, 0x00, 0x36, 0x6A, 0x07, 0x00, 0x7F, 0x4F, 0x00, 0x00, 0x00, 0x00, 0x00, 0x51, 0x1D}},
+    {"Bassoon", {0x54, 0x26, 0x09, 0x5A, 0x00, 0x23, 0x00, 0x2B, 0x09, 0x62, 0x7F, 0x05, 0x7F, 0x6A, 0x02, 0x00, 0x29, 0x01}},
+    {"Auto Release Noise Sweep", {0x7F, 0x00, 0x00, 0x00, 0x7F, 0x7F, 0x00, 0x7F, 0x00, 0x68, 0x6B, 0x00, 0x4F, 0x39, 0x53, 0x00, 0x44, 0x1A}},
+    {"Brass Ensemble", {0x19, 0x5E, 0x00, 0x49, 0x00, 0x2F, 0x22, 0x23, 0x00, 0x41, 0x27, 0x06, 0x44, 0x43, 0x26, 0x00, 0x5A, 0x18}},
+    {"Guitar", {0x45, 0x00, 0x00, 0x69, 0x00, 0x2F, 0x78, 0x00, 0x00, 0x7F, 0x3C, 0x5C, 0x32, 0x7F, 0x37, 0x3B, 0x1A, 0x18}},
+    {"Soft Lead", {0x48, 0x2D, 0x00, 0x1D, 0x00, 0x00, 0x66, 0x3E, 0x00, 0x5A, 0x1E, 0x00, 0x75, 0x00, 0x78, 0x00, 0x5A, 0x19}},
+    {"Power Lead", {0x01, 0x00, 0x00, 0x69, 0x7F, 0x38, 0x59, 0x07, 0x26, 0x79, 0x7F, 0x4E, 0x62, 0x57, 0x4E, 0x00, 0x24, 0x00}},
+    {"String Pad", {0x2C, 0x00, 0x00, 0x15, 0x00, 0x16, 0x00, 0x23, 0x07, 0x6B, 0x67, 0x00, 0x41, 0x3C, 0x62, 0x7F, 0x2C, 0x10}},
+    {"String Swell", {0x45, 0x16, 0x09, 0x00, 0x00, 0x23, 0x00, 0x2B, 0x07, 0x62, 0x68, 0x05, 0x7F, 0x6A, 0x07, 0x00, 0x2A, 0x01}},
+    {"String Ensemble", {0x7F, 0x00, 0x00, 0x00, 0x7F, 0x02, 0x00, 0x4D, 0x00, 0x68, 0x6B, 0x00, 0x16, 0x6C, 0x78, 0x00, 0x21, 0x18}},
+    {"Bright Strings", {0x23, 0x12, 0x00, 0x49, 0x00, 0x21, 0x00, 0x35, 0x00, 0x41, 0x45, 0x03, 0x2C, 0x6D, 0x00, 0x00, 0x2A, 0x1C}},
+    {"Fast Attack Strings", {0x22, 0x00, 0x00, 0x3B, 0x00, 0x19, 0x00, 0x2A, 0x00, 0x41, 0x16, 0x15, 0x49, 0x47, 0x30, 0x00, 0x19, 0x18}},
+    {"Slow Strings", {0x1E, 0x2D, 0x7F, 0x00, 0x00, 0x3A, 0x7F, 0x00, 0x00, 0x7F, 0x6B, 0x00, 0x59, 0x00, 0x27, 0x00, 0x24, 0x00}},
+    {"Arco Strings", {0x01, 0x00, 0x00, 0x69, 0x7F, 0x54, 0x0B, 0x00, 0x31, 0x36, 0x4B, 0x21, 0x61, 0x7F, 0x79, 0x00, 0x24, 0x0A}},
+    {"Chorus Strings", {0x32, 0x00, 0x00, 0x32, 0x00, 0x3F, 0x54, 0x41, 0x00, 0x7F, 0x46, 0x7F, 0x00, 0x6B, 0x00, 0x2F, 0x39, 0x1F}},
+    {"Piano", {0x46, 0x1C, 0x00, 0x0E, 0x00, 0x04, 0x00, 0x3F, 0x10, 0x62, 0x57, 0x10, 0x67, 0x6A, 0x15, 0x00, 0x3C, 0x09}},
+    {"Electric Piano", {0x63, 0x00, 0x00, 0x00, 0x7F, 0x48, 0x70, 0x00, 0x00, 0x7F, 0x7F, 0x00, 0x18, 0x00, 0x18, 0x00, 0x41, 0x00}},
+    {"Clavichord", {0x33, 0x7F, 0x00, 0x49, 0x00, 0x2D, 0x64, 0x23, 0x00, 0x41, 0x54, 0x04, 0x5A, 0x00, 0x1B, 0x00, 0x32, 0x1C}},
+    {"Harpsichord", {0x47, 0x2D, 0x16, 0x00, 0x00, 0x59, 0x00, 0x00, 0x03, 0x78, 0x55, 0x2B, 0x2D, 0x39, 0x1A, 0x00, 0x34, 0x18}},
+    {"Guitar", {0x1E, 0x2D, 0x7F, 0x00, 0x00, 0x4C, 0x7F, 0x00, 0x00, 0x7F, 0x6F, 0x00, 0x16, 0x34, 0x3B, 0x00, 0x24, 0x00}},
+    {"Bass", {0x24, 0x00, 0x00, 0x69, 0x00, 0x3C, 0x09, 0x00, 0x7F, 0x00, 0x4D, 0x22, 0x37, 0x7F, 0x69, 0x00, 0x2A, 0x18}},
+    {"Percussive Synth", {0x00, 0x0B, 0x00, 0x68, 0x00, 0x4C, 0x7F, 0x00, 0x00, 0x7F, 0x53, 0x00, 0x17, 0x17, 0x39, 0x00, 0x4C, 0x18}},
+    {"Wah Synth", {0x10, 0x00, 0x00, 0x44, 0x00, 0x08, 0x00, 0x57, 0x00, 0x34, 0x0E, 0x00, 0x24, 0x6D, 0x00, 0x38, 0x59, 0x18}},
+    {"Sweep", {0x15, 0x2D, 0x05, 0x51, 0x00, 0x47, 0x00, 0x00, 0x00, 0x67, 0x28, 0x53, 0x17, 0x6D, 0x2A, 0x00, 0x19, 0x18}},
+    {"Filter Sweep", {0x33, 0x7F, 0x00, 0x49, 0x00, 0x00, 0x00, 0x5E, 0x00, 0x7F, 0x61, 0x03, 0x2C, 0x33, 0x0B, 0x00, 0x32, 0x1C}},
+    {"Pluck Synth", {0x39, 0x2D, 0x15, 0x00, 0x00, 0x4B, 0x00, 0x03, 0x01, 0x2D, 0x6D, 0x30, 0x41, 0x5A, 0x22, 0x00, 0x31, 0x18}},
+    {"Lead Synth", {0x50, 0x00, 0x0A, 0x46, 0x00, 0x5C, 0x00, 0x00, 0x00, 0x47, 0x30, 0x1B, 0x39, 0x39, 0x29, 0x00, 0x1C, 0x18}},
+    {"Synth Pad", {0x6C, 0x00, 0x00, 0x00, 0x00, 0x6E, 0x7F, 0x50, 0x3F, 0x7F, 0x00, 0x00, 0x7F, 0x33, 0x59, 0x00, 0x02, 0x1A}},
+    {"Atmospheric Pad", {0x32, 0x0B, 0x00, 0x2C, 0x00, 0x1D, 0x04, 0x58, 0x05, 0x5F, 0x4F, 0x00, 0x30, 0x17, 0x2A, 0x09, 0x4C, 0x01}},
+    {"FX", {0x4E, 0x00, 0x00, 0x00, 0x00, 0x37, 0x7F, 0x2B, 0x00, 0x7F, 0x4D, 0x00, 0x00, 0x00, 0x00, 0x7F, 0x29, 0x17}},
+    {"Noise FX", {0x32, 0x00, 0x00, 0x2D, 0x00, 0x26, 0x54, 0x20, 0x00, 0x7F, 0x65, 0x00, 0x31, 0x37, 0x00, 0x38, 0x39, 0x19}}
+};
+
+================================================================================
+FILE: .\Source\Core\JunoSysEx.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include <vector>
+
+/**
+ * JunoSysEx - Helper for Roland Juno-106 SysEx protocol
+ * Supports:
+ * - 0x32 (Individual Parameter Change): F0 41 32 <channel> <paramId> <value> F7
+ * - 0x30 (Patch Dump): F0 41 30 <channel> <patchNum> <16 params> <sw1> <sw2> F7
+ * - 0x31 (Manual Mode): F0 41 31 <channel> <patchNum?> F7
+ */
+namespace JunoSysEx
+{
+    static constexpr uint8_t kRolandID = 0x41;
+    static constexpr uint8_t kMsgPatchDump = 0x30;
+    static constexpr uint8_t kMsgManualMode = 0x31;
+    static constexpr uint8_t kMsgParamChange = 0x32;
+
+    // Parameter Identifiers for 0x32
+    enum ParamID {
+        LFO_RATE = 0x00,
+        LFO_DELAY = 0x01,
+        DCO_LFO = 0x02,
+        DCO_PWM = 0x03,
+        DCO_NOISE = 0x04,
+        VCF_FREQ = 0x05,
+        VCF_RES = 0x06,
+        VCF_ENV = 0x07,
+        VCF_LFO = 0x08,
+        VCF_KYBD = 0x09,
+        VCA_LEVEL = 0x0A,
+        ENV_A = 0x0B,
+        ENV_D = 0x0C,
+        ENV_S = 0x0D,
+        ENV_R = 0x0E,
+        DCO_SUB = 0x0F,
+        SWITCHES_1 = 0x10,
+        SWITCHES_2 = 0x11
+    };
+
+    /** Creates a 7-byte Roland SysEx message for individual parameter changes (0x32) */
+    inline juce::MidiMessage createParamChange(int channel, int paramId, int value)
+    {
+        uint8_t data[7];
+        data[0] = 0xF0;
+        data[1] = kRolandID;
+        data[2] = kMsgParamChange;
+        data[3] = static_cast<uint8_t>(channel & 0x0F);
+        data[4] = static_cast<uint8_t>(paramId & 0x7F);
+        data[5] = static_cast<uint8_t>(value & 0x7F);
+        data[6] = 0xF7;
+        return juce::MidiMessage(data, 7);
+    }
+
+    /** Creates a Patch Dump message (0x30). Returns full MidiMessage with F0/F7. 
+     *  Internal data payload: RolandID, MsgType, Ch, PatchNum, 16 Params, SW1, SW2.
+     */
+    inline juce::MidiMessage createPatchDump(int channel, int patchNum, const uint8_t* params16, uint8_t sw1, uint8_t sw2)
+    {
+        std::vector<uint8_t> data;
+        data.push_back(kRolandID);
+        data.push_back(kMsgPatchDump);
+        data.push_back(static_cast<uint8_t>(channel & 0x0F));
+        data.push_back(static_cast<uint8_t>(patchNum & 0x7F));
+        
+        for (int i = 0; i < 16; ++i) data.push_back(params16[i] & 0x7F);
+        data.push_back(sw1 & 0x7F);
+        data.push_back(sw2 & 0x7F);
+        
+        return juce::MidiMessage::createSysExMessage(data.data(), (int)data.size());
+    }
+
+    /** Parses a MidiMessage to see if it's a valid Juno-106 SysEx */
+    inline bool parseMessage(const juce::MidiMessage& msg, int& type, int& channel, int& p1, int& p2, std::vector<uint8_t>& dumpData)
+    {
+        if (!msg.isSysEx()) return false;
+        
+        // getSysExData returns pointer to Byte AFTER F0.
+        // getRawDataSize returns Total Bytes including F0 and F7.
+        const uint8_t* data = msg.getSysExData();
+        int size = msg.getRawDataSize() - 2; // Size of content between F0 and F7
+
+        if (size < 3) return false;
+        if (data[0] != kRolandID) return false;
+        
+        type = data[1];
+        channel = data[2] & 0x0F;
+
+        if (type == kMsgParamChange && size == 5)
+        {
+            p1 = data[3] & 0x7F; // Param ID
+            p2 = data[4] & 0x7F; // Value
+            return true;
+        }
+        // We allow >= 22 to support dumps that might include extra padding or unofficial checksums.
+        // The standard dump is exactly 22 bytes (header+payload), but robust parsers often ignore trailing bytes.
+        else if (type == kMsgPatchDump && size >= 22) // 41 30 CH Patch [16 params] SW1 SW2
+        {
+            p1 = data[3] & 0x7F; // Patch Num
+            dumpData.clear();
+            // We need 18 bytes (16 params + 2 switches)
+            // Valid range indexes: 4 to 21
+            // Validation: Ensure valid 7-bit data
+            for (int i = 4; i < 22; ++i) {
+                if (data[i] > 0x7F) return false; // Invalid SysEx data
+                dumpData.push_back(data[i]);
+            }
+            return true;
+        }
+        else if (type == kMsgManualMode)
+        {
+            return true;
+        }
+        
+        return false;
+    }
+}
+
+================================================================================
+FILE: .\Source\Core\JunoTapeDecoder.cpp
+================================================================================
+#include "JunoTapeDecoder.h"
+#include <cmath>
+
+JunoTapeDecoder::DecodeResult JunoTapeDecoder::decodeWavFile(const juce::File& file) {
+    DecodeResult result;
+    
+    juce::AudioFormatManager formatManager;
+    formatManager.registerBasicFormats();
+    
+    std::unique_ptr<juce::AudioFormatReader> reader(formatManager.createReaderFor(file));
+    if (reader == nullptr) {
+        result.errorMessage = "Could not read WAV file: " + file.getFileName();
+        return result;
+    }
+    
+    juce::AudioBuffer<float> buffer(1, (int)reader->lengthInSamples);
+    reader->read(&buffer, 0, (int)reader->lengthInSamples, 0, true, false);
+    
+    const float* samples = buffer.getReadPointer(0);
+    double sr = reader->sampleRate;
+    const int numSamples = buffer.getNumSamples();
+    
+    // 1. Detection with adaptive hysteresis
+    // 1. Detection with adaptive threshold based on Peak
+    // This handles quiet or normalized recordings better than fixed 0.01
+    float maxPeak = 0.0f;
+    for (int i = 0; i < numSamples; ++i) {
+        float absS = std::abs(samples[i]);
+        if (absS > maxPeak) maxPeak = absS;
+    }
+    
+    // Fallback if silent
+    if (maxPeak < 0.001f) {
+        result.errorMessage = "Signal is silence.";
+        return result;
+    }
+
+    std::vector<int> crossings;
+    bool isPositive = samples[0] > 0.0f;
+    // Hysteresis threshold: 10% of peak (robust against noise floor)
+    float threshold = maxPeak * 0.1f; 
+    
+    for (int i = 1; i < numSamples; ++i) {
+        if (isPositive && samples[i] < -threshold) {
+            crossings.push_back(i);
+            isPositive = false;
+        }
+        else if (!isPositive && samples[i] > threshold) {
+            crossings.push_back(i);
+            isPositive = true;
+        }
+    }
+    
+    if (crossings.size() < 50) {
+        result.errorMessage = "Signal too weak. Transitions: " + juce::String((int)crossings.size());
+        return result;
+    }
+    
+    // 2. Sample-accurate frequency state (FSK 1.3kHz vs 2.1kHz)
+    double midHalfPeriod = sr / 3400.0;
+    std::vector<bool> state(numSamples, true);
+    for (size_t i = 1; i < crossings.size(); ++i) {
+        int halfPeriod = crossings[i] - crossings[i-1];
+        bool mark = (halfPeriod < midHalfPeriod); 
+        for (int s = crossings[i-1]; s < crossings[i]; ++s) state[s] = mark;
+    }
+    
+    // 3. Byte Scanning
+    std::vector<uint8_t> decodedBytes;
+    double samplesPerBit = sr / 1200.0;
+    
+    int s = 0;
+    while (s < numSamples - (int)(samplesPerBit * 11)) {
+        if (state[s] == true && state[s+1] == false) {
+            double bitPos = (double)s + 1.0 + (samplesPerBit * 0.5);
+            uint8_t byte = 0;
+            bool framingSuccess = true;
+            
+            if (state[(int)bitPos] == false) {
+                for (int b = 0; b < 8; ++b) {
+                    bitPos += samplesPerBit;
+                    if (state[(int)bitPos]) byte |= (1 << b);
+                }
+                
+                bitPos += samplesPerBit;
+                if (state[(int)bitPos] == false) framingSuccess = false;
+                
+                if (framingSuccess) {
+                    decodedBytes.push_back(byte);
+                    s = (int)(bitPos + (samplesPerBit * 0.2)); 
+                    continue;
+                }
+            }
+        }
+        s++;
+    }
+    
+    result.data = decodedBytes;
+    
+    // Validate Full Bank or Partial
+    int numPatches = (int)(decodedBytes.size() / 18);
+    int remainder = (int)(decodedBytes.size() % 18);
+    
+    if (numPatches > 0) {
+        result.success = true;
+        result.data.resize(numPatches * 18); // Truncate to valid boundary
+        
+        if (numPatches == 64 && remainder == 0) {
+             // Perfect bank
+             // errorMessage empty means "Perfect"
+        }
+        else {
+             result.errorMessage = "Loaded " + juce::String(numPatches) + " patches (Partial Bank).";
+             if (remainder > 0) {
+                 result.errorMessage += " Discarded " + juce::String(remainder) + " trailing bytes.";
+             }
+        }
+    }
+    else {
+        result.success = false;
+        result.errorMessage = "No valid patches found. Extracted " + juce::String((int)decodedBytes.size()) + " bytes (Need 18 per patch).";
+    }
+    
+    return result;
+}
+
+// reconstructBytes removed (logic integrated in decodeWavFile)
+
+================================================================================
+FILE: .\Source\Core\JunoTapeDecoder.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include <vector>
+
+/**
+ * JunoTapeDecoder
+ * Decodes Roland Juno-106 FSK tape audio (1300Hz/2100Hz) into binary patch data.
+ */
+class JunoTapeDecoder {
+public:
+    struct DecodeResult {
+        bool success = false;
+        std::vector<uint8_t> data;
+        juce::String errorMessage;
+    };
+
+    /**
+     * Decodes a WAV file containing Juno-106 tape data.
+     * Expects a full bank (1152 bytes) or partial bank (multiple of 18 bytes).
+     */
+    static DecodeResult decodeWavFile(const juce::File& file);
+
+private:
+    // FSK Constants
+    static constexpr float kFreq0 = 1300.0f;
+    static constexpr float kFreq1 = 2100.0f;
+    static constexpr float kThreshold = 0.5f; // Frequency discrimination threshold
+
+    // Bit-stream Reconstruction
+};
+
+================================================================================
+FILE: .\Source\Core\JunoVoiceManager.cpp
+================================================================================
+#include "JunoVoiceManager.h"
+
+JunoVoiceManager::JunoVoiceManager() {
+    voiceTimestamps.fill(0);
+}
+
+void JunoVoiceManager::prepare(double sampleRate, int maxBlockSize) {
+    for (auto& voice : voices) {
+        voice.prepare(sampleRate, maxBlockSize);
+    }
+}
+
+void JunoVoiceManager::updateParams(const SynthParams& params) {
+    for (auto& voice : voices) {
+        voice.updateParams(params);
+    }
+}
+
+void JunoVoiceManager::renderNextBlock(juce::AudioBuffer<float>& buffer, int startSample, int numSamples) {
+    // Clear buffer is handled by the processor usually, but we accumulate
+    // voices. The processor passes a buffer that might contain other things, 
+    // but typically it's cleared before audio generation.
+    // Assuming buffer is ready for accumulation or cleared.
+    // To be safe and typical for a manager, we usually assume addition.
+    // But since this is the primary source, PluginProcessor should clear it.
+    
+    // We render each voice into a temp buffer and add, or add directly if Voice supports it.
+    // Voice::renderNextBlock typically adds to the buffer.
+    
+    for (auto& voice : voices) {
+        if (voice.isActive()) {
+            voice.renderNextBlock(buffer, startSample, numSamples);
+        }
+    }
+}
+
+void JunoVoiceManager::setPolyMode(int mode) {
+    if (polyMode != mode) {
+        polyMode = mode;
+        setAllNotesOff(); // Prevent stuck notes when switching modes
+    }
+}
+
+void JunoVoiceManager::noteOn(int midiChannel, int midiNote, float velocity) {
+    currentTimestamp++;
+    
+    // === UNISON MODE (3) ===
+    // Triggers ALL voices for the same note.
+    if (polyMode == 3) {
+        for (int i = 0; i < MAX_VOICES; ++i) {
+            voices[i].noteOn(midiNote, velocity);
+            voiceTimestamps[i] = currentTimestamp;
+        }
+        lastAllocatedVoiceIndex = 0; // Reset
+        return;
+    }
+    
+    // === POLY MODES (1 & 2) ===
+    
+    // 1. Check for retrigger (Same note already playing)
+    for (int i = 0; i < MAX_VOICES; ++i) {
+        if (voices[i].isActive() && voices[i].getCurrentNote() == midiNote) {
+            voices[i].noteOn(midiNote, velocity);
+            voiceTimestamps[i] = currentTimestamp;
+            lastAllocatedVoiceIndex = i; // Update last allocated even on retrigger
+            return;
+        }
+    }
+    
+    // 2. Find free voice strategy
+    int voiceIndex = findFreeVoiceIndex();
+    
+    // 3. Stealing (if no free voice)
+    if (voiceIndex == -1) {
+        voiceIndex = findVoiceToSteal();
+    }
+    
+    // 4. Allocate
+    if (voiceIndex != -1) {
+        voices[voiceIndex].noteOn(midiNote, velocity);
+        voiceTimestamps[voiceIndex] = currentTimestamp;
+        lastAllocatedVoiceIndex = voiceIndex;
+    }
+}
+
+void JunoVoiceManager::noteOff(int midiChannel, int midiNote, float velocity) {
+    // If Unison, kill all matching notes
+    if (polyMode == 3) {
+        for (int i = 0; i < MAX_VOICES; ++i) {
+             if (voices[i].getCurrentNote() == midiNote) {
+                 voices[i].noteOff();
+             }
+        }
+        return;
+    }
+
+    // Poly Mode: Kill specific voice
+    for (int i = 0; i < MAX_VOICES; ++i) {
+        if (voices[i].isActive() && voices[i].getCurrentNote() == midiNote) {
+            voices[i].noteOff();
+            return;
+        }
+    }
+}
+
+int JunoVoiceManager::findFreeVoiceIndex() {
+    // Poly 1: Cyclic (Round Robin) - Authentic natural release
+    if (polyMode == 1) {
+        for (int i = 0; i < MAX_VOICES; ++i) {
+            int idx = (lastAllocatedVoiceIndex + 1 + i) % MAX_VOICES;
+            if (!voices[idx].isActive()) return idx;
+        }
+    }
+    // Poly 2: Lowest Free (Linear) - Tends to cut tails, cleaner
+    else if (polyMode == 2) {
+         for (int i = 0; i < MAX_VOICES; ++i) {
+            if (!voices[i].isActive()) return i;
+        }
+    }
+    
+    return -1;
+}
+
+int JunoVoiceManager::findVoiceToSteal() {
+    int oldestIndex = -1;
+    uint64_t minTimestamp = UINT64_MAX;
+    
+    for (int i = 0; i < MAX_VOICES; ++i) {
+        if (voiceTimestamps[i] < minTimestamp) {
+            minTimestamp = voiceTimestamps[i];
+            oldestIndex = i;
+        }
+    }
+    
+    return oldestIndex;
+}
+
+void JunoVoiceManager::outputActiveVoiceInfo() {
+    juce::String state;
+    for (int i = 0; i < MAX_VOICES; ++i) {
+        state += "[" + juce::String(i) + ":" + (voices[i].isActive() ? juce::String(voices[i].getCurrentNote()) : ".") + "] ";
+    }
+    DBG("Voices: " << state);
+}
+
+void JunoVoiceManager::setAllNotesOff() {
+    for (auto& voice : voices) {
+        voice.noteOff();
+    }
+}
+
+================================================================================
+FILE: .\Source\Core\JunoVoiceManager.h
+================================================================================
+#pragma once
+
+#include <JuceHeader.h>
+#include "../Synth/Voice.h"
+#include "SynthParams.h"
+#include <array>
+
+/**
+ * JunoVoiceManager
+ * 
+ * Handles the allocation and lifecycle of 6 fixed voices, mimicking the
+ * Roland Juno-106 architecture (DCOs 1-6).
+ * 
+ * - Fixed 6-voice polyphony
+ * - Round-Robin allocation
+ * - Voice stealing based on oldest timestamp
+ * - Centralized parameter updates
+ */
+class JunoVoiceManager {
+public:
+    JunoVoiceManager();
+    
+    void prepare(double sampleRate, int maxBlockSize);
+    void renderNextBlock(juce::AudioBuffer<float>& buffer, int startSample, int numSamples);
+    
+    void noteOn(int midiChannel, int midiNote, float velocity);
+    void noteOff(int midiChannel, int midiNote, float velocity);
+    void outputActiveVoiceInfo(); // Debug helper
+    
+    // Updates all voices with the current parameter state
+    // Should be called once per block, not per sample
+    void updateParams(const SynthParams& params);
+    
+    void setPolyMode(int mode); // 1-Poly1, 2-Poly2, 3-Unison
+    int getLastTriggeredVoiceIndex() const { return lastAllocatedVoiceIndex; }
+    void setAllNotesOff();
+
+private:
+    static constexpr int MAX_VOICES = 6;
+    std::array<Voice, MAX_VOICES> voices;
+    
+    // Timestamps for voice stealing (incremented on noteOn)
+    std::array<uint64_t, MAX_VOICES> voiceTimestamps;
+    uint64_t currentTimestamp = 0;
+    
+    int lastAllocatedVoiceIndex = -1; // For Round-Robin
+    int polyMode = 1; // 1=Poly1, 2=Poly2, 3=Unison
+    
+    // Finds the best voice to play a new note
+    int findFreeVoiceIndex();
+    
+    // Finds the oldest voice to steal
+    int findVoiceToSteal();
+};
+
+================================================================================
+FILE: .\Source\Core\MidiLearnHandler.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include <map>
+
+/**
+ * MidiLearnHandler - Manages MIDI CC to Parameter mappings and Learn mode.
+ */
+class MidiLearnHandler
+{
+public:
+    MidiLearnHandler() = default;
+
+    static bool isProtectedCC(int cc) {
+        return cc == 1 || cc == 64; // Mod Wheel & Sustain
+    }
+
+    /** Processes an incoming CC message */
+    void handleIncomingCC(int ccNumber, int value, juce::AudioProcessorValueTreeState& apvts)
+    {
+        if (isLearning && learningParamID.isNotEmpty())
+        {
+            if (isProtectedCC(ccNumber)) return; // Ignore protected CCs
+            
+            bind(ccNumber, learningParamID);
+            isLearning = false;
+            learningParamID = "";
+            
+            if (onMappingChanged) onMappingChanged();
+            return;
+        }
+
+        auto it = ccToParam.find(ccNumber);
+        if (it != ccToParam.end())
+        {
+            if (auto* param = apvts.getParameter(it->second))
+            {
+                float normalizedValue = value / 127.0f;
+                param->setValueNotifyingHost(normalizedValue);
+            }
+        }
+    }
+
+    /** Binds a CC number to a parameter ID */
+    void bind(int ccNumber, const juce::String& paramID)
+    {
+        unbindParam(paramID); // Ensure one-to-one
+        ccToParam[ccNumber] = paramID;
+    }
+    
+    /** Unbinds a specific CC */
+    void unbindCC(int ccNumber) {
+        ccToParam.erase(ccNumber);
+    }
+    
+    /** Unbinds a specific Parameter */
+    void unbindParam(const juce::String& paramID) {
+        for (auto it = ccToParam.begin(); it != ccToParam.end(); ) {
+            if (it->second == paramID) it = ccToParam.erase(it);
+            else ++it;
+        }
+    }
+
+    /** Enables learn mode for a specific parameter */
+    void startLearning(const juce::String& paramID)
+    {
+        isLearning = true;
+        learningParamID = paramID;
+    }
+
+    /** Returns the CC mapped to a parameter, or -1 if none */
+    int getCCForParam(const juce::String& paramID) const
+    {
+        for (auto const& [cc, id] : ccToParam)
+        {
+            if (id == paramID) return cc;
+        }
+        return -1;
+    }
+
+    /** Reset all mappings */
+    void clearMappings() { ccToParam.clear(); }
+
+    /** Serializes mappings to a ValueTree */
+    juce::ValueTree saveState() const
+    {
+        juce::ValueTree vt("MIDI_MAPPINGS");
+        for (auto const& [cc, id] : ccToParam)
+        {
+            juce::ValueTree entry("MAP");
+            entry.setProperty("cc", cc, nullptr);
+            entry.setProperty("param", id, nullptr);
+            vt.appendChild(entry, nullptr);
+        }
+        return vt;
+    }
+
+    /** Deserializes mappings from a ValueTree */
+    void loadState(const juce::ValueTree& vt)
+    {
+        if (vt.getType() != juce::Identifier("MIDI_MAPPINGS")) return;
+        
+        ccToParam.clear();
+        for (int i = 0; i < vt.getNumChildren(); ++i)
+        {
+            auto child = vt.getChild(i);
+            if (child.getType() == juce::Identifier("MAP"))
+            {
+                int cc = child.getProperty("cc");
+                juce::String id = child.getProperty("param");
+                if (cc >= 0 && cc <= 127 && id.isNotEmpty())
+                {
+                    ccToParam[cc] = id;
+                }
+            }
+        }
+    }
+
+    bool getIsLearning() const { return isLearning; }
+    juce::String getLearningParamID() const { return learningParamID; }
+
+    std::function<void()> onMappingChanged;
+
+private:
+    std::map<int, juce::String> ccToParam;
+    bool isLearning = false;
+    juce::String learningParamID;
+};
+
+================================================================================
+FILE: .\Source\Core\PluginEditor.cpp
+================================================================================
+#include "PluginEditor.h"
+
+SimpleJuno106AudioProcessorEditor::SimpleJuno106AudioProcessorEditor(SimpleJuno106AudioProcessor& p)
+    : AudioProcessorEditor(&p), audioProcessor(p),
+      lfoSection(p.getAPVTS(), p.midiLearnHandler),
+      dcoSection(p.getAPVTS(), p.midiLearnHandler),
+      hpfSection(p.getAPVTS(), p.midiLearnHandler),
+      vcfSection(p.getAPVTS(), p.midiLearnHandler),
+      vcaSection(p.getAPVTS(), p.midiLearnHandler),
+      envSection(p.getAPVTS(), p.midiLearnHandler),
+      chorusSection(p.getAPVTS(), p.midiLearnHandler),
+      controlSection(p, p.getAPVTS(), *p.getPresetManager(), p.midiLearnHandler),
+      midiKeyboard(p.keyboardState, juce::MidiKeyboardComponent::horizontalKeyboard)
+{
+    setLookAndFeel(&lookAndFeel);
+    setSize(1300, 600);
+
+    addAndMakeVisible(lfoSection);
+    addAndMakeVisible(dcoSection);
+    addAndMakeVisible(hpfSection);
+    addAndMakeVisible(vcfSection);
+    addAndMakeVisible(vcaSection);
+    addAndMakeVisible(envSection);
+    addAndMakeVisible(chorusSection);
+    addAndMakeVisible(controlSection);
+    addAndMakeVisible(midiKeyboard);
+
+    audioProcessor.keyboardState.addListener(&audioProcessor);
+
+    // Callbacks
+    controlSection.onPresetLoad = [this](int index) {
+        audioProcessor.loadPreset(index);
+    };
+    
+    controlSection.dumpButton.onClick = [this] {
+        audioProcessor.sendPatchDump();
+    };
+
+    // Keyboard configuration: 4 octaves for significantly wider keys
+    midiKeyboard.setAvailableRange(36, 84); // C2 to C6 (49 keys)
+    midiKeyboard.setScrollButtonsVisible(false);
+}
+
+SimpleJuno106AudioProcessorEditor::~SimpleJuno106AudioProcessorEditor()
+{
+    audioProcessor.keyboardState.removeListener(&audioProcessor);
+}
+
+void SimpleJuno106AudioProcessorEditor::paint(juce::Graphics& g)
+{
+    g.fillAll(JunoUI::kJunoDarkGrey);
+    
+    g.setColour(juce::Colours::white);
+    g.setFont(juce::FontOptions(22.0f, juce::Font::bold));
+    g.drawText("ABDSimplyJuno106", 20, 10, 300, 30, juce::Justification::left);
+}
+
+void SimpleJuno106AudioProcessorEditor::resized()
+{
+    auto area = getLocalBounds().reduced(10);
+    int topY = 50;
+    int topH = 260;
+    int curX = 10;
+    int gap = 5;
+
+    // Top Strip
+    lfoSection.setBounds(curX, topY, 120, topH); curX += 120 + gap;
+    dcoSection.setBounds(curX, topY, 420, topH); curX += 420 + gap;
+    hpfSection.setBounds(curX, topY, 60, topH); curX += 60 + gap;
+    vcfSection.setBounds(curX, topY, 320, topH); curX += 320 + gap;
+    vcaSection.setBounds(curX, topY, 110, topH); curX += 110 + gap;
+    envSection.setBounds(curX, topY, 210, topH); 
+
+    // Middle Strip
+    int midY = 320;
+    int chorusW = 140;
+    controlSection.setBounds(10, midY, getWidth() - chorusW - 30, 130);
+    chorusSection.setBounds(getWidth() - chorusW - 10, midY, chorusW, 130); 
+    
+    // Keyboard placement - reaching bottom, ultra-wide notes
+    int keyY = 445; // Moved up slightly to give more height
+    midiKeyboard.setBounds(10, keyY, getWidth() - 20, getHeight() - keyY - 5);
+    
+    // Explicitly set key width to fill the 1280px area (29 white keys)
+    // 1280 / 29 = ~44.1f per white key
+    midiKeyboard.setKeyWidth(44.0f);
+    
+    // Ensure keyboard is on top
+    midiKeyboard.toFront(false);
+}
+
+================================================================================
+FILE: .\Source\Core\PluginEditor.h
+================================================================================
+#pragma once
+
+#include <JuceHeader.h>
+#include "PluginProcessor.h"
+#include "../UI/Sections/JunoLFOSection.h"
+#include "../UI/Sections/JunoDCOSection.h"
+#include "../UI/Sections/JunoHPFSection.h"
+#include "../UI/Sections/JunoVCFSection.h"
+#include "../UI/Sections/JunoVCASection.h"
+#include "../UI/Sections/JunoENVSection.h"
+#include "../UI/Sections/JunoChorusSection.h"
+#include "../UI/Sections/JunoControlSection.h"
+
+/**
+ * SimpleJuno106AudioProcessorEditor
+ * 
+ * Modular Interface Refactor
+ */
+class SimpleJuno106AudioProcessorEditor : public juce::AudioProcessorEditor {
+public:
+    SimpleJuno106AudioProcessorEditor(SimpleJuno106AudioProcessor&);
+    ~SimpleJuno106AudioProcessorEditor() override;
+
+    void paint(juce::Graphics&) override;
+    void resized() override;
+
+private:
+    SimpleJuno106AudioProcessor& audioProcessor;
+    JunoUI::JunoLookAndFeel lookAndFeel;
+    
+    // Modular Sections
+    JunoLFOSection lfoSection;
+    JunoDCOSection dcoSection;
+    JunoHPFSection hpfSection;
+    JunoVCFSection vcfSection;
+    JunoVCASection vcaSection;
+    JunoENVSection envSection;
+    JunoChorusSection chorusSection;
+    JunoControlSection controlSection;
+    
+    // Virtual MIDI Keyboard
+    juce::MidiKeyboardComponent midiKeyboard;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SimpleJuno106AudioProcessorEditor)
+};
+
+================================================================================
+FILE: .\Source\Core\PluginProcessor.cpp
+================================================================================
+#include "PluginProcessor.h"
+#include <JuceHeader.h>
+#include "PluginEditor.h"
+#include "PresetManager.h"
+
+//==============================================================================
+SimpleJuno106AudioProcessor::SimpleJuno106AudioProcessor()
+#ifndef JucePlugin_PreferredChannelConfigurations
+     : AudioProcessor (BusesProperties()
+                     #if ! JucePlugin_IsMidiEffect
+                      #if ! JucePlugin_IsSynth
+                       .withInput  ("Input",  juce::AudioChannelSet::stereo(), true)
+                      #endif
+                       .withOutput ("Output", juce::AudioChannelSet::stereo(), true)
+                     #endif
+                       ),
+#else
+    : AudioProcessor(JucePlugin_PreferredChannelConfigurations),
+#endif
+      apvts(*this, nullptr, "Parameters", createParameterLayout())
+{
+    presetManager = std::make_unique<PresetManager>();
+    // voiceTimestamp init removed
+
+    // Default MIDI CC Mapping
+    midiLearnHandler.bind(16, "lfoRate");
+    midiLearnHandler.bind(17, "lfoDelay");
+    midiLearnHandler.bind(18, "lfoToDCO");
+    midiLearnHandler.bind(19, "pwm");
+    midiLearnHandler.bind(20, "subOsc");
+    midiLearnHandler.bind(21, "noise");
+    midiLearnHandler.bind(22, "hpfFreq");
+    midiLearnHandler.bind(23, "vcfFreq");
+    midiLearnHandler.bind(24, "resonance");
+    midiLearnHandler.bind(25, "envAmount");
+    midiLearnHandler.bind(26, "lfoToVCF");
+    midiLearnHandler.bind(27, "kybdTracking");
+    midiLearnHandler.bind(28, "attack");
+    midiLearnHandler.bind(29, "decay");
+    midiLearnHandler.bind(30, "sustain");
+    midiLearnHandler.bind(31, "release");
+    midiLearnHandler.bind(32, "vcaLevel");
+    
+    // Connect on-screen keyboard to the engine
+    keyboardState.addListener(this);
+}
+
+SimpleJuno106AudioProcessor::~SimpleJuno106AudioProcessor()
+{
+}
+
+//==============================================================================
+const juce::String SimpleJuno106AudioProcessor::getName() const { return JucePlugin_Name; }
+
+bool SimpleJuno106AudioProcessor::acceptsMidi() const { return true; }
+bool SimpleJuno106AudioProcessor::producesMidi() const { return true; }
+bool SimpleJuno106AudioProcessor::isMidiEffect() const { return false; }
+double SimpleJuno106AudioProcessor::getTailLengthSeconds() const { return 0.0; }
+int SimpleJuno106AudioProcessor::getNumPrograms() { return 1; }
+int SimpleJuno106AudioProcessor::getCurrentProgram() { return 0; }
+void SimpleJuno106AudioProcessor::setCurrentProgram (int index) { juce::ignoreUnused(index); }
+const juce::String SimpleJuno106AudioProcessor::getProgramName (int index) { juce::ignoreUnused(index); return {}; }
+void SimpleJuno106AudioProcessor::changeProgramName (int index, const juce::String& newName) { juce::ignoreUnused(index, newName); }
+
+//==============================================================================
+void SimpleJuno106AudioProcessor::prepareToPlay (double sampleRate, int samplesPerBlock)
+{
+    voiceManager.prepare(sampleRate, samplesPerBlock);
+    
+    juce::dsp::ProcessSpec spec;
+    spec.sampleRate = sampleRate;
+    spec.maximumBlockSize = static_cast<juce::uint32>(samplesPerBlock);
+    spec.numChannels = 2;
+    
+    chorus.prepare(spec);
+    chorus.reset();
+    
+    dcBlocker.prepare(spec);
+    *dcBlocker.state = *juce::dsp::IIR::Coefficients<float>::makeHighPass(sampleRate, 20.0f);
+}
+
+void SimpleJuno106AudioProcessor::releaseResources() {}
+
+bool SimpleJuno106AudioProcessor::isBusesLayoutSupported (const BusesLayout& layouts) const
+{
+    if (layouts.getMainOutputChannelSet() != juce::AudioChannelSet::mono()
+     && layouts.getMainOutputChannelSet() != juce::AudioChannelSet::stereo())
+        return false;
+    return true;
+}
+
+void SimpleJuno106AudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce::MidiBuffer& midiMessages)
+{
+    juce::ScopedNoDenormals noDenormals;
+    auto totalNumInputChannels  = getTotalNumInputChannels();
+    auto totalNumOutputChannels = getTotalNumOutputChannels();
+
+    for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
+        buffer.clear (i, 0, buffer.getNumSamples());
+
+    // 1. Pre-process keyboard state (updates listeners, i.e., us)
+    keyboardState.processNextMidiBuffer (midiMessages, 0, buffer.getNumSamples(), true);
+
+    // 2. Handle SysEx and CCs (Directly from midiBuffer to avoid overhead in callbacks)
+    for (const auto metadata : midiMessages)
+    {
+        auto message = metadata.getMessage();
+        if (message.isSysEx())
+        {
+            int type, ch, p1, p2;
+            std::vector<uint8_t> dumpData;
+            if (JunoSysEx::parseMessage(message, type, ch, p1, p2, dumpData))
+            {
+                if (type == JunoSysEx::kMsgManualMode) { /* Handle manual */ }
+                else handleSysEx(message.getSysExData(), (int)message.getRawDataSize() - 2);
+            }
+        }
+        else if (message.isController())
+        {
+            auto cn = message.getControllerNumber();
+            auto cv = message.getControllerValue();
+            
+            if (cn == 1) // Modulation
+            {
+                if (auto* p = apvts.getParameter("benderToLFO")) p->setValueNotifyingHost(cv / 127.0f);
+            }
+            else if (cn == 64) // Sustain
+            {
+                sustainPedalActive = (cv >= 64);
+                if (!sustainPedalActive)
+                {
+                    for (int note : pendingNoteOffs) handleNoteOff(nullptr, 0, note, 0.0f);
+                    pendingNoteOffs.clear();
+                }
+            }
+            else
+            {
+                midiLearnHandler.handleIncomingCC(cn, cv, apvts);
+            }
+        }
+        else if (message.isPitchWheel())
+        {
+            auto val = (float)message.getPitchWheelValue();
+            // Map 0-16383 to -1 to 1
+            float norm = (val / 8192.0f) - 1.0f;
+            if (auto* p = apvts.getParameter("bender")) p->setValueNotifyingHost(p->convertTo0to1(norm));
+        }
+    }
+
+    // 3. Update internal parameters
+    updateParamsFromAPVTS();
+    voiceManager.updateParams(currentParams);
+
+    // 4. Render voices
+    buffer.clear();
+    voiceManager.renderNextBlock(buffer, 0, buffer.getNumSamples());
+
+    // 5. Apply Effects
+    juce::dsp::AudioBlock<float> block(buffer);
+    juce::dsp::ProcessContextReplacing<float> context(block);
+    
+    bool c1 = apvts.getRawParameterValue("chorus1")->load() > 0.5f;
+    bool c2 = apvts.getRawParameterValue("chorus2")->load() > 0.5f;
+    
+    if (c1 || c2) {
+         if (c1 && !c2) {
+            chorus.setRate(0.5f); chorus.setDepth(0.12f); chorus.setMix(0.5f); chorus.setCentreDelay(6.0f);
+         } else if (!c1 && c2) {
+            chorus.setRate(0.8f); chorus.setDepth(0.25f); chorus.setMix(0.5f); chorus.setCentreDelay(8.0f);
+         } else {
+            chorus.setRate(1.0f); chorus.setDepth(0.15f); chorus.setMix(0.5f); chorus.setCentreDelay(7.0f);
+         }
+         chorus.process(context);
+    }
+    dcBlocker.process(context);
+
+    // 6. MIDI Out
+    if (midiOutEnabled)
+    {
+        midiMessages.addEvents(midiOutBuffer, 0, buffer.getNumSamples(), 0);
+        midiOutBuffer.clear();
+    }
+}
+
+//==============================================================================
+void SimpleJuno106AudioProcessor::enterTestMode(bool enter)
+{
+    isTestMode = enter;
+    if (isTestMode)
+    {
+        // Authentic Test Mode display pattern (approximation)
+        // Usually it shows segments. We'll set lastTriggeredVoiceIdx to a special value
+        // lastTriggeredVoiceIdx = 0; // Show CH 1 on entry (Variable removed in refactor)
+    }
+}
+
+void SimpleJuno106AudioProcessor::triggerTestProgram(int bankIndex)
+{
+    if (!isTestMode) return;
+
+    auto setP = [&](juce::String id, float val) {
+        if (auto* p = apvts.getParameter(id)) p->setValueNotifyingHost(val / 10.0f);
+    };
+    auto setBool = [&](juce::String id, bool val) {
+        if (auto* p = apvts.getParameter(id)) p->setValueNotifyingHost(val ? 1.0f : 0.0f);
+    };
+    auto setInt = [&](juce::String id, int val) {
+        if (auto* p = apvts.getParameter(id)) {
+             float norm = p->convertTo0to1(static_cast<float>(val));
+             p->setValueNotifyingHost(norm);
+        }
+    };
+    auto setParam = [&](juce::String id, float normVal) {
+        if (auto* p = apvts.getParameter(id)) p->setValueNotifyingHost(normVal);
+    };
+
+    // Table settings from service manual
+    auto applyCommon = [&]() {
+        setP("lfoRate", 5); setP("lfoDelay", 0); setP("lfoToDCO", 8); 
+        setInt("dcoRange", 1); // 8'
+        setBool("sawOn", false); setBool("pulseOn", false);
+        setP("subOsc", 0); setP("noise", 0); setP("lfoToVCF", 0); setP("pwm", 0);
+        setParam("pwmMode", 1.0f); // MAN
+        setParam("hpfFreq", 1.0f); // HPF 1
+        setP("vcfFreq", 10); setP("resonance", 0); setP("envAmount", 0);
+        setParam("vcfPolarity", 0.0f); 
+        setP("kybdTracking", 10);
+        setParam("vcaMode", 0.0f); // ENV
+        setP("vcaLevel", 5);
+        setP("attack", 0); setP("decay", 0); setP("sustain", 10); setP("release", 0);
+        setBool("chorus1", false); setBool("chorus2", false);
+    };
+
+    applyCommon();
+
+    switch (bankIndex)
+    {
+        case 0: break; // 1: VCA OFFSET
+        case 1: setP("subOsc", 10); break; // 2: SUB OSC
+        case 2: setP("vcfFreq", 6.3f); setP("resonance", 10); break; // 3: VCA/VCF GAIN
+        case 3: setBool("sawOn", true); break; // 4: RAMP WAVE
+        case 4: setBool("pulseOn", true); setP("pwm", 5); break; // 5: PWM 50%
+        case 5: setP("noise", 10); break; // 6: NOISE LEVEL
+        case 6: break; // 7: VCF HI/LO
+        case 7: // 8: RE-TRIGGER
+            setBool("pulseOn", true);
+            setP("decay", 1.3f); setP("sustain", 0); setP("release", 1.3f);
+            break;
+    }
+}
+
+void SimpleJuno106AudioProcessor::handleNoteOn(juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity)
+{
+    voiceManager.noteOn(midiChannel, midiNoteNumber, velocity);
+}
+
+void SimpleJuno106AudioProcessor::handleNoteOff(juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity)
+{
+    if (sustainPedalActive)
+    {
+        if (std::find(pendingNoteOffs.begin(), pendingNoteOffs.end(), midiNoteNumber) == pendingNoteOffs.end())
+            pendingNoteOffs.push_back(midiNoteNumber);
+        return;
+    }
+
+    voiceManager.noteOff(midiChannel, midiNoteNumber, velocity);
+}
+
+void SimpleJuno106AudioProcessor::updateParamsFromAPVTS() {
+    auto getVal = [this](juce::String id) { return apvts.getRawParameterValue(id)->load(); };
+    auto getBool = [this](juce::String id) { return apvts.getRawParameterValue(id)->load() > 0.5f; };
+    auto getInt = [this](juce::String id) { return static_cast<int>(apvts.getRawParameterValue(id)->load()); };
+
+    currentParams.dcoRange = getInt("dcoRange");
+    currentParams.sawOn = getBool("sawOn");
+    currentParams.pulseOn = getBool("pulseOn");
+    currentParams.pwmAmount = getVal("pwm");
+    currentParams.pwmMode = getInt("pwmMode");
+    currentParams.subOscLevel = getVal("subOsc");
+    currentParams.noiseLevel = getVal("noise");
+    currentParams.lfoToDCO = getVal("lfoToDCO");
+    currentParams.hpfFreq = getInt("hpfFreq");
+    currentParams.vcfFreq = getVal("vcfFreq");
+    currentParams.resonance = getVal("resonance");
+    currentParams.envAmount = getVal("envAmount");
+    currentParams.lfoToVCF = getVal("lfoToVCF");
+    currentParams.kybdTracking = getVal("kybdTracking");
+    currentParams.vcfPolarity = getInt("vcfPolarity");
+    currentParams.vcaMode = getInt("vcaMode");
+    currentParams.vcaLevel = getVal("vcaLevel");
+    currentParams.attack = getVal("attack");
+    currentParams.decay = getVal("decay");
+    currentParams.sustain = getVal("sustain");
+    currentParams.release = getVal("release");
+    currentParams.lfoRate = getVal("lfoRate");
+    currentParams.lfoDelay = getVal("lfoDelay");
+    currentParams.chorus1 = getBool("chorus1");
+    currentParams.chorus2 = getBool("chorus2");
+    currentParams.polyMode = getInt("polyMode");
+    voiceManager.setPolyMode(currentParams.polyMode);
+
+    currentParams.portamentoTime = getVal("portamentoTime");
+    currentParams.portamentoOn = getBool("portamentoOn");
+    currentParams.benderValue = getVal("bender");
+    currentParams.benderToDCO = getVal("benderToDCO");
+    currentParams.benderToVCF = getVal("benderToVCF");
+    
+    // Add Mod Wheel (benderToLFO) to LFO depths (Authentic feel: Modulation lever adds LFO)
+    float modWheel = getVal("benderToLFO");
+    currentParams.lfoToDCO = juce::jlimit(0.0f, 1.0f, getVal("lfoToDCO") + modWheel);
+    currentParams.vcfLFOAmount = juce::jlimit(0.0f, 1.0f, getVal("lfoToVCF") + modWheel);
+
+    currentParams.tune = getVal("tune");
+
+    midiOutEnabled = getBool("midiOut");
+
+    // Detect changes and send SysEx (individual params 0x32)
+    if (midiOutEnabled)
+    {
+        auto sendIfChanged = [&](float oldVal, float newVal, JunoSysEx::ParamID pId) {
+            if (std::abs(oldVal - newVal) > 0.001f)
+                midiOutBuffer.addEvent(JunoSysEx::createParamChange(midiChannel - 1, pId, static_cast<int>(newVal * 127.0f)), 0);
+        };
+
+        sendIfChanged(lastParams.lfoRate, currentParams.lfoRate, JunoSysEx::LFO_RATE);
+        sendIfChanged(lastParams.lfoDelay, currentParams.lfoDelay, JunoSysEx::LFO_DELAY);
+        sendIfChanged(lastParams.lfoToDCO, currentParams.lfoToDCO, JunoSysEx::DCO_LFO);
+        sendIfChanged(lastParams.pwmAmount, currentParams.pwmAmount, JunoSysEx::DCO_PWM);
+        sendIfChanged(lastParams.noiseLevel, currentParams.noiseLevel, JunoSysEx::DCO_NOISE);
+        sendIfChanged(lastParams.vcfFreq, currentParams.vcfFreq, JunoSysEx::VCF_FREQ);
+        sendIfChanged(lastParams.resonance, currentParams.resonance, JunoSysEx::VCF_RES);
+        sendIfChanged(lastParams.envAmount, currentParams.envAmount, JunoSysEx::VCF_ENV);
+        sendIfChanged(lastParams.lfoToVCF, currentParams.lfoToVCF, JunoSysEx::VCF_LFO);
+        sendIfChanged(lastParams.kybdTracking, currentParams.kybdTracking, JunoSysEx::VCF_KYBD);
+        sendIfChanged(lastParams.vcaLevel, currentParams.vcaLevel, JunoSysEx::VCA_LEVEL);
+        sendIfChanged(lastParams.attack, currentParams.attack, JunoSysEx::ENV_A);
+        sendIfChanged(lastParams.decay, currentParams.decay, JunoSysEx::ENV_D);
+        sendIfChanged(lastParams.sustain, currentParams.sustain, JunoSysEx::ENV_S);
+        sendIfChanged(lastParams.release, currentParams.release, JunoSysEx::ENV_R);
+        sendIfChanged(lastParams.subOscLevel, currentParams.subOscLevel, JunoSysEx::DCO_SUB);
+
+        // SW1 (Byte 17)
+        uint8_t sw1 = 0;
+        if (currentParams.dcoRange == 0) sw1 |= (1 << 0);
+        if (currentParams.dcoRange == 1) sw1 |= (1 << 1);
+        if (currentParams.dcoRange == 2) sw1 |= (1 << 2);
+        if (currentParams.pulseOn) sw1 |= (1 << 3);
+        if (currentParams.sawOn) sw1 |= (1 << 4);
+        if (!(currentParams.chorus1 || currentParams.chorus2)) sw1 |= (1 << 5); 
+        if (currentParams.chorus1) sw1 |= (1 << 6); 
+
+        midiOutBuffer.addEvent(JunoSysEx::createParamChange(midiChannel - 1, JunoSysEx::SWITCHES_1, sw1), 0);
+
+        // SW2 (Byte 18)
+        uint8_t sw2 = 0;
+        if (currentParams.pwmMode == 1) sw2 |= (1 << 0);
+        if (currentParams.vcfPolarity == 1) sw2 |= (1 << 1);
+        if (currentParams.vcaMode == 1) sw2 |= (1 << 2);
+        
+        int hpfVal = currentParams.hpfFreq;
+        sw2 |= (static_cast<uint8_t>(hpfVal & 0x03) << 3);
+
+        midiOutBuffer.addEvent(JunoSysEx::createParamChange(midiChannel - 1, JunoSysEx::SWITCHES_2, sw2), 0);
+    }
+    lastParams = currentParams;
+}
+
+void SimpleJuno106AudioProcessor::loadPreset(int index) {
+    if (!presetManager) return;
+    const auto* preset = presetManager->getPreset(index);
+    if (preset != nullptr) {
+        for (int i = 0; i < (int)preset->state.getNumProperties(); ++i) {
+            auto propName = preset->state.getPropertyName(i);
+            auto value = preset->state.getProperty(propName);
+            if (auto* param = apvts.getParameter(propName.toString())) {
+                if (value.isBool() || (value.isDouble() && ((double)value == 0.0 || (double)value == 1.0))) {
+                    param->setValueNotifyingHost(static_cast<bool>(value) ? 1.0f : 0.0f);
+                }
+                else {
+                    float normValue = param->convertTo0to1(static_cast<float>(value));
+                    param->setValueNotifyingHost(normValue);
+                }
+            }
+        }
+        presetManager->setCurrentPreset(index);
+    }
+}
+
+void SimpleJuno106AudioProcessor::handleSysEx(const uint8_t* data, int size) 
+{ 
+    juce::MidiMessage msg = juce::MidiMessage::createSysExMessage(data, size);
+    int type, ch, p1, p2;
+    std::vector<uint8_t> dumpData;
+    
+    if (JunoSysEx::parseMessage(msg, type, ch, p1, p2, dumpData))
+    {
+        auto setParam = [&](juce::String id, float normVal) {
+            if (auto* p = apvts.getParameter(id)) p->setValueNotifyingHost(normVal);
+        };
+
+        if (type == JunoSysEx::kMsgParamChange)
+        {
+            float fVal = p2 / 127.0f;
+            switch (p1)
+            {
+                case JunoSysEx::LFO_RATE: setParam("lfoRate", fVal); break;
+                case JunoSysEx::LFO_DELAY: setParam("lfoDelay", fVal); break;
+                case JunoSysEx::DCO_LFO: setParam("lfoToDCO", fVal); break;
+                case JunoSysEx::DCO_PWM: setParam("pwm", fVal); break;
+                case JunoSysEx::DCO_NOISE: setParam("noise", fVal); break;
+                case JunoSysEx::VCF_FREQ: setParam("vcfFreq", fVal); break;
+                case JunoSysEx::VCF_RES: setParam("resonance", fVal); break;
+                case JunoSysEx::VCF_ENV: setParam("envAmount", fVal); break;
+                case JunoSysEx::VCF_LFO: setParam("lfoToVCF", fVal); break;
+                case JunoSysEx::VCF_KYBD: setParam("kybdTracking", fVal); break;
+                case JunoSysEx::VCA_LEVEL: setParam("vcaLevel", fVal); break;
+                case JunoSysEx::ENV_A: setParam("attack", fVal); break;
+                case JunoSysEx::ENV_D: setParam("decay", fVal); break;
+                case JunoSysEx::ENV_S: setParam("sustain", fVal); break;
+                case JunoSysEx::ENV_R: setParam("release", fVal); break;
+                case JunoSysEx::DCO_SUB: setParam("subOsc", fVal); break;
+                
+                case JunoSysEx::SWITCHES_1:
+                {
+                    setParam("dcoRange", (p2 & 1) ? 0.0f : ((p2 & 2) ? 1.0f : 2.0f));
+                    setParam("pulseOn", (p2 & (1 << 3)) != 0);
+                    setParam("sawOn", (p2 & (1 << 4)) != 0);
+                    bool chorusOn = (p2 & (1 << 5)) == 0;
+                    bool chorusMode1 = (p2 & (1 << 6)) != 0;
+                    setParam("chorus1", chorusOn && chorusMode1);
+                    setParam("chorus2", chorusOn && !chorusMode1);
+                    break;
+                }
+                case JunoSysEx::SWITCHES_2:
+                {
+                    setParam("pwmMode", (p2 & (1 << 0)) != 0);
+                    setParam("vcaMode", (p2 & (1 << 1)) != 0);
+                    setParam("vcfPolarity", (p2 & (1 << 2)) != 0);
+                    int hpf = (p2 >> 3) & 0x03;
+                    setParam("hpfFreq", (float)hpf);
+                    break;
+                }
+            }
+        }
+        else if (type == JunoSysEx::kMsgPatchDump && dumpData.size() >= 18)
+        {
+            setParam("lfoRate", dumpData[0] / 127.0f);
+            setParam("lfoDelay", dumpData[1] / 127.0f);
+            setParam("lfoToDCO", dumpData[2] / 127.0f);
+            setParam("pwm", dumpData[3] / 127.0f);
+            setParam("noise", dumpData[4] / 127.0f);
+            setParam("vcfFreq", dumpData[5] / 127.0f);
+            setParam("resonance", dumpData[6] / 127.0f);
+            setParam("envAmount", dumpData[7] / 127.0f);
+            setParam("lfoToVCF", dumpData[8] / 127.0f);
+            setParam("kybdTracking", dumpData[9] / 127.0f);
+            setParam("vcaLevel", dumpData[10] / 127.0f);
+            setParam("attack", dumpData[11] / 127.0f);
+            setParam("decay", dumpData[12] / 127.0f);
+            setParam("sustain", dumpData[13] / 127.0f);
+            setParam("release", dumpData[14] / 127.0f);
+            setParam("subOsc", dumpData[15] / 127.0f);
+            
+            uint8_t sw1 = dumpData[16];
+            setParam("dcoRange", (sw1 & 1) ? 0.0f : ((sw1 & 2) ? 1.0f : 2.0f));
+            setParam("pulseOn", (sw1 & (1 << 3)) != 0);
+            setParam("sawOn", (sw1 & (1 << 4)) != 0);
+            bool chorusOn = (sw1 & (1 << 5)) == 0;
+            bool chorusMode1 = (sw1 & (1 << 6)) != 0;
+            setParam("chorus1", chorusOn && chorusMode1);
+            setParam("chorus2", chorusOn && !chorusMode1);
+
+            uint8_t sw2 = dumpData[17];
+            setParam("pwmMode", (sw2 & (1 << 0)) != 0);
+            setParam("vcaMode", (sw2 & (1 << 1)) != 0);
+            setParam("vcfPolarity", (sw2 & (1 << 2)) != 0);
+            int hpf = (sw2 >> 3) & 0x03;
+            setParam("hpfFreq", (float)hpf);
+        }
+    }
+}
+
+void SimpleJuno106AudioProcessor::sendPatchDump()
+{
+    if (midiOutEnabled) midiOutBuffer.addEvent(generatePatchDumpMessage(), 0);
+}
+
+juce::MidiMessage SimpleJuno106AudioProcessor::generatePatchDumpMessage()
+{
+    uint8_t params[16];
+    params[0] = static_cast<uint8_t>(currentParams.lfoRate * 127.0f);
+    params[1] = static_cast<uint8_t>(currentParams.lfoDelay * 127.0f);
+    params[2] = static_cast<uint8_t>(currentParams.lfoToDCO * 127.0f);
+    params[3] = static_cast<uint8_t>(currentParams.pwmAmount * 127.0f);
+    params[4] = static_cast<uint8_t>(currentParams.noiseLevel * 127.0f);
+    params[5] = static_cast<uint8_t>(currentParams.vcfFreq * 127.0f);
+    params[6] = static_cast<uint8_t>(currentParams.resonance * 127.0f);
+    params[7] = static_cast<uint8_t>(currentParams.envAmount * 127.0f);
+    params[8] = static_cast<uint8_t>(currentParams.lfoToVCF * 127.0f);
+    params[9] = static_cast<uint8_t>(currentParams.kybdTracking * 127.0f);
+    params[10] = static_cast<uint8_t>(currentParams.vcaLevel * 127.0f);
+    params[11] = static_cast<uint8_t>(currentParams.attack * 127.0f);
+    params[12] = static_cast<uint8_t>(currentParams.decay * 127.0f);
+    params[13] = static_cast<uint8_t>(currentParams.sustain * 127.0f);
+    params[14] = static_cast<uint8_t>(currentParams.release * 127.0f);
+    params[15] = static_cast<uint8_t>(currentParams.subOscLevel * 127.0f);
+
+    uint8_t sw1 = 0;
+    if (currentParams.dcoRange == 0) sw1 |= (1 << 0);
+    if (currentParams.dcoRange == 1) sw1 |= (1 << 1);
+    if (currentParams.dcoRange == 2) sw1 |= (1 << 2);
+    if (currentParams.pulseOn) sw1 |= (1 << 3);
+    if (currentParams.sawOn) sw1 |= (1 << 4);
+    if (!(currentParams.chorus1 || currentParams.chorus2)) sw1 |= (1 << 5); 
+    if (currentParams.chorus1) sw1 |= (1 << 6); 
+
+    uint8_t sw2 = 0;
+    if (currentParams.pwmMode == 1) sw2 |= (1 << 0);
+    if (currentParams.vcaMode == 1) sw2 |= (1 << 1);
+    if (currentParams.vcfPolarity == 1) sw2 |= (1 << 2);
+    
+    int hpfVal = currentParams.hpfFreq;
+    sw2 |= (static_cast<uint8_t>(hpfVal & 0x03) << 3);
+
+    return JunoSysEx::createPatchDump(midiChannel - 1, 0, params, sw1, sw2);
+}
+
+PresetManager* SimpleJuno106AudioProcessor::getPresetManager() { return presetManager.get(); }
+
+juce::AudioProcessorValueTreeState::ParameterLayout SimpleJuno106AudioProcessor::createParameterLayout() {
+    std::vector<std::unique_ptr<juce::RangedAudioParameter>> params;
+    auto makeParam = [](juce::String id, juce::String name, float min, float max, float def) { return std::make_unique<juce::AudioParameterFloat>(id, name, min, max, def); };
+    auto makeIntParam = [](juce::String id, juce::String name, int min, int max, int def) { return std::make_unique<juce::AudioParameterInt>(id, name, min, max, def); };
+    auto makeBool = [](juce::String id, juce::String name, bool def) { return std::make_unique<juce::AudioParameterBool>(id, name, def); };
+
+    params.push_back(makeIntParam("dcoRange", "DCO Range", 0, 2, 1));
+    params.push_back(makeBool("sawOn", "DCO Saw", true));
+    params.push_back(makeBool("pulseOn", "DCO Pulse", false));
+    params.push_back(makeParam("pwm", "PWM Level", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeIntParam("pwmMode", "PWM Mode", 0, 1, 0));
+    params.push_back(makeParam("subOsc", "Sub Osc Level", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("noise", "Noise Level", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("lfoToDCO", "LFO to DCO", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeIntParam("hpfFreq", "HPF Freq", 0, 3, 0));
+    params.push_back(makeParam("vcfFreq", "VCF Freq", 0.0f, 1.0f, 1.0f));
+    params.push_back(makeParam("resonance", "Resonance", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("envAmount", "Env Amount", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeIntParam("vcfPolarity", "VCF Polarity", 0, 1, 0));
+    params.push_back(makeParam("kybdTracking", "VCF Kykd Track", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("lfoToVCF", "LFO to VCF", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeIntParam("vcaMode", "VCA Mode", 0, 1, 0));
+    params.push_back(makeParam("vcaLevel", "VCA Level", 0.0f, 1.0f, 1.0f));
+    params.push_back(makeParam("attack", "Attack", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("decay", "Decay", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("sustain", "Sustain", 0.0f, 1.0f, 1.0f));
+    params.push_back(makeParam("release", "Release", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("lfoRate", "LFO Rate", 0.0f, 1.0f, 0.5f));
+    params.push_back(makeParam("lfoDelay", "LFO Delay", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeBool("chorus1", "Chorus I", false));
+    params.push_back(makeBool("chorus2", "Chorus II", false));
+    params.push_back(makeIntParam("polyMode", "Poly Mode", 1, 3, 1));
+    params.push_back(makeParam("portamentoTime", "Portamento Time", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeBool("portamentoOn", "Portamento On", false));
+    params.push_back(makeParam("bender", "Bender", -1.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("benderToDCO", "Bender to DCO", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("benderToVCF", "Bender to VCF", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("benderToLFO", "Bender to LFO", 0.0f, 1.0f, 0.0f));
+    params.push_back(makeParam("tune", "Master Tune", -50.0f, 50.0f, 0.0f));
+    params.push_back(makeBool("midiOut", "MIDI Out Enabled", false));
+
+    return { params.begin(), params.end() };
+}
+
+juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter() { return new SimpleJuno106AudioProcessor(); }
+
+// Missing Editor & State implementation
+bool SimpleJuno106AudioProcessor::hasEditor() const { return true; }
+juce::AudioProcessorEditor* SimpleJuno106AudioProcessor::createEditor() {
+    return new SimpleJuno106AudioProcessorEditor(*this);
+}
+
+void SimpleJuno106AudioProcessor::getStateInformation(juce::MemoryBlock& destData) {
+    auto state = apvts.copyState();
+    std::unique_ptr<juce::XmlElement> xml(state.createXml());
+    copyXmlToBinary(*xml, destData);
+}
+
+void SimpleJuno106AudioProcessor::setStateInformation(const void* data, int sizeInBytes) {
+    std::unique_ptr<juce::XmlElement> xmlState(getXmlFromBinary(data, sizeInBytes));
+    if (xmlState != nullptr)
+        if (xmlState->hasTagName(apvts.state.getType().toString()))
+            apvts.replaceState(juce::ValueTree::fromXml(*xmlState));
+}
+
+================================================================================
+FILE: .\Source\Core\PluginProcessor.h
+================================================================================
+#pragma once
+
+#include <JuceHeader.h>
+
+#include "../Synth/Voice.h"
+#include "JunoVoiceManager.h"
+#include "JunoSysEx.h"
+#include "MidiLearnHandler.h"
+
+class PresetManager;
+
+/**
+ * SimpleJuno106AudioProcessor
+ */
+class SimpleJuno106AudioProcessor : public juce::AudioProcessor,
+                                     public juce::MidiKeyboardState::Listener {
+public:
+    SimpleJuno106AudioProcessor();
+    ~SimpleJuno106AudioProcessor() override;
+
+    // AudioProcessor
+    void prepareToPlay(double sampleRate, int samplesPerBlock) override;
+    void releaseResources() override;
+    bool isBusesLayoutSupported(const BusesLayout& layouts) const override;
+    void processBlock(juce::AudioBuffer<float>&, juce::MidiBuffer&) override;
+    
+    // MIDI / SysEx Support
+    bool midiOutEnabled = false;
+    int midiChannel = 1; // 1-16
+    juce::MidiBuffer midiOutBuffer;
+    MidiLearnHandler midiLearnHandler;
+    juce::AudioProcessorEditor* createEditor() override;
+    bool hasEditor() const override;
+
+    const juce::String getName() const override;
+    bool acceptsMidi() const override;
+    bool producesMidi() const override;
+    bool isMidiEffect() const override;
+    double getTailLengthSeconds() const override;
+    int getNumPrograms() override;
+    int getCurrentProgram() override;
+    void setCurrentProgram(int index) override;
+    const juce::String getProgramName(int index) override;
+    void changeProgramName(int index, const juce::String& newName) override;
+
+    void getStateInformation(juce::MemoryBlock& destData) override;
+    void setStateInformation(const void* data, int sizeInBytes) override;
+    
+    // Accessors
+    juce::AudioProcessorValueTreeState& getAPVTS() { return apvts; }
+    class PresetManager* getPresetManager();
+    const JunoVoiceManager& getVoiceManager() const { return voiceManager; }
+    
+    juce::MidiKeyboardState keyboardState;
+
+    // Preset Management
+    void loadPreset(int index);
+    
+    // Internal Synth Logic
+    void updateParamsFromAPVTS();
+    
+    // SysEx Handling
+    void handleSysEx(const uint8_t* data, int size);
+    void sendPatchDump();
+    juce::MidiMessage generatePatchDumpMessage();
+
+    // Test Mode (Authentic Hardware Behavior)
+    bool isTestMode = false;
+    // int lastTriggeredVoiceIdx = -1; // Removed: Handled internally or debug data from manager
+    void triggerTestProgram(int bankIndex);
+    void enterTestMode(bool enter);
+
+    // Midi Listener
+    void handleNoteOn(juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
+    void handleNoteOff(juce::MidiKeyboardState*, int midiChannel, int midiNoteNumber, float velocity) override;
+
+private:
+    juce::AudioProcessorValueTreeState apvts;
+    juce::AudioProcessorValueTreeState::ParameterLayout createParameterLayout();
+    
+    // Core Engine
+    JunoVoiceManager voiceManager;
+    SynthParams currentParams;
+    SynthParams lastParams; // Used to detect changes for SysEx send
+
+    std::unique_ptr<class PresetManager> presetManager;
+    
+    // MIDI State
+    bool sustainPedalActive = false;
+    std::vector<int> pendingNoteOffs;
+
+    juce::dsp::Chorus<float> chorus; 
+    juce::dsp::ProcessorDuplicator<juce::dsp::IIR::Filter<float>, juce::dsp::IIR::Coefficients<float>> dcBlocker;
+
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(SimpleJuno106AudioProcessor)
+};
+
+================================================================================
+FILE: .\Source\Core\PresetManager.cpp
+================================================================================
+#include "PresetManager.h"
+#include "FactoryPresets.h"
+#include "JunoTapeDecoder.h"
+
+PresetManager::PresetManager() {
+    // Initialize with first bank
+    addBank("Factory Bank");
+    loadFactoryPresets();
+    loadUserPresets();
+}
+
+void PresetManager::addBank(const juce::String& name) {
+    Bank b;
+    b.name = name;
+    banks.push_back(b);
+}
+
+void PresetManager::selectBank(int index) {
+    currentBankIndex = juce::jlimit(0, getNumBanks() - 1, index);
+}
+
+juce::Result PresetManager::loadTape(const juce::File& wavFile) {
+    auto result = JunoTapeDecoder::decodeWavFile(wavFile);
+    if (!result.success) return juce::Result::fail(result.errorMessage);
+    
+    // Create new bank for this tape
+    addBank(wavFile.getFileNameWithoutExtension());
+    int newBankIdx = getNumBanks() - 1;
+    Bank& bank = banks[newBankIdx];
+    
+    // Decode patches
+    for (int p = 0; p < 64; ++p) {
+        if ((p + 1) * 18 > (int)result.data.size()) break;
+        
+        const unsigned char* patchBytes = &result.data[p * 18];
+        juce::String patchName = juce::String(p + 1).paddedLeft('0', 2);
+        bank.patches.push_back(createPresetFromJunoBytes(patchName, patchBytes));
+    }
+    
+    selectBank(newBankIdx);
+    
+    // If we have warning message (like Partial Bank), we could append it, but Result usually means Success or Fail.
+    // We can assume if Success, it is OK.
+    return juce::Result::ok();
+}
+
+void PresetManager::createFactoryPreset(Bank& bank, const juce::String& name,
+                                       float sawLevel, float pulseLevel, float pwm, float subOsc,
+                                       float cutoff, float resonance, float envAmount,
+                                       float attack, float decay, float sustain, float release,
+                                       float lfoRate, float lfoDepth, int lfoDest,
+                                       bool chorusI, bool chorusII, bool gateMode) {
+    juce::ValueTree state("Parameters");
+    state.setProperty("sawOn", sawLevel > 0.0f, nullptr);
+    state.setProperty("pulseOn", pulseLevel > 0.0f, nullptr);
+    state.setProperty("pwm", pwm, nullptr);
+    state.setProperty("subOsc", subOsc, nullptr);
+    state.setProperty("vcfFreq", cutoff, nullptr);
+    state.setProperty("resonance", resonance, nullptr);
+    state.setProperty("envAmount", envAmount, nullptr);
+    state.setProperty("attack", attack, nullptr);
+    state.setProperty("decay", decay, nullptr);
+    state.setProperty("sustain", sustain, nullptr);
+    state.setProperty("release", release, nullptr);
+    state.setProperty("lfoRate", lfoRate, nullptr);
+    state.setProperty("lfoToDCO", lfoDepth, nullptr);
+    state.setProperty("chorus1", chorusI, nullptr);
+    state.setProperty("chorus2", chorusII, nullptr);
+    state.setProperty("vcaMode", gateMode ? 1 : 0, nullptr);
+    state.setProperty("vcaLevel", 0.8f, nullptr);
+    
+    bank.patches.push_back(Preset(name, "Factory", state));
+}
+
+PresetManager::Preset PresetManager::createPresetFromJunoBytes(const juce::String& name, const unsigned char* bytes) {
+    juce::ValueTree state("Parameters");
+    auto toNorm = [](unsigned char b) { return static_cast<float>(b) / 127.0f; };
+    
+    state.setProperty("lfoRate", toNorm(bytes[0]), nullptr);
+    state.setProperty("lfoDelay", toNorm(bytes[1]), nullptr);
+    state.setProperty("lfoToDCO", toNorm(bytes[2]), nullptr);
+    state.setProperty("pwm", toNorm(bytes[3]), nullptr);
+    state.setProperty("noise", toNorm(bytes[4]), nullptr);
+    state.setProperty("vcfFreq", toNorm(bytes[5]), nullptr);
+    state.setProperty("resonance", toNorm(bytes[6]), nullptr);
+    state.setProperty("envAmount", toNorm(bytes[7]), nullptr);
+    state.setProperty("lfoToVCF", toNorm(bytes[8]), nullptr);
+    state.setProperty("kybdTracking", toNorm(bytes[9]), nullptr);
+    state.setProperty("vcaLevel", toNorm(bytes[10]), nullptr);
+    state.setProperty("attack", toNorm(bytes[11]), nullptr);
+    state.setProperty("decay", toNorm(bytes[12]), nullptr);
+    state.setProperty("sustain", toNorm(bytes[13]), nullptr);
+    state.setProperty("release", toNorm(bytes[14]), nullptr);
+    state.setProperty("subOsc", toNorm(bytes[15]), nullptr);
+    
+    unsigned char sw1 = bytes[16];
+    int range = 1; 
+    if (sw1 & (1 << 0)) range = 0; // 16'
+    else if (sw1 & (1 << 1)) range = 1; // 8'
+    else if (sw1 & (1 << 2)) range = 2; // 4'
+    state.setProperty("dcoRange", range, nullptr);
+    state.setProperty("pulseOn", (sw1 & (1 << 3)) != 0, nullptr);
+    state.setProperty("sawOn", (sw1 & (1 << 4)) != 0, nullptr);
+    
+    bool chorusOn = (sw1 & (1 << 5)) == 0;
+    bool chorusModeII = (sw1 & (1 << 6)) != 0; // 0=I, 1=II
+    state.setProperty("chorus1", chorusOn && !chorusModeII, nullptr);
+    state.setProperty("chorus2", chorusOn && chorusModeII, nullptr);
+
+    unsigned char sw2 = bytes[17];
+    state.setProperty("pwmMode", (sw2 & (1 << 0)) != 0, nullptr);
+    state.setProperty("vcfPolarity", (sw2 & (1 << 1)) != 0, nullptr);
+    state.setProperty("vcaMode", (sw2 & (1 << 2)) != 0, nullptr);
+    
+    int hpfRaw = (sw2 >> 3) & 0x03;
+    state.setProperty("hpfFreq", hpfRaw, nullptr); // Map 1:1
+    
+    return Preset(name, "Factory", state);
+}
+
+void PresetManager::loadFactoryPresets() {
+    Bank& bank = banks[0];
+    bank.patches.clear();
+    
+    // Add factory sounds from header
+    for (const auto& data : junoFactoryPresets) {
+        bank.patches.push_back(createPresetFromJunoBytes(data.name, data.bytes));
+    }
+}
+
+void PresetManager::loadUserPresets() {
+    // For now, user presets are just another bank
+    addBank("User Bank");
+    Bank& bank = banks.back();
+    
+    auto userDir = getUserPresetsDirectory();
+    if (!userDir.exists()) return;
+    auto files = userDir.findChildFiles(juce::File::findFiles, false, "*.json");
+    for (const auto& file : files) {
+        auto json = juce::JSON::parse(file);
+        if (json.isObject()) {
+            auto obj = json.getDynamicObject();
+            if (obj != nullptr) {
+                juce::String name = obj->getProperty("name").toString();
+                auto stateVar = obj->getProperty("state");
+                if (stateVar.isObject()) {
+                    juce::ValueTree state = juce::ValueTree::fromXml(stateVar.toString());
+                    if (state.isValid()) bank.patches.push_back(Preset(name, "User", state));
+                }
+            }
+        }
+    }
+}
+
+void PresetManager::saveUserPreset(const juce::String& name, const juce::ValueTree& state) {
+    auto userDir = getUserPresetsDirectory();
+    userDir.createDirectory();
+    auto file = userDir.getChildFile(name + ".json");
+    juce::DynamicObject::Ptr obj = new juce::DynamicObject();
+    obj->setProperty("name", name);
+    obj->setProperty("state", state.toXmlString());
+    juce::var json(obj.get());
+    file.replaceWithText(juce::JSON::toString(json));
+}
+
+void PresetManager::deleteUserPreset(const juce::String& name) {
+    auto userDir = getUserPresetsDirectory();
+    auto file = userDir.getChildFile(name + ".json");
+    file.deleteFile();
+}
+
+juce::StringArray PresetManager::getPresetNames() const {
+    juce::StringArray names;
+    if (currentBankIndex < getNumBanks()) {
+        for (const auto& p : banks[currentBankIndex].patches) names.add(p.name);
+    }
+    return names;
+}
+
+const PresetManager::Preset* PresetManager::getPreset(int index) const {
+    if (currentBankIndex < getNumBanks() && index >= 0 && index < (int)banks[currentBankIndex].patches.size()) {
+        return &banks[currentBankIndex].patches[index];
+    }
+    return nullptr;
+}
+
+void PresetManager::setCurrentPreset(int index) {
+    currentPresetIndex = index;
+}
+
+juce::File PresetManager::getUserPresetsDirectory() const {
+    return juce::File::getSpecialLocation(juce::File::userApplicationDataDirectory)
+        .getChildFile("SimpleJuno106v2").getChildFile("UserPresets");
+}
+
+================================================================================
+FILE: .\Source\Core\PresetManager.h
+================================================================================
+#pragma once
+
+#include <JuceHeader.h>
+
+/**
+ * PresetManager - Manages factory and user presets
+ * 
+ * Features:
+ * - Factory presets (hardcoded)
+ * - User presets (saved to AppData as JSON)
+ * - Load/Save functionality
+ * - Preset list management
+ */
+class PresetManager {
+public:
+    struct Preset {
+        juce::String name;
+        juce::String category; // "Factory", "User", or Tape name
+        juce::ValueTree state;
+        
+        Preset() = default;
+        Preset(const juce::String& n, const juce::String& cat, const juce::ValueTree& s)
+            : name(n), category(cat), state(s) {}
+    };
+
+    struct Bank {
+        juce::String name;
+        std::vector<Preset> patches; // Juno-106 banks are 64 patches (8x8)
+        
+        Bank() { patches.reserve(64); }
+    };
+    
+    PresetManager();
+    ~PresetManager() = default;
+    
+    // Bank management
+    void addBank(const juce::String& name);
+    void selectBank(int index);
+    int getActiveBankIndex() const { return currentBankIndex; }
+    int getNumBanks() const { return static_cast<int>(banks.size()); }
+    const Bank& getBank(int index) const { return banks[juce::jlimit(0, getNumBanks() - 1, index)]; }
+    
+    // Tape Loading
+    juce::Result loadTape(const juce::File& wavFile);
+
+    // Preset management
+    void loadFactoryPresets();
+    void loadUserPresets();
+    void saveUserPreset(const juce::String& name, const juce::ValueTree& state);
+    void deleteUserPreset(const juce::String& name);
+    
+    // Preset access (for current bank)
+    juce::StringArray getPresetNames() const;
+    const Preset* getPreset(int index) const;
+    
+    // Current preset
+    void setCurrentPreset(int index);
+    int getCurrentPresetIndex() const { return currentPresetIndex; }
+    
+    // File paths
+    juce::File getUserPresetsDirectory() const;
+    
+private:
+    std::vector<Bank> banks;
+    int currentBankIndex = 0;
+    int currentPresetIndex = 0;
+    
+    void createFactoryPreset(Bank& bank, const juce::String& name, 
+                            float sawLevel, float pulseLevel, float pwm, float subOsc,
+                            float cutoff, float resonance, float envAmount,
+                            float attack, float decay, float sustain, float release,
+                            float lfoRate, float lfoDepth, int lfoDest,
+                            bool chorusI, bool chorusII, bool gateMode);
+
+    Preset createPresetFromJunoBytes(const juce::String& name, const unsigned char* bytes);
+    
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PresetManager)
+};
+
+================================================================================
+FILE: .\Source\Core\SynthParams.h
+================================================================================
+#pragma once
+
+#include <JuceHeader.h>
+
+/**
+ * SynthParams - Parameter definitions for SimpleJuno106
+ * 
+ * Simple, flat structure - no complex modular architecture
+ */
+struct SynthParams {
+    // DCO (Complete Juno-106 authentic)
+    int dcoRange = 1;           // 0=16', 1=8', 2=4' (octave selector)
+    bool sawOn = true;          // On/Off (Authentic: Switched, not mixed)
+    bool pulseOn = true;        // On/Off (Authentic: Switched)
+    float pwmAmount = 0.5f;     // 0-1 (pulse width or PWM depth)
+    int pwmMode = 0;            // 0=MAN, 1=LFO
+    float subOscLevel = 0.0f;   // 0-1
+    float noiseLevel = 0.0f;    // 0-1 (NEW!)
+    float lfoToDCO = 0.0f;      // 0-1 (LFO modulation to pitch) (NEW!)
+    
+    // VCF
+    float vcfFreq = 0.8f;       // 0-1 (mapped to Hz in Voice)
+    float resonance = 0.0f;     // 0-1
+    float envAmount = 0.5f;     // 0-1 (envelope modulation depth)
+    
+    // ADSR
+    float attack = 0.01f;       // seconds
+    float decay = 0.3f;         // seconds
+    float sustain = 0.7f;       // 0-1
+    float release = 0.5f;       // seconds
+    
+    // LFO (Juno-106 authentic)
+    float lfoRate = 2.0f;       // 0.1 to 30 Hz
+    // lfoDepth removed - Authenticity fix: Global depth doesn't exist.
+    // Depths are controlled per-section (DCO, VCF, PWM).
+    float lfoDelay = 0.0f;      // 0-5 seconds (fade-in time)
+    // lfoDestination removed - authentic Juno-106 has dedicated sliders per section
+    
+    // Chorus (can combine both)
+    bool chorus1 = false;       // Chorus I
+    bool chorus2 = false;       // Chorus II
+    
+    // VCA
+    int vcaMode = 0;           // 0=ENV, 1=GATE
+    
+    // Chorus/Ensemble (Authentic Juno-106)
+    int chorusMode = 0;         // 0=Off, 1=I, 2=II, 3=I+II
+    
+    // POLY Modes (Authentic Juno-106)
+    int polyMode = 0;           // 0=POLY1, 1=POLY2, 2=UNISON
+    
+    // Master
+    float vcaLevel = 0.8f;      // 0-1
+    
+    // Bender
+    float benderValue = 0.0f;   // -1 to +1
+    float benderToDCO = 1.0f;   // 0-1 (amount to pitch)
+    float benderToVCF = 0.0f;   // 0-1 (amount to filter)
+    float benderToLFO = 0.0f;   // 0-1 (amount to LFO rate)
+    
+    // Analog Character
+    float drift = 0.0f;            // 0 to 1, analog drift amount
+    float tune = 0.0f;             // Â±50 cents (Master Tune)
+    
+    // VCF Modulation (Juno-106 authentic controls)
+    // vcfEnvAmount removed (consolidated with envAmount)
+
+    float vcfLFOAmount = 0.0f;     // LFO: 0 to 1 (LFO modulation depth)
+    float lfoToVCF = 0.0f;         // LFO: 0 to 1 (authentic LFO to VCF slider)
+    float kybdTracking = 0.0f;     // KYBD: 0 to 1 (keyboard tracking amount)
+    int vcfPolarity = 0;           // 0=Normal, 1=Inverted
+    
+    // HPF (High-Pass Filter - Juno-106 authentic)
+    int hpfFreq = 0;               // 0=Off, 1=80Hz, 2=180Hz, 3=330Hz
+    
+    // Portamento
+    bool portamentoOn = false;  // ON/OFF
+    float portamentoTime = 0.0f; // 0-1 (0-5 seconds glide time)
+};
+
+================================================================================
+FILE: .\Source\Synth\JunoADSR.cpp
+================================================================================
+// Source/Synth/JunoADSR.cpp
+#include "JunoADSR.h"
+#include <algorithm>
+
+JunoADSR::JunoADSR() {
+    reset();
+}
+
+void JunoADSR::setSampleRate(double sr) {
+    sampleRate = sr;
+    calculateRates();
+}
+
+void JunoADSR::reset() {
+    stage = Stage::Idle;
+    currentValue = 0.0f;
+}
+
+void JunoADSR::setAttack(float seconds) {
+    attackTime = std::max(0.001f, seconds);
+    calculateRates();
+}
+
+void JunoADSR::setDecay(float seconds) {
+    decayTime = std::max(0.001f, seconds);
+    calculateRates();
+}
+
+void JunoADSR::setSustain(float level) {
+    sustainLevel = juce::jlimit(0.0f, 1.0f, level);
+    calculateRates();
+}
+
+void JunoADSR::setRelease(float seconds) {
+    releaseTime = std::max(0.001f, seconds);
+    calculateRates();
+}
+
+void JunoADSR::setGateMode(bool enabled) {
+    gateMode = enabled;
+}
+
+void JunoADSR::calculateRates() {
+    if (sampleRate <= 0) return;
+    
+    // Attack: Exponential approach
+    // We want to reach target in approx 'attackTime' seconds. 
+    // Time Constant (Tau) ~ Time / 5?
+    // Using a simple coefficient: coeff = 1 - exp(-1 / (time * sr))
+    // Or approximate for small coeffs: coeff = 1 / (time * sr) * Factor
+    
+    // Factor 3.0 means we reach 95% in 'time'.
+    
+    float attackSamples = attackTime * static_cast<float>(sampleRate);
+    attackRate = 1.0f - std::exp(-3.0f / attackSamples);
+    if (attackSamples < 1.0f) attackRate = 1.0f;
+    
+    // Decay
+    float decaySamples = decayTime * static_cast<float>(sampleRate);
+    decayRate = 1.0f - std::exp(-3.0f / decaySamples);
+    if (decaySamples < 1.0f) decayRate = 1.0f;
+    
+    // Release
+    float releaseSamples = releaseTime * static_cast<float>(sampleRate);
+    releaseRate = 1.0f - std::exp(-3.0f / releaseSamples);
+    if (releaseSamples < 1.0f) releaseRate = 1.0f;
+}
+
+void JunoADSR::noteOn() {
+    stage = Stage::Attack;
+    // Don't reset currentValue - allows legato/retriggering
+}
+
+void JunoADSR::noteOff() {
+    if (stage != Stage::Idle) {
+        stage = Stage::Release;
+    }
+}
+
+float JunoADSR::getNextSample() {
+    // If Gate Mode is active, bypass ADSR phases and act as a simple Gate
+    if (gateMode) {
+        if (stage == Stage::Release || stage == Stage::Idle) {
+            currentValue = 0.0f;
+            stage = Stage::Idle;
+        } else {
+            currentValue = 1.0f;
+        }
+        return currentValue;
+    }
+
+    // Authentic Analog ADSR (approximated with Exponential Curves)
+    // Target levels
+    float target = 0.0f;
+    float rate = 0.0f;
+
+    switch (stage) {
+        case Stage::Idle:
+            currentValue = 0.0f;
+            return 0.0f;
+            
+        case Stage::Attack:
+            target = 1.01f; // Overshoot for fast exponential attack
+            rate = attackRate;
+            currentValue += (target - currentValue) * rate;
+            if (currentValue >= 1.0f) {
+                currentValue = 1.0f;
+                stage = Stage::Decay;
+            }
+            break;
+            
+        case Stage::Decay:
+            target = sustainLevel;
+            rate = decayRate;
+            currentValue += (target - currentValue) * rate;
+            // Epsilon check to enter sustain (if close enough)
+            if (std::abs(currentValue - target) < 0.001f) {
+                currentValue = target;
+                stage = Stage::Sustain;
+            }
+            break;
+            
+        case Stage::Sustain:
+            currentValue = sustainLevel;
+            break;
+            
+        case Stage::Release:
+            target = 0.0f;
+            rate = releaseRate;
+            currentValue += (target - currentValue) * rate;
+            if (currentValue < 0.001f) {
+                currentValue = 0.0f;
+                stage = Stage::Idle;
+            }
+            break;
+    }
+    
+    return currentValue;
+}
+
+================================================================================
+FILE: .\Source\Synth\JunoADSR.h
+================================================================================
+// Source/Synth/JunoADSR.h
+#pragma once
+
+#include <JuceHeader.h>
+
+/**
+ * JunoADSR - Authentic Juno-106 ADSR Envelope
+ * 
+ * CHARACTERISTICS:
+ * - Linear ramps (not exponential) - authentic Juno-106
+ * - Fast, responsive envelopes
+ * - GATE mode support (ENV button)
+ * - 5-Stage State Machine: Idle, Attack, Decay, Sustain, Release
+ * 
+ * IMPLEMENTATION:
+ * - Uses only JUCE standard components
+ * - Per-sample processing for stability
+ * - Simple linear math (no pow/exp)
+ */
+class JunoADSR {
+public:
+    enum class Stage {
+        Idle,
+        Attack,
+        Decay,
+        Sustain,
+        Release
+    };
+    
+    JunoADSR();
+    
+    // Setup
+    void setSampleRate(double sampleRate);
+    void reset();
+    
+    // Parameters (seconds)
+    void setAttack(float seconds);
+    void setDecay(float seconds);
+    void setSustain(float level);      // 0-1
+    void setRelease(float seconds);
+    void setGateMode(bool enabled);    // ENV button
+    
+    // Lifecycle
+    void noteOn();
+    void noteOff();
+    
+    // Processing
+    float getNextSample();
+    bool isActive() const { return stage != Stage::Idle; }
+    
+    Stage getCurrentStage() const { return stage; }
+    float getCurrentValue() const { return currentValue; }
+    
+private:
+    double sampleRate = 44100.0;
+    
+    // Parameters
+    float attackTime = 0.01f;      // seconds
+    float decayTime = 0.3f;        // seconds
+    float sustainLevel = 0.7f;     // 0-1
+    float releaseTime = 0.5f;      // seconds
+    bool gateMode = false;         // ENV button state
+    
+    // Linear rates (per-sample increment/decrement)
+    float attackRate = 0.0f;
+    float decayRate = 0.0f;
+    float releaseRate = 0.0f;
+    
+    // State
+    Stage stage = Stage::Idle;
+    float currentValue = 0.0f;
+    
+    // Helper
+    void calculateRates();
+};
+
+================================================================================
+FILE: .\Source\Synth\JunoDCO.cpp
+================================================================================
+// Source/Synth/JunoDCO.cpp
+#include "JunoDCO.h"
+#include <cmath>
+
+JunoDCO::JunoDCO() {
+    // Sawtooth using JUCE Oscillator
+    sawOsc.initialise([](float x) {
+        return juce::jmap(x, 
+                         -juce::MathConstants<float>::pi, 
+                          juce::MathConstants<float>::pi, 
+                         -1.0f, 1.0f);
+    }, 128);
+    
+    updateRangeMultiplier();
+    reset();
+}
+
+void JunoDCO::prepare(double sr, int maxBlockSize) {
+    sampleRate = sr;
+    
+    juce::dsp::ProcessSpec spec;
+    spec.sampleRate = sr;
+    spec.maximumBlockSize = static_cast<juce::uint32>(maxBlockSize);
+    spec.numChannels = 1;
+    
+    sawOsc.prepare(spec);
+    reset();
+}
+
+void JunoDCO::reset() {
+    sawOsc.reset();
+    pulsePhase = 0.0;
+    driftMigrator = 0.0f;
+    driftTarget = 0.0f;
+    driftCounter = 0;
+    currentPWM = pwmValue;
+    subFlipFlop = false;
+}
+
+void JunoDCO::setFrequency(float hz) {
+    baseFrequency = hz;
+}
+
+void JunoDCO::setRange(Range r) {
+    range = r;
+    updateRangeMultiplier();
+}
+
+void JunoDCO::updateRangeMultiplier() {
+    switch (range) {
+        case Range::Range16: rangeMultiplier = 0.5f; break;  // -1 octave
+        case Range::Range8:  rangeMultiplier = 1.0f; break;  // Normal
+        case Range::Range4:  rangeMultiplier = 2.0f; break;  // +1 octave
+    }
+}
+
+void JunoDCO::setPulseLevel(float level) {
+    pulseLevel = juce::jlimit(0.0f, 1.0f, level);
+}
+
+void JunoDCO::setSawLevel(float level) {
+    sawLevel = juce::jlimit(0.0f, 1.0f, level);
+}
+
+void JunoDCO::setSubLevel(float level) {
+    subLevel = juce::jlimit(0.0f, 1.0f, level);
+}
+
+void JunoDCO::setNoiseLevel(float level) {
+    noiseLevel = juce::jlimit(0.0f, 1.0f, level);
+}
+
+void JunoDCO::setPWM(float value) {
+    pwmValue = juce::jlimit(0.0f, 1.0f, value);
+}
+
+void JunoDCO::setPWMMode(PWMMode mode) {
+    pwmMode = mode;
+}
+
+void JunoDCO::setLFODepth(float depth) {
+    lfoDepth = juce::jlimit(0.0f, 1.0f, depth);
+}
+
+void JunoDCO::setDrift(float amount) {
+    driftAmount = juce::jlimit(0.0f, 1.0f, amount);
+}
+
+float JunoDCO::getNextSample(float lfoValue) {
+    // === ANALOG DRIFT (Random Walk) ===
+    // Update target occasionally to create "wandering" pitch
+    if (++driftCounter > 1000) {
+        driftCounter = 0;
+        // Random walk target between -1.0 and 1.0
+        driftTarget = (noiseGen.nextFloat() * 2.0f - 1.0f); 
+    }
+    
+    // Smoothly migrate towards target (Simulate thermal capacitance/instability)
+    driftMigrator += (driftTarget - driftMigrator) * 0.005f;
+    
+    // Scale by user drift amount (Max 15 cents equivalent)
+    float driftSemitones = driftMigrator * driftAmount * 0.15f; 
+    
+    // === FREQUENCY with RANGE, LFO, and DRIFT ===
+    float freq = baseFrequency * rangeMultiplier;
+    
+    // Apply LFO to pitch (vibrato)
+    float lfoSemitones = lfoValue * lfoDepth * 0.5f; // LFO max range ~ half semitone (checked/reduced)
+    freq *= std::pow(2.0f, (lfoSemitones + driftSemitones) / 12.0f);
+    
+    // Nyquist check
+    if (freq >= sampleRate * 0.49f) {
+        freq = static_cast<float>(sampleRate * 0.49);
+    }
+    
+    sawOsc.setFrequency(freq);
+    
+    // === UPDATE PHASE (Must happen even if Pulse is OFF for Sub Osc) ===
+    double dt = freq / sampleRate;
+    pulsePhase += dt;
+    if (pulsePhase >= 1.0) {
+        pulsePhase -= 1.0;
+        subFlipFlop = !subFlipFlop; // Authentic: Sub is derived from DCO clock
+    }
+    
+    float output = 0.0f;
+    
+    // === 1. SAWTOOTH (JUCE) ===
+    if (sawLevel > 0.0f) {
+        float saw = sawOsc.processSample(0.0f);
+        output += saw * sawLevel;
+    }
+    
+    // === 2. PULSE with PWM ===
+    if (pulseLevel > 0.0f) {
+        // Calculate target PWM based on mode
+        float targetPWM = 0.5f;
+        
+        if (pwmMode == PWMMode::Manual) {
+            targetPWM = juce::jlimit(0.05f, 0.95f, pwmValue);
+        } else {
+            // LFO varies around 50% +/- depth
+            float pwmDepth = pwmValue;
+            targetPWM = juce::jlimit(0.05f, 0.95f, 0.5f + lfoValue * pwmDepth * 0.45f);
+        }
+        
+        // Slew PWM
+        currentPWM += (targetPWM - currentPWM) * 0.01f;
+        
+        // Generate pulse
+        float pulse = (pulsePhase < currentPWM) ? 1.0f : -1.0f;
+        output += pulse * pulseLevel;
+    }
+    
+    // === 3. SUB-OSCILLATOR ===
+    if (subLevel > 0.0f) {
+        float sub = subFlipFlop ? 1.0f : -1.0f;
+        output += sub * subLevel;
+    }
+    
+    // === 4. NOISE ===
+    if (noiseLevel > 0.0f) {
+        float noise = noiseGen.nextFloat() * 2.0f - 1.0f;
+        output += noise * noiseLevel;
+    }
+    
+    return output * 0.5f; 
+}
+
+================================================================================
+FILE: .\Source\Synth\JunoDCO.h
+================================================================================
+// Source/Synth/JunoDCO.h
+#pragma once
+
+#include <JuceHeader.h>
+
+/**
+ * JunoDCO - Complete Authentic Juno-106 DCO
+ * 
+ * AUTHENTIC CONTROLS (from front panel):
+ * - RANGE: 16', 8', 4' (octave selector)
+ * - LFO: LFO modulation depth to pitch
+ * - PWM: Pulse width (MAN) or PWM depth (LFO)
+ * - LFO/MAN: PWM mode selector
+ * - Waveforms: Pulse, Saw (both can be active)
+ * - SUB: Sub-oscillator level
+ * - NOISE: Noise generator level
+ * 
+ * JUCE COMPONENTS USED:
+ * - juce::dsp::Oscillator for Sawtooth
+ * - juce::Random for Noise
+ * - Custom for Pulse (PWM slew support)
+ * - Custom for Sub-osc (flip-flop authentic)
+ */
+class JunoDCO {
+public:
+    enum class Range {
+        Range16 = 0,  // -1 octave (Ã—0.5)
+        Range8 = 1,   // Normal (Ã—1.0) - DEFAULT
+        Range4 = 2    // +1 octave (Ã—2.0)
+    };
+    
+    enum class PWMMode {
+        Manual = 0,   // PWM slider = pulse width directly
+        LFO = 1       // PWM slider = LFO modulation depth
+    };
+    
+    JunoDCO();
+    
+    void prepare(double sampleRate, int maxBlockSize);
+    void reset();
+    
+    // Frequency
+    void setFrequency(float hz);
+    
+    // RANGE (16', 8', 4')
+    void setRange(Range range);
+    
+    // Waveform levels (0-1)
+    void setPulseLevel(float level);
+    void setSawLevel(float level);
+    void setSubLevel(float level);
+    void setNoiseLevel(float level);
+    
+    // PWM
+    void setPWM(float value);           // 0-1 (slider value)
+    void setPWMMode(PWMMode mode);      // LFO or MAN
+    
+    // LFO to DCO
+    void setLFODepth(float depth);      // 0-1 (LFO slider)
+    
+    // Character
+    void setDrift(float amount);        // 0-1 (analog drift)
+    
+    // Processing (receives LFO value from external LFO)
+    float getNextSample(float lfoValue);
+    
+private:
+    // JUCE Components
+    juce::dsp::Oscillator<float> sawOsc;
+    juce::Random noiseGen;
+    
+    // Manual oscillators
+    double pulsePhase = 0.0;
+    
+    // Spec
+    double sampleRate = 44100.0;
+    float baseFrequency = 440.0f;
+    
+    // RANGE
+    Range range = Range::Range8;
+    float rangeMultiplier = 1.0f;
+    
+    // Waveform levels
+    float pulseLevel = 0.5f;
+    float sawLevel = 0.5f;
+    float subLevel = 0.0f;
+    float noiseLevel = 0.0f;
+    
+    // PWM
+    float pwmValue = 0.5f;
+    PWMMode pwmMode = PWMMode::Manual;
+    float lfoDepth = 0.0f;
+    float currentPWM = 0.5f;      // Slewed
+    
+    // Drift (Random Walk)
+    float driftAmount = 0.0f;
+    float driftMigrator = 0.0f;   // Current erratic tuning offset
+    float driftTarget = 0.0f;     // Target for random walk
+    int driftCounter = 0;         // Decimator for drift updates
+    
+    // Sub-osc flip-flop (authentic)
+    bool subFlipFlop = false;
+    
+    // Helpers
+    void updateRangeMultiplier();
+    
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(JunoDCO)
+};
+
+================================================================================
+FILE: .\Source\Synth\JunoLFO.cpp
+================================================================================
+// Source/Synth/JunoLFO.cpp
+#include "JunoLFO.h"
+#include <cmath>
+
+JunoLFO::JunoLFO() {
+    // Initialize sine wave (authentic Juno-106)
+    oscillator.initialise([](float x) { 
+        return std::sin(x); 
+    }, 128);
+}
+
+void JunoLFO::prepare(double sr, int maxBlockSize) {
+    sampleRate = sr;
+    
+    juce::dsp::ProcessSpec spec;
+    spec.sampleRate = sr;
+    spec.maximumBlockSize = static_cast<juce::uint32>(maxBlockSize);
+    spec.numChannels = 1;
+    
+    oscillator.prepare(spec);
+    oscillator.setFrequency(rate);
+    reset();
+}
+
+void JunoLFO::reset() {
+    oscillator.reset();
+    delayTimer = 0.0f;
+    delayEnvelope = 0.0f;
+    currentValue = 0.0f;
+    noteActive = false;
+}
+
+void JunoLFO::setRate(float hz) {
+    rate = juce::jlimit(0.1f, 30.0f, hz);
+    oscillator.setFrequency(rate);
+}
+
+void JunoLFO::setDepth(float amount) {
+    depth = juce::jlimit(0.0f, 1.0f, amount);
+}
+
+void JunoLFO::setDelay(float seconds) {
+    delay = juce::jlimit(0.0f, 3.0f, seconds);
+}
+
+void JunoLFO::noteOn() {
+    noteActive = true;
+    delayTimer = 0.0f;
+    delayEnvelope = 0.0f;
+}
+
+void JunoLFO::noteOff() {
+    noteActive = false;
+}
+
+float JunoLFO::getNextSample() {
+    // Update delay envelope (fade-in)
+    if (noteActive && delayEnvelope < 1.0f) {
+        if (delay > 0.0f) {
+            delayTimer += 1.0f / static_cast<float>(sampleRate);
+            delayEnvelope = juce::jlimit(0.0f, 1.0f, delayTimer / delay);
+        } else {
+            delayEnvelope = 1.0f;
+        }
+    }
+    
+    // Get LFO sample (sine wave)
+    float lfoSample = oscillator.processSample(0.0f);
+    
+    // Apply depth and delay envelope
+    currentValue = lfoSample * depth * delayEnvelope;
+    
+    return currentValue;
+}
+
+================================================================================
+FILE: .\Source\Synth\JunoLFO.h
+================================================================================
+// Source/Synth/JunoLFO.h
+#pragma once
+
+#include <JuceHeader.h>
+
+/**
+ * JunoLFO - Authentic Juno-106 Low Frequency Oscillator
+ * 
+ * CHARACTERISTICS:
+ * - Sine wave only (authentic Juno-106)
+ * - Rate: 0.1 Hz to 30 Hz
+ * - Delay: 0 to 3 seconds (fade-in time)
+ * - Destinations: PWM, Filter, DCO (pitch), VCA (amplitude)
+ * 
+ * IMPLEMENTATION:
+ * - Uses juce::dsp::Oscillator (JUCE standard component)
+ * - Modular architecture (separate from Voice)
+ */
+class JunoLFO {
+public:
+    JunoLFO();
+    
+    void prepare(double sampleRate, int maxBlockSize);
+    void reset();
+    
+    // Parameters
+    void setRate(float hz);          // 0.1 - 30 Hz
+    void setDepth(float amount);     // 0 - 1
+    void setDelay(float seconds);    // 0 - 5 seconds
+    
+    float getRate() const { return rate; }
+    float getDepth() const { return depth; }
+    float getDelay() const { return delay; }
+    
+    // Processing
+    void noteOn();
+    void noteOff();
+    float getNextSample();
+    float getCurrentValue() const { return currentValue; }
+    
+private:
+    juce::dsp::Oscillator<float> oscillator;
+    double sampleRate = 44100.0;
+    
+    float rate = 5.0f;               // Hz
+    float depth = 1.0f;              // 0-1
+    float delay = 0.0f;              // seconds
+    
+    // Delay envelope
+    float delayTimer = 0.0f;
+    float delayEnvelope = 0.0f;
+    bool noteActive = false;
+    
+    float currentValue = 0.0f;
+};
+
+================================================================================
+FILE: .\Source\Synth\Voice.cpp
+================================================================================
+#include "Voice.h"
+#include <cmath>
+
+Voice::Voice() {
+    // Initialize filter with Juno-106 characteristics
+    // IR3109 is a 4-pole (24dB/oct) lowpass
+    filter.setMode(juce::dsp::LadderFilterMode::LPF24);
+    filter.setResonance(0.0f);
+    filter.setCutoffFrequencyHz(5500.0f);  // Authentic Juno default
+    filter.setDrive(1.2f);  // Slight drive for analog warmth
+}
+
+void Voice::prepare(double sr, int maxBlockSize) {
+    sampleRate = sr;
+    
+    // Setup DCO (Juno-106)
+    dco.prepare(sr, maxBlockSize);
+    
+    juce::dsp::ProcessSpec spec;
+    spec.sampleRate = sr;
+    spec.maximumBlockSize = static_cast<juce::uint32>(maxBlockSize);
+    spec.numChannels = 1;
+    
+    // Setup ADSR (Juno-106)
+    adsr.setSampleRate(sr);
+    
+    filter.prepare(spec);
+    filter.reset();
+    
+    // Setup HPF (Juno-106)
+    hpFilter.prepare(spec);
+    hpFilter.reset();
+    updateHPF();
+    
+    // Setup LFO (Juno-106)
+    lfo.prepare(sr, maxBlockSize);
+}
+
+void Voice::noteOn(int midiNote, float vel) {
+    currentNote = midiNote;
+    velocity = vel;
+    
+    // Calculate target frequency
+    targetFrequency = 440.0f * std::pow(2.0f, (midiNote - 69) / 12.0f);
+    // Portamento: if enabled, glide from current to target
+    if (params.portamentoOn && adsr.isActive()) {
+        // Keep current frequency, will glide to target
+        // currentFrequency is already set from previous note, will glide to targetFrequency
+    } else {
+        // Jump immediately to target
+        currentFrequency = targetFrequency;
+    }
+    
+    // Set DCO frequency
+    dco.setFrequency(currentFrequency);
+    
+    // Trigger ADSR
+    adsr.noteOn();
+    
+    // Trigger LFO (with delay)
+    lfo.noteOn();
+}
+
+void Voice::noteOff() {
+    adsr.noteOff();
+}
+
+void Voice::updateParams(const SynthParams& p) {
+    params = p;
+    
+    // Update DCO (Complete Juno-106)
+    dco.setRange(static_cast<JunoDCO::Range>(p.dcoRange));
+    dco.setSawLevel(p.sawOn ? 1.0f : 0.0f); 
+    dco.setPulseLevel(p.pulseOn ? 1.0f : 0.0f); 
+    dco.setSubLevel(p.subOscLevel);
+    dco.setNoiseLevel(p.noiseLevel);
+    dco.setPWM(p.pwmAmount);
+    dco.setPWMMode(static_cast<JunoDCO::PWMMode>(p.pwmMode));
+    dco.setLFODepth(p.lfoToDCO);
+    dco.setDrift(p.drift);
+    
+    // Update ADSR (Spec: 1.5ms to 3s/12s) - Normalized input to Log scaling
+    float attackTime = 0.0015f * std::pow(3.0f / 0.0015f, p.attack);
+    float decayTime = 0.0015f * std::pow(12.0f / 0.0015f, p.decay);
+    float releaseTime = 0.0015f * std::pow(12.0f / 0.0015f, p.release);
+
+    adsr.setAttack(attackTime);
+    adsr.setDecay(decayTime);
+    adsr.setSustain(p.sustain);
+    adsr.setRelease(releaseTime);
+    adsr.setGateMode(p.vcaMode == 1);
+    
+    // IR3109 resonance: self oscillation push (Normalize 0-1 to internal range)
+    filter.setResonance(p.resonance * 1.05f); 
+    
+    // Update HPF
+    updateHPF();
+    
+    // Update LFO (Spec: 0.1Hz to 30Hz, 3s Delay)
+    float lfoRateHz = 0.1f * std::pow(30.0f / 0.1f, p.lfoRate);
+    lfo.setRate(lfoRateHz);
+    lfo.setDepth(1.0f); 
+    lfo.setDelay(p.lfoDelay * 3.0f);
+}
+
+void Voice::updateHPF() {
+    float cutoffFreq = 10.0f;
+    
+    // Authentic Juno-106 HPF Cutoff Frequencies
+    switch (params.hpfFreq) {
+        case 0: cutoffFreq = 10.0f; break;    // Position 0: Bypass/Boost (DC Block level)
+        case 1: cutoffFreq = 225.0f; break;   // Position 1
+        case 2: cutoffFreq = 360.0f; break;   // Position 2
+        case 3: cutoffFreq = 720.0f; break;   // Position 3
+    }
+    
+    hpFilter.coefficients = juce::dsp::IIR::Coefficients<float>::makeHighPass(sampleRate, cutoffFreq);
+}
+
+void Voice::renderNextBlock(juce::AudioBuffer<float>& buffer, int startSample, int numSamples) {
+    if (!adsr.isActive()) return;
+    
+    // Portamento: smooth glide to target frequency
+    if (params.portamentoOn && std::abs(currentFrequency - targetFrequency) > 0.1f) {
+        float glideTime = params.portamentoTime * 5.0f;
+        float glideRate = 1.0f / (glideTime * static_cast<float>(sampleRate));
+        
+        if (currentFrequency < targetFrequency) {
+            currentFrequency += (targetFrequency - currentFrequency) * glideRate;
+        } else {
+            currentFrequency -= (currentFrequency - targetFrequency) * glideRate;
+        }
+    } else {
+        currentFrequency = targetFrequency;
+    }
+    
+    // Apply bender and master tune to DCO
+    float bendedFrequency = currentFrequency;
+    bendedFrequency *= std::pow(2.0f, params.tune / 1200.0f);
+
+    if (params.benderValue != 0.0f && params.benderToDCO > 0.0f) {
+        float bendSemitones = params.benderValue * params.benderToDCO * 12.0f;
+        bendedFrequency *= std::pow(2.0f, bendSemitones / 12.0f);
+    }
+    
+    dco.setFrequency(bendedFrequency);
+    
+    // Base VCF cutoff (10Hz to 24kHz authentic range)
+    float baseCutoff = 10.0f * std::pow(24000.0f / 10.0f, params.vcfFreq);
+    if (params.kybdTracking > 0.0f) {
+        float semitones = static_cast<float>(currentNote) - 60.0f;
+        baseCutoff *= std::pow(2.0f, (semitones * params.kybdTracking) / 12.0f);
+    }
+
+    // Temporary buffers
+    juce::AudioBuffer<float> voiceBuffer(1, numSamples);
+    voiceBuffer.clear();
+    
+    // Generate oscillator and modulation
+    for (int i = 0; i < numSamples; ++i) {
+        // 1. Advance LFO (Per-sample is mandatory for timing)
+        float lfoValue = lfo.getNextSample();
+        
+        // 2. Update VCF Cutoff (Frequent update for snap)
+        if ((i % 8) == 0) {
+            float envVal = adsr.getCurrentValue();
+            
+            float envModOctaves = envVal * params.envAmount * 14.0f;
+            if (params.vcfPolarity == 1) envModOctaves = -envModOctaves;
+            
+            float lfoModOctaves = lfoValue * params.vcfLFOAmount * 3.5f;
+            float benderModOctaves = params.benderValue * params.benderToVCF * 3.5f;
+            
+            float modulatedCutoff = baseCutoff * std::pow(2.0f, envModOctaves + lfoModOctaves + benderModOctaves);
+            modulatedCutoff = juce::jlimit(5.0f, static_cast<float>(sampleRate * 0.45), modulatedCutoff);
+            filter.setCutoffFrequencyHz(modulatedCutoff);
+        }
+        
+        // 3. Generate sample from JunoDCO
+        float sample = dco.getNextSample(lfoValue);
+        
+        // 4. Apply HPF
+        sample = hpFilter.processSample(sample);
+        
+        voiceBuffer.setSample(0, i, sample);
+    }
+    
+    // Process filter on entire block
+    juce::dsp::AudioBlock<float> block(voiceBuffer);
+    juce::dsp::ProcessContextReplacing<float> context(block);
+    filter.process(context);
+    
+    // Apply VCA envelope and mix to output
+    for (int i = 0; i < numSamples; ++i) {
+        float sample = voiceBuffer.getSample(0, i);
+        float envelope = adsr.getNextSample();
+        
+        if (params.vcaMode == 1) { // GATE (handled by adsr internal mode)
+            sample *= envelope * velocity; 
+        } else { // ENV
+            sample *= envelope * velocity;
+        }
+        
+        sample *= params.vcaLevel;
+        
+        buffer.addSample(0, startSample + i, sample);
+        if (buffer.getNumChannels() > 1) {
+            buffer.addSample(1, startSample + i, sample);
+        }
+    }
+}
+
+================================================================================
+FILE: .\Source\Synth\Voice.h
+================================================================================
+#pragma once
+
+#include <JuceHeader.h>
+#include "../Core/SynthParams.h"
+#include "JunoDCO.h"
+#include "JunoLFO.h"
+#include "JunoADSR.h"
+
+/**
+ * Voice - Single voice for SimpleJuno106
+ * 
+ * Uses JUCE built-in components + Juno-106 authentic modules:
+ * - JunoDCO for oscillator (RANGE, PWM modes, Noise, authentic)
+ * - juce::dsp::LadderFilter for VCF
+ * - JunoVCO for oscillator (with drift)
+ * - JunoLFO for modulation (with delay)
+ */
+class Voice {
+public:
+    Voice();
+    
+    void prepare(double sampleRate, int maxBlockSize);
+    void noteOn(int midiNote, float velocity);
+    void noteOff();
+    
+    void renderNextBlock(juce::AudioBuffer<float>& buffer, int startSample, int numSamples);
+    
+    void updateParams(const SynthParams& params);
+    
+    bool isActive() const { return adsr.isActive(); }
+    int getCurrentNote() const { return currentNote; }
+    
+private:
+    // State
+    double sampleRate = 44100.0;
+    int currentNote = -1;
+    float velocity = 0.0f;
+    
+    // Portamento
+    float currentFrequency = 440.0f;
+    float targetFrequency = 440.0f;
+    
+    // Juno modules
+    JunoDCO dco;
+    JunoLFO lfo;
+    
+    // Juno ADSR (linear ramps, authentic)
+    JunoADSR adsr;
+    
+    // JUCE Ladder Filter
+    juce::dsp::LadderFilter<float> filter;
+    juce::dsp::IIR::Filter<float> hpFilter;  // Juno-106 HPF
+    
+    // Cached params
+    SynthParams params;
+    
+    // Helper methods
+    void updateHPF();
+};
+
+================================================================================
+FILE: .\Source\UI\JunoBender.cpp
+================================================================================
+#include "JunoBender.h"
+
+JunoBender::JunoBender() {
+    // Setup bender lever (horizontal)
+    setupSlider(benderLever, juce::Slider::LinearHorizontal);
+    benderLever.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
+    setupLabel(benderLabel, "BENDER");
+    
+    // Setup destination sliders (vertical)
+    setupSlider(dcoSlider, juce::Slider::LinearVertical);
+    setupLabel(dcoLabel, "DCO");
+    
+    setupSlider(vcfSlider, juce::Slider::LinearVertical);
+    setupLabel(vcfLabel, "VCF");
+    
+    setupSlider(lfoSlider, juce::Slider::LinearVertical);
+    setupLabel(lfoLabel, "LFO");
+}
+
+void JunoBender::attachToParameters(juce::AudioProcessorValueTreeState& apvts) {
+    benderAttachment = std::make_unique<SliderAttachment>(apvts, "bender", benderLever);
+    dcoAttachment = std::make_unique<SliderAttachment>(apvts, "benderToDCO", dcoSlider);
+    vcfAttachment = std::make_unique<SliderAttachment>(apvts, "benderToVCF", vcfSlider);
+    lfoAttachment = std::make_unique<SliderAttachment>(apvts, "benderToLFO", lfoSlider);
+}
+
+void JunoBender::setupSlider(juce::Slider& slider, juce::Slider::SliderStyle style) {
+    addAndMakeVisible(slider);
+    slider.setSliderStyle(style);
+    slider.setTextBoxStyle(juce::Slider::TextBoxBelow, false, 40, 20);
+}
+
+void JunoBender::setupLabel(juce::Label& label, const juce::String& text) {
+    addAndMakeVisible(label);
+    label.setText(text, juce::dontSendNotification);
+    label.setJustificationType(juce::Justification::centred);
+    label.setFont(juce::FontOptions(11.0f, juce::Font::bold));
+    label.setColour(juce::Label::textColourId, juce::Colours::lightblue);
+}
+
+void JunoBender::paint(juce::Graphics& g) {
+    // Background
+    g.setColour(juce::Colour(0xff3a3a3a));
+    g.fillRoundedRectangle(getLocalBounds().toFloat(), 5.0f);
+    
+    // Title
+    g.setColour(juce::Colours::lightblue);
+    g.setFont(juce::FontOptions(12.0f, juce::Font::bold));
+    g.drawText("BENDER", 0, 5, getWidth(), 20, juce::Justification::centred);
+    
+    // Divider line
+    g.setColour(juce::Colour(0xff4a4a4a));
+    g.drawLine(10.0f, 25.0f, (float)getWidth() - 10.0f, 25.0f, 1.0f);
+}
+
+void JunoBender::resized() {
+    auto bounds = getLocalBounds();
+    bounds.removeFromTop(30); // Title space
+    
+    int padding = 10;
+    bounds.reduce(padding, padding);
+    
+    // Layout: [DCO] [VCF] [LFO] sliders on left, bender lever on right
+    int sliderWidth = 30;
+    int sliderSpacing = 10;
+    int totalSliderWidth = (sliderWidth * 3) + (sliderSpacing * 2);
+    
+    // Destination sliders (vertical, left side)
+    auto sliderArea = bounds.removeFromLeft(totalSliderWidth);
+    
+    auto dcoArea = sliderArea.removeFromLeft(sliderWidth);
+    dcoSlider.setBounds(dcoArea.removeFromTop(bounds.getHeight() - 25));
+    dcoLabel.setBounds(dcoArea);
+    
+    sliderArea.removeFromLeft(sliderSpacing);
+    
+    auto vcfArea = sliderArea.removeFromLeft(sliderWidth);
+    vcfSlider.setBounds(vcfArea.removeFromTop(bounds.getHeight() - 25));
+    vcfLabel.setBounds(vcfArea);
+    
+    sliderArea.removeFromLeft(sliderSpacing);
+    
+    auto lfoArea = sliderArea.removeFromLeft(sliderWidth);
+    lfoSlider.setBounds(lfoArea.removeFromTop(bounds.getHeight() - 25));
+    lfoLabel.setBounds(lfoArea);
+    
+    // Bender lever (horizontal, right side)
+    bounds.removeFromLeft(15); // Spacing
+    
+    auto leverArea = bounds;
+    benderLever.setBounds(leverArea.removeFromBottom(40).reduced(0, 5));
+    benderLabel.setBounds(leverArea.removeFromBottom(20));
+}
+
+================================================================================
+FILE: .\Source\UI\JunoBender.h
+================================================================================
+#pragma once
+
+#include <JuceHeader.h>
+
+/**
+ * JunoBender - Modular Bender Component
+ * 
+ * Authentic Juno-106 bender panel with:
+ * - Horizontal bender lever (-1 to +1)
+ * - 3 destination sliders (DCO, VCF, LFO)
+ * 
+ * This is a self-contained UI component that can be reused
+ */
+class JunoBender : public juce::Component {
+public:
+    JunoBender();
+    ~JunoBender() override = default;
+    
+    void paint(juce::Graphics& g) override;
+    void resized() override;
+    
+    // Attach to APVTS parameters
+    void attachToParameters(juce::AudioProcessorValueTreeState& apvts);
+    
+private:
+    using SliderAttachment = juce::AudioProcessorValueTreeState::SliderAttachment;
+    
+    // Bender lever (horizontal)
+    juce::Slider benderLever;
+    std::unique_ptr<SliderAttachment> benderAttachment;
+    juce::Label benderLabel;
+    
+    // Destination sliders (vertical)
+    juce::Slider dcoSlider;
+    juce::Slider vcfSlider;
+    juce::Slider lfoSlider;
+    
+    std::unique_ptr<SliderAttachment> dcoAttachment;
+    std::unique_ptr<SliderAttachment> vcfAttachment;
+    std::unique_ptr<SliderAttachment> lfoAttachment;
+    
+    juce::Label dcoLabel;
+    juce::Label vcfLabel;
+    juce::Label lfoLabel;
+    
+    void setupSlider(juce::Slider& slider, juce::Slider::SliderStyle style);
+    void setupLabel(juce::Label& label, const juce::String& text);
+    
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(JunoBender)
+};
+
+================================================================================
+FILE: .\Source\UI\JunoUIHelpers.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+
+namespace JunoUI
+{
+    // Authentic Juno-106 Palette
+    const juce::Colour kJunoRed = juce::Colour::fromFloatRGBA(0.756f, 0.153f, 0.176f, 1.0f);    // #C1272D
+    const juce::Colour kJunoDarkGrey = juce::Colour(0xff232323);
+    const juce::Colour kPanelBackground = juce::Colour(0xff333333);
+    const juce::Colour kAccentBlue = juce::Colour(0xff3399FF);
+    const juce::Colour kAccentRed = juce::Colour(0xffCC0000);
+    const juce::Colour kTextWhite = juce::Colours::white;
+    const juce::Colour kTextGrey = juce::Colour(0xffcccccc);
+
+    /**
+     * MidiLearnMouseListener - Handles right-click MIDI Learn on components
+     */
+    class MidiLearnMouseListener : public juce::MouseListener
+    {
+    public:
+        MidiLearnMouseListener(MidiLearnHandler& h, const juce::String& pId)
+            : handler(h), paramID(pId) {}
+
+        void mouseDown(const juce::MouseEvent& event) override
+        {
+            if (event.mods.isRightButtonDown())
+            {
+                juce::PopupMenu menu;
+                
+                int currentCC = handler.getCCForParam(paramID);
+                juce::String ccText = (currentCC >= 0) ? " (Mapped to CC " + juce::String(currentCC) + ")" : " (Unmapped)";
+                
+                menu.addItem(1, "MIDI Learn" + ccText);
+                menu.addItem(2, "Clear MIDI Mapping", currentCC >= 0);
+
+                menu.showMenuAsync(juce::PopupMenu::Options(), [this](int result)
+                {
+                    if (result == 1) handler.startLearning(paramID);
+                    else if (result == 2) handler.bind(-1, paramID); // Unbind
+                });
+            }
+        }
+
+    private:
+        MidiLearnHandler& handler;
+        juce::String paramID;
+    };
+
+    /**
+     * JunoLookAndFeel - Custom skin for authentic hardware look
+     */
+    class JunoLookAndFeel : public juce::LookAndFeel_V4
+    {
+    public:
+        JunoLookAndFeel()
+        {
+            setColour(juce::Slider::thumbColourId, juce::Colours::silver);
+            setColour(juce::Slider::trackColourId, juce::Colours::black);
+            setColour(juce::TextButton::buttonColourId, juce::Colour(0xff444444));
+            setColour(juce::ToggleButton::tickColourId, juce::Colours::orange);
+        }
+
+        void drawLinearSlider(juce::Graphics& g, int x, int y, int width, int height,
+                              float sliderPos, float minSliderPos, float maxSliderPos,
+                              const juce::Slider::SliderStyle style, juce::Slider& slider) override
+        {
+            if (slider.getProperties().contains("isSwitch"))
+            {
+                drawJunoSwitch(g, x, y, width, height, sliderPos, slider);
+                return;
+            }
+
+            juce::ignoreUnused(minSliderPos, maxSliderPos, style);
+            auto isVertical = slider.isVertical();
+            auto trackWidth = 4.0f;
+            auto thumbWidth = 20.0f;
+            auto thumbHeight = 35.0f;
+
+            // Draw Ticks and Numbers (Authentic Juno Style)
+            if (isVertical)
+            {
+                // Authentic Light Grey color (derived from background but brighter)
+                g.setColour(juce::Colour(0xffa0a0a0)); // Light grey
+                g.setFont(juce::FontOptions(10.0f, juce::Font::bold));
+
+                // Determine Number Sides: "Left", "Right", "Both", "None"
+                // Default to "Both" if not set? Or "Right"?
+                // Let's default to "None" if unset to verify? No, let's default to "Right" as fail-safe or "Both".
+                // Based on standard JUCE, properties are empty by default.
+                juce::String side = slider.getProperties().getWithDefault("numberSide", "Both");
+
+                int numTicks = 11; // 0 to 10
+                
+                // Exact Thumb Travel Calculation
+                // The slider value maps to the center of the thumb.
+                // Min Value (usually bottom) -> y + height - margin
+                // Max Value (usually top) -> y + margin
+                // We want ticks to align perfectly with these centers.
+                
+                // thumbHeight is 35. Margin is half of that.
+                float margin = thumbHeight * 0.5f;
+                float trackTop = (float)y + margin;
+                float trackBottom = (float)y + (float)height - margin;
+                float trackLen = trackBottom - trackTop;
+                
+                for (int i = 0; i < numTicks; ++i)
+                {
+                    // i=0 is Bottom (Value 0), i=10 is Top (Value 10)
+                    float yPos = trackBottom - (i * (trackLen / 10.0f));
+                    
+                    bool isWide = (i == 0 || i == 5 || i == 10);
+                    float tickW = isWide ? 26.0f : 12.0f; 
+                    
+                    // Draw Tick Line (Centered horizontally)
+                    float centerX = (float)x + (float)width * 0.5f;
+                    g.fillRect(centerX - tickW * 0.5f, yPos, tickW, 1.5f);
+                    
+                    // Draw Numbers
+                    if (isWide)
+                    {
+                        juce::String numStr = juce::String(i);
+                        
+                        // Left
+                        if (side == "Left" || side == "Both")
+                            g.drawText(numStr, (int)(centerX - 25), (int)(yPos - 5), 15, 10, juce::Justification::centredRight);
+                        
+                        // Right
+                        if (side == "Right" || side == "Both")
+                            g.drawText(numStr, (int)(centerX + 10), (int)(yPos - 5), 15, 10, juce::Justification::centredLeft);
+                    }
+                }
+            }
+
+            // Draw Track
+            g.setColour(juce::Colours::black);
+            if (isVertical)
+                g.fillRect(juce::Rectangle<float>((float)x + ((float)width - trackWidth) * 0.5f, (float)y, trackWidth, (float)height));
+            else
+                g.fillRect(juce::Rectangle<float>((float)x, (float)y + ((float)height - trackWidth) * 0.5f, (float)width, trackWidth));
+
+            // Draw Thumb (Cap)
+            auto thumbRect = isVertical ? 
+                juce::Rectangle<float>((float)x + ((float)width - thumbWidth) * 0.5f, sliderPos - thumbHeight * 0.5f, thumbWidth, thumbHeight) :
+                juce::Rectangle<float>(sliderPos - thumbHeight * 0.5f, (float)y + ((float)height - thumbWidth) * 0.5f, thumbHeight, thumbWidth);
+
+            // Silver body
+            g.setColour(juce::Colours::silver);
+            g.fillRect(thumbRect);
+            
+            // Accent line on cap
+            g.setColour(juce::Colours::black);
+            if (isVertical)
+                g.fillRect(thumbRect.getX(), thumbRect.getCentreY() - 1.0f, thumbRect.getWidth(), 2.0f);
+            else
+                g.fillRect(thumbRect.getCentreX() - 1.0f, thumbRect.getY(), 2.0f, thumbRect.getHeight());
+
+            // Outline
+            g.setColour(juce::Colours::black.withAlpha(0.6f));
+            g.drawRect(thumbRect, 1.0f);
+        }
+
+        void drawJunoSwitch(juce::Graphics& g, int x, int y, int width, int height, float sliderPos, juce::Slider& slider)
+        {
+            // Background slot
+            g.setColour(juce::Colours::black);
+            auto area = juce::Rectangle<float>((float)x, (float)y, (float)width, (float)height);
+            auto slot = area.withSizeKeepingCentre(10.0f, area.getHeight() - 10.0f);
+            g.fillRoundedRectangle(slot, 5.0f);
+
+            // Switch Handle
+            float handleHeight = 20.0f;
+            float handleWidth = 24.0f; // Wider than slot
+            // Authentic switch is black plastic
+            
+            auto handleRect = juce::Rectangle<float>(0, 0, handleWidth, handleHeight)
+                                .withCentre(juce::Point<float>(area.getCentreX(), sliderPos));
+            
+            g.setColour(juce::Colour(0xff333333)); // Dark Grey plastic
+            g.fillRect(handleRect);
+            
+            // Highlight
+            g.setColour(juce::Colours::white.withAlpha(0.2f));
+            g.fillRect(handleRect.removeFromTop(2.0f));
+
+            g.setColour(juce::Colours::black);
+            g.drawRect(handleRect, 1.0f);
+        }
+
+        void drawToggleButton(juce::Graphics& g, juce::ToggleButton& b,
+                              bool /*isMouseOver*/, bool isButtonDown) override
+        {
+            auto area = b.getLocalBounds().toFloat();
+            auto isToggled = b.getToggleState();
+            
+            // Layout: LED at top (20%), Button at bottom (80%)
+            // If button is small, adjust logic?
+            // Assuming authentic layout space provided by parent (e.g. 50x60)
+            
+            float ledSize = 10.0f;
+            auto ledArea = area.removeFromTop(area.getHeight() * 0.35f).withSizeKeepingCentre(ledSize, ledSize);
+            auto buttonArea = area.reduced(2.0f); // Remaining is button
+
+            // Draw LED
+            juce::Colour ledOnColor = b.getProperties().contains("ledColor") 
+                                    ? juce::Colour::fromString(b.getProperties()["ledColor"].toString())
+                                    : kJunoRed; // Default Red
+                                    
+            juce::Colour ledColor = isToggled ? ledOnColor : ledOnColor.darker(0.8f);
+            
+            // Glow
+            if (isToggled) {
+                g.setColour(ledColor.withAlpha(0.5f));
+                g.fillEllipse(ledArea.expanded(4.0f));
+                g.setColour(ledColor.withAlpha(0.8f));
+                g.fillEllipse(ledArea.expanded(1.0f));
+            } else {
+                 g.setColour(juce::Colours::black);
+                 g.fillEllipse(ledArea);
+            }
+            
+            // Core
+            g.setColour(ledColor);
+            g.fillEllipse(ledArea);
+            
+            // Reflection
+            g.setColour(juce::Colours::white.withAlpha(0.4f));
+            g.fillEllipse(ledArea.removeFromTop(ledSize * 0.4f).removeFromLeft(ledSize * 0.4f).translated(2.0f, 2.0f));
+
+            // Draw Button Cap (Authentic White/Beige)
+            juce::Colour capColor = juce::Colour(0xffe0e0d0); // Juno Button White
+            if (isButtonDown) capColor = capColor.darker(0.1f);
+            
+            g.setColour(capColor);
+            g.fillRect(buttonArea);
+            
+            // 3D Bevel
+            g.setColour(juce::Colours::white.withAlpha(0.6f));
+            g.fillRect(buttonArea.removeFromTop(2.0f));
+            g.setColour(juce::Colours::black.withAlpha(0.2f));
+            g.fillRect(buttonArea.removeFromBottom(4.0f));
+
+            // Outline
+            g.setColour(juce::Colours::black.withAlpha(0.4f));
+            g.drawRect(buttonArea, 1.0f);
+        }
+
+        void drawButtonBackground(juce::Graphics& g, juce::Button& b, const juce::Colour& backgroundColour,
+                                  bool isMouseOverButton, bool isButtonDown) override
+        {
+            auto area = b.getLocalBounds().toFloat();
+            auto baseColour = backgroundColour;
+
+            // Authentic Juno Patch Button Style
+            if (b.getProperties().contains("isPatchButton"))
+            {
+                // Juno Blue/Aqua: #66AACC
+                auto junoBlue = juce::Colour(0xff66aacc);
+                
+                if (b.getToggleState()) 
+                {
+                   baseColour = junoBlue.brighter(0.4f); 
+                }
+                else
+                {
+                   baseColour = junoBlue;
+                }
+                
+                if (isButtonDown) baseColour = baseColour.darker(0.1f);
+                else if (isMouseOverButton) baseColour = baseColour.brighter(0.1f);
+                
+                g.setColour(baseColour);
+                g.fillRect(area);
+                
+                // Bevel
+                g.setColour(juce::Colours::white.withAlpha(0.3f));
+                g.fillRect(area.removeFromTop(3.0f));
+                g.setColour(juce::Colours::black.withAlpha(0.2f));
+                g.fillRect(area.removeFromBottom(3.0f));
+                
+                g.setColour(juce::Colours::black.withAlpha(0.6f));
+                g.drawRect(area, 1.0f);
+            }
+            else
+            {
+                // Default Button (Dark Grey / Black)
+                if (isButtonDown) baseColour = baseColour.darker(0.2f);
+                else if (isMouseOverButton) baseColour = baseColour.brighter(0.1f);
+
+                g.setColour(baseColour);
+                g.fillRect(area);
+
+                g.setColour(juce::Colours::black.withAlpha(0.5f));
+                g.drawRect(area, 1.0f);
+            }
+        }
+    };
+
+    // Helper functions
+    inline void setupVerticalSlider(juce::Slider& slider)
+    {
+        slider.setSliderStyle(juce::Slider::LinearVertical);
+        slider.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0); // Headers have labels
+    }
+
+    inline void setupRotarySlider(juce::Slider& slider)
+    {
+        slider.setSliderStyle(juce::Slider::RotaryHorizontalVerticalDrag);
+        slider.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
+    }
+
+    inline void setupLabel(juce::Label& label, const juce::String& text, juce::Component& parent)
+    {
+        parent.addAndMakeVisible(label);
+        label.setText(text, juce::dontSendNotification);
+        label.setJustificationType(juce::Justification::centred);
+        label.setFont(juce::FontOptions(11.0f, juce::Font::bold));
+        label.setColour(juce::Label::textColourId, kTextGrey);
+    }
+
+    /** Attaches MIDI Learn capability to a component */
+    inline void setupMidiLearn(juce::Component& comp, MidiLearnHandler& handler, const juce::String& paramID, juce::OwnedArray<MidiLearnMouseListener>& listeners)
+    {
+        auto* listener = new MidiLearnMouseListener(handler, paramID);
+        listeners.add(listener);
+        comp.addMouseListener(listener, false);
+    }
+
+    inline void drawSectionBackground(juce::Graphics& g, juce::Rectangle<int> bounds, const juce::String& title)
+    {
+        auto fBounds = bounds.toFloat();
+        
+        // 1. Main Background with subtle gradient
+        juce::ColourGradient grad(kJunoDarkGrey.brighter(0.1f), 0, (float)bounds.getY(),
+                                  kJunoDarkGrey, 0, (float)bounds.getBottom(), false);
+        g.setGradientFill(grad);
+        g.fillRect(fBounds);
+        
+        // 2. Red Header
+        auto headerRect = fBounds.removeFromTop(20.0f);
+        g.setColour(kJunoRed);
+        g.fillRect(headerRect);
+        
+        g.setColour(juce::Colours::white);
+        g.setFont(juce::FontOptions(13.0f, juce::Font::bold));
+        g.drawText(title, headerRect, juce::Justification::centred);
+        
+        // 3. Bottom Accent Bar
+        auto footerRect = fBounds.removeFromBottom(3.0f);
+        // Alternate blue/red pattern based on title or position?
+        // For simplicity, let's use a common logic.
+        g.setColour(title.contains("DCO") || title.contains("LFO") ? kAccentBlue : kAccentRed);
+        g.fillRect(footerRect);
+
+        // 4. Border
+        g.setColour(juce::Colours::black.withAlpha(0.6f));
+        g.drawRect(bounds.toFloat(), 1.0f);
+    }
+
+    /**
+     * JunoLCD - Simulates the red 2-digit LED display
+     */
+    class JunoLCD : public juce::Component
+    {
+    public:
+        void paint(juce::Graphics& g) override
+        {
+            auto area = getLocalBounds().toFloat();
+            
+            // Outer frame
+            g.setColour(juce::Colours::black);
+            g.fillRoundedRectangle(area, 2.0f);
+            
+            // Inner glow (very dark red)
+            auto inner = area.reduced(2.0f);
+            g.setColour(juce::Colour(0xff220000));
+            g.fillRect(inner);
+            
+            // Text (Bright Red/Orange)
+            g.setColour(juce::Colours::orangered);
+            g.setFont(juce::FontOptions(20.0f, juce::Font::bold)); // Use a "segmented" looking font if possible, else bold sans
+            g.drawText(text, inner, juce::Justification::centred);
+        }
+
+        void setText(const juce::String& newText) { text = newText; repaint(); }
+
+    private:
+        juce::String text = "--";
+    };
+}
+
+================================================================================
+FILE: .\Source\UI\PresetBrowser.cpp
+================================================================================
+#include "PresetBrowser.h"
+
+PresetBrowser::PresetBrowser(PresetManager& pm)
+    : presetManager(pm) {
+    
+    // Preset combo box
+    addAndMakeVisible(presetCombo);
+    presetCombo.addListener(this);
+    refreshPresetList();
+    
+    // Previous button
+    addAndMakeVisible(prevButton);
+    prevButton.setButtonText("<");
+    prevButton.addListener(this);
+    
+    // Next button
+    addAndMakeVisible(nextButton);
+    nextButton.setButtonText(">");
+    nextButton.addListener(this);
+    
+    // Save button
+    addAndMakeVisible(saveButton);
+    saveButton.setButtonText("SAVE");
+    saveButton.addListener(this);
+}
+
+void PresetBrowser::paint(juce::Graphics& g) {
+    // Background
+    g.setColour(juce::Colour(0xff3a3a3a));
+    g.fillRoundedRectangle(getLocalBounds().toFloat(), 5.0f);
+    
+    // Title
+    g.setColour(juce::Colours::lightblue);
+    g.setFont(juce::Font(12.0f, juce::Font::bold));
+    g.drawText("PRESETS", 0, 5, getWidth(), 20, juce::Justification::centred);
+}
+
+void PresetBrowser::resized() {
+    auto bounds = getLocalBounds();
+    bounds.removeFromTop(25); // Title space
+    bounds.reduce(5, 5);
+    
+    int buttonWidth = 30;
+    int saveWidth = 50;
+    
+    // Layout: [<] [Combo] [>] [SAVE]
+    prevButton.setBounds(bounds.removeFromLeft(buttonWidth));
+    bounds.removeFromLeft(5);
+    
+    saveButton.setBounds(bounds.removeFromRight(saveWidth));
+    bounds.removeFromRight(5);
+    
+    nextButton.setBounds(bounds.removeFromRight(buttonWidth));
+    bounds.removeFromRight(5);
+    
+    presetCombo.setBounds(bounds);
+}
+
+void PresetBrowser::refreshPresetList() {
+    presetCombo.clear();
+    
+    auto names = presetManager.getPresetNames();
+    for (int i = 0; i < names.size(); ++i) {
+        presetCombo.addItem(names[i], i + 1);
+    }
+    
+    // Select current preset by index
+    int index = presetManager.getCurrentPresetIndex();
+    presetCombo.setSelectedId(index + 1, juce::dontSendNotification);
+}
+
+void PresetBrowser::comboBoxChanged(juce::ComboBox* box) {
+    if (box == &presetCombo) {
+        loadPreset(presetCombo.getSelectedItemIndex());
+    }
+}
+
+void PresetBrowser::buttonClicked(juce::Button* button) {
+    if (button == &prevButton) {
+        int currentIndex = presetCombo.getSelectedItemIndex();
+        if (currentIndex > 0) {
+            loadPreset(currentIndex - 1);
+            presetCombo.setSelectedId(currentIndex, juce::dontSendNotification);
+        }
+    }
+    else if (button == &nextButton) {
+        int currentIndex = presetCombo.getSelectedItemIndex();
+        if (currentIndex < presetCombo.getNumItems() - 1) {
+            loadPreset(currentIndex + 1);
+            presetCombo.setSelectedId(currentIndex + 2, juce::dontSendNotification);
+        }
+    }
+    else if (button == &saveButton) {
+        showSaveDialog();
+    }
+}
+
+void PresetBrowser::loadPreset(int index) {
+    presetManager.setCurrentPreset(index);
+    
+    if (onPresetChanged) {
+        onPresetChanged(juce::String(index));
+    }
+}
+
+void PresetBrowser::showSaveDialog() {
+    auto presetName = juce::String("Preset_") + juce::String(juce::Random::getSystemRandom().nextInt(100));
+    
+    saveDialog = std::make_unique<juce::AlertWindow>("Save Preset", "", juce::MessageBoxIconType::NoIcon);
+    saveDialog->addTextEditor("name", presetName);
+    saveDialog->addButton("Save", 1);
+    saveDialog->addButton("Cancel", 0);
+    
+    saveDialog->enterModalState(true, juce::ModalCallbackFunction::create([this](int result) {
+        if (result == 1 && saveDialog != nullptr) {
+            auto name = saveDialog->getTextEditorContents("name");
+            
+            if (name.isNotEmpty()) {
+                if (onGetCurrentState) {
+                    auto state = onGetCurrentState();
+                    presetManager.saveUserPreset(name, state);
+                    refreshPresetList();
+                    
+                    // Note: User presets now go to a specific bank in the new refactor
+                }
+            }
+        }
+        saveDialog.reset();
+    }));
+}
+
+================================================================================
+FILE: .\Source\UI\PresetBrowser.h
+================================================================================
+#pragma once
+
+#include <JuceHeader.h>
+#include "../Core/PresetManager.h"
+
+/**
+ * PresetBrowser - UI component for preset selection
+ * 
+ * Features:
+ * - Preset combo box
+ * - Previous/Next buttons
+ * - Save button
+ * - Integrates with PresetManager
+ */
+class PresetBrowser : public juce::Component,
+                      public juce::ComboBox::Listener,
+                      public juce::Button::Listener {
+public:
+    PresetBrowser(PresetManager& pm);
+    ~PresetBrowser() override = default;
+    
+    void paint(juce::Graphics& g) override;
+    void resized() override;
+    
+    // Callbacks
+    void comboBoxChanged(juce::ComboBox* box) override;
+    void buttonClicked(juce::Button* button) override;
+    
+    // Update preset list
+    void refreshPresetList();
+    juce::String getSelectedPreset() const { return presetCombo.getText(); }
+    void loadPreset(int index);
+    
+    // Set callback for preset change
+    std::function<void(const juce::String&)> onPresetChanged;
+    std::function<juce::ValueTree()> onGetCurrentState;
+    
+private:
+    PresetManager& presetManager;
+    
+    juce::ComboBox presetCombo;
+    juce::TextButton prevButton;
+    juce::TextButton nextButton;
+    juce::TextButton saveButton;
+    
+    void showSaveDialog();
+    
+    std::unique_ptr<juce::AlertWindow> saveDialog;
+    
+    JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR(PresetBrowser)
+};
+
+================================================================================
+FILE: .\Source\UI\Sections\JunoChorusSection.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include "../JunoUIHelpers.h"
+
+// Note: Combining Chorus and "Extras" (Portamento, Mode, etc.) might be cleaner 
+// separated, but usually they are the "Lower Control Board" or "Left Cheek" + "Right Chorus".
+// Let's separate Chorus to match the top strip flow if desired, or just "LowerPanel".
+
+class JunoChorusSection : public juce::Component
+{
+public:
+    JunoChorusSection(juce::AudioProcessorValueTreeState& apvts, MidiLearnHandler& mlh)
+    {
+        addAndMakeVisible(b1);
+        b1.setButtonText(""); // No text in button, use label above
+        att1 = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(apvts, "chorus1", b1);
+        JunoUI::setupLabel(l1, "I", *this);
+
+        addAndMakeVisible(b2);
+        b2.setButtonText(""); // No text in button
+        att2 = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(apvts, "chorus2", b2);
+        JunoUI::setupLabel(l2, "II", *this);
+
+        JunoUI::setupMidiLearn(b1, mlh, "chorus1", midiLearnListeners);
+        JunoUI::setupMidiLearn(b2, mlh, "chorus2", midiLearnListeners);
+    }
+
+    void paint(juce::Graphics& g) override
+    {
+        JunoUI::drawSectionBackground(g, getLocalBounds(), "CHORUS");
+    }
+
+    void resized() override
+    {
+        auto r = getLocalBounds().reduced(10, 30);
+        int btnW = 40;
+        int btnH = 50;
+        int gap = 10;
+        
+        int totalW = (btnW * 2) + gap;
+        int startX = (getWidth() - totalW) / 2;
+        int btnY = 60; // Lower buttons
+        int labelY = 40;
+        
+        l1.setBounds(startX, labelY, btnW, 20);
+        b1.setBounds(startX, btnY, btnW, btnH);
+        
+        l2.setBounds(startX + btnW + gap, labelY, btnW, 20);
+        b2.setBounds(startX + btnW + gap, btnY, btnW, btnH);
+    }
+
+private:
+    juce::ToggleButton b1, b2;
+    juce::Label l1, l2;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> att1, att2;
+    juce::OwnedArray<JunoUI::MidiLearnMouseListener> midiLearnListeners;
+};
+
+================================================================================
+FILE: .\Source\UI\Sections\JunoControlSection.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include "../JunoUIHelpers.h"
+#include "../../UI/JunoBender.h"
+#include "../../UI/PresetBrowser.h"
+#include "../../Core/PluginProcessor.h"
+
+// Bottom Panel: Bender, Key Control, Mode, Presets
+class JunoControlSection : public juce::Component, public juce::Timer
+{
+public:
+    JunoControlSection(juce::AudioProcessor& p, juce::AudioProcessorValueTreeState& apvts, PresetManager& pm, MidiLearnHandler& mlh)
+        : presetBrowser(pm), processor(p)
+    {
+        // Bender
+        addAndMakeVisible(bender);
+        bender.attachToParameters(apvts);
+
+        // Portamento
+        JunoUI::setupRotarySlider(portSlider);
+        addAndMakeVisible(portSlider);
+        portAtt = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "portamentoTime", portSlider);
+        JunoUI::setupLabel(portLabel, "PORT", *this);
+
+        addAndMakeVisible(portButton);
+        portButton.setButtonText("ON");
+        portButtonAtt = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(apvts, "portamentoOn", portButton);
+
+        // Assign Mode
+        addAndMakeVisible(modeCombo);
+        modeCombo.addItem("POLY 1", 1);
+        modeCombo.addItem("POLY 2", 2);
+        modeCombo.addItem("UNISON", 3);
+        modeAtt = std::make_unique<juce::AudioProcessorValueTreeState::ComboBoxAttachment>(apvts, "polyMode", modeCombo);
+        JunoUI::setupLabel(modeLabel, "ASSIGN", *this);
+
+        // Preset Browser
+        addAndMakeVisible(presetBrowser);
+        
+        // MIDI Out
+        midiOutButton.setButtonText("MIDI OUT");
+        midiOutAtt = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(apvts, "midiOut", midiOutButton);
+
+        // Transpose & Power (Secret combo for Test Mode)
+        addAndMakeVisible(transposeButton);
+        transposeButton.setButtonText("TRANSPOSE");
+        transposeButton.setClickingTogglesState(true);
+
+        addAndMakeVisible(powerButton);
+        powerButton.setButtonText("POWER");
+        powerButton.onClick = [this] {
+            auto* proc = dynamic_cast<SimpleJuno106AudioProcessor*>(&processor);
+            if (proc && transposeButton.getToggleState())
+            {
+                proc->enterTestMode(true);
+            }
+            else if (proc)
+            {
+                proc->enterTestMode(false);
+            }
+        };
+
+        // Bank Buttons (Simulated by 1-8 keys or buttons)
+        for (int i = 0; i < 8; ++i)
+        {
+            bankButtons[i].setButtonText(juce::String(i + 1));
+            addAndMakeVisible(bankButtons[i]);
+            bankButtons[i].onClick = [this, i] {
+                auto* proc = dynamic_cast<SimpleJuno106AudioProcessor*>(&processor);
+                if (proc)
+                {
+                    if (proc->isTestMode)
+                    {
+                        proc->triggerTestProgram(i);
+                    }
+                    else
+                    {
+                        auto names = proc->getPresetManager()->getPresetNames();
+                        if (i < (int)names.size())
+                        {
+                            presetBrowser.loadPreset(i);
+                            presetBrowser.refreshPresetList();
+                        }
+                    }
+                }
+            };
+        }
+
+        // Callbacks
+        presetBrowser.onPresetChanged = [&](const juce::String& /*indexStr*/) {
+            auto* p = dynamic_cast<SimpleJuno106AudioProcessor*>(&processor);
+            if (onPresetLoad && p) {
+                 int idx = p->getPresetManager()->getCurrentPresetIndex();
+                 if (idx >= 0) onPresetLoad(idx);
+            }
+        };
+        
+         presetBrowser.onGetCurrentState = [&]() {
+            return apvts.copyState();
+        };
+
+        // MIDI Learn
+        JunoUI::setupMidiLearn(portSlider, mlh, "portamentoTime", midiLearnListeners);
+        JunoUI::setupMidiLearn(portButton, mlh, "portamentoOn", midiLearnListeners);
+        JunoUI::setupMidiLearn(modeCombo, mlh, "polyMode", midiLearnListeners);
+
+        // Multi-Bank Controls
+        addAndMakeVisible(decBankButton);
+        addAndMakeVisible(incBankButton);
+        decBankButton.setButtonText("< BK");
+        incBankButton.setButtonText("BK >");
+        
+        decBankButton.onClick = [this] {
+            auto* proc = dynamic_cast<SimpleJuno106AudioProcessor*>(&processor);
+            if (proc) {
+                auto* pm = proc->getPresetManager();
+                pm->selectBank(pm->getActiveBankIndex() - 1);
+                presetBrowser.refreshPresetList();
+            }
+        };
+        
+        incBankButton.onClick = [this] {
+            auto* proc = dynamic_cast<SimpleJuno106AudioProcessor*>(&processor);
+            if (proc) {
+                auto* pm = proc->getPresetManager();
+                pm->selectBank(pm->getActiveBankIndex() + 1);
+                presetBrowser.refreshPresetList();
+            }
+        };
+
+        // Load Tape Button
+        addAndMakeVisible(loadTapeButton);
+        loadTapeButton.setButtonText("LOAD TAPE");
+        loadTapeButton.onClick = [this] {
+            auto* proc = dynamic_cast<SimpleJuno106AudioProcessor*>(&processor);
+            if (proc) {
+                fileChooser = std::make_unique<juce::FileChooser>("Select a Juno-106 Tape WAV file...",
+                    juce::File::getSpecialLocation(juce::File::userHomeDirectory),
+                    "*.wav");
+                
+                auto flags = juce::FileBrowserComponent::openMode | juce::FileBrowserComponent::canSelectFiles;
+                fileChooser->launchAsync(flags, [this, proc](const juce::FileChooser& fc) {
+                    auto file = fc.getResult();
+                    if (file.existsAsFile()) {
+                        auto result = proc->getPresetManager()->loadTape(file);
+                        if (result.wasOk()) {
+                            juce::String msg = "Successfully decoded patches from: " + file.getFileNameWithoutExtension();
+                            if (result.getErrorMessage().isNotEmpty())
+                                msg += "\n\nDetails: " + result.getErrorMessage();
+                                
+                            juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::InfoIcon,
+                                "Tape Loaded", msg);
+                        }
+                        else {
+                            juce::AlertWindow::showMessageBoxAsync(juce::MessageBoxIconType::WarningIcon,
+                                "Load Failed",
+                                "Error loading tape: " + file.getFileName() + "\n\nReason: " + result.getErrorMessage());
+                        }
+                    }
+                });
+            }
+        };
+
+        addAndMakeVisible(lcd);
+        startTimer(50); // 20Hz update for LCD
+    }
+
+    void timerCallback() override
+    {
+        auto* proc = dynamic_cast<SimpleJuno106AudioProcessor*>(&processor);
+        if (proc)
+        {
+            if (proc->isTestMode)
+            {
+                lcd.setText("CH " + juce::String(proc->getVoiceManager().getLastTriggeredVoiceIndex() + 1));
+            }
+            else
+            {
+                auto* pm = proc->getPresetManager();
+                int bankIdx = pm->getActiveBankIndex() + 1;
+                int patchIdx = pm->getCurrentPresetIndex();
+                
+                // Show Bank-Patch (e.g. 1-11)
+                int group = (patchIdx / 8) + 1;
+                int prog = (patchIdx % 8) + 1;
+                lcd.setText(juce::String(bankIdx) + "-" + juce::String(group) + juce::String(prog));
+            }
+        }
+    }
+    
+    // Setter for callbacks
+    std::function<void(int)> onPresetLoad;
+    std::function<void()> onDump;
+
+    void resized() override
+    {
+        // Layout: Bender (Left) -> Key Control -> Mode -> Presets
+        int benderW = 120;
+        bender.setBounds(0, 0, benderW, 130);
+        
+        int x = benderW + 10;
+        
+        // Portamento
+        portLabel.setBounds(x, 10, 50, 20);
+        portSlider.setBounds(x, 30, 50, 60);
+        portButton.setBounds(x, 95, 50, 25);
+        x += 60;
+        
+        // Mode
+        modeLabel.setBounds(x, 10, 80, 20);
+        modeCombo.setBounds(x, 35, 80, 25);
+        x += 90;
+
+        // Bank / Tape Controls
+        decBankButton.setBounds(x, 10, 45, 25);
+        incBankButton.setBounds(x + 50, 10, 45, 25);
+        loadTapeButton.setBounds(x, 40, 95, 30);
+        x += 105;
+
+        // LCD placement
+        lcd.setBounds(x, 10, 80, 40);
+        x += 90;
+        
+        // Presets
+        presetBrowser.setBounds(x, 10, 350, 90);
+        x += 360;
+        
+        // Buttons
+        powerButton.setBounds(x, 10, 60, 25);
+        transposeButton.setBounds(x, 40, 80, 25);
+        dumpButton.setBounds(x, 70, 60, 25);
+        midiOutButton.setBounds(x, 95, 75, 25);
+        x += 90;
+
+        // Bank Buttons (Authentication: 8 buttons in 2 rows of 4, Aqua Style)
+        // Row 1: 1-4
+        // Row 2: 5-8
+        int btnW = 40; // Wider
+        int btnH = 30;
+        int gap = 5;
+        int startY = 30;
+        
+        for (int i = 0; i < 8; ++i)
+        {
+            bankButtons[i].getProperties().set("isPatchButton", true);
+            
+            int row = i / 4; // 0 or 1
+            int col = i % 4; // 0 to 3
+            
+            bankButtons[i].setBounds(x + (col * (btnW + gap)), startY + (row * (btnH + gap)), btnW, btnH);
+        }
+    }
+
+    PresetBrowser presetBrowser;
+    juce::TextButton dumpButton;
+    juce::ToggleButton midiOutButton;
+    juce::TextButton transposeButton;
+    juce::TextButton powerButton;
+    juce::TextButton bankButtons[8];
+    juce::TextButton incBankButton, decBankButton, loadTapeButton;
+    JunoUI::JunoLCD lcd;
+
+private:
+    JunoBender bender;
+    juce::Slider portSlider;
+    juce::Label portLabel, modeLabel;
+    juce::ToggleButton portButton;
+    juce::ComboBox modeCombo;
+    
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> portAtt;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> portButtonAtt;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ComboBoxAttachment> modeAtt;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> midiOutAtt;
+    
+    std::unique_ptr<juce::FileChooser> fileChooser;
+    juce::OwnedArray<JunoUI::MidiLearnMouseListener> midiLearnListeners;
+    juce::AudioProcessor& processor;
+};
+
+================================================================================
+FILE: .\Source\UI\Sections\JunoDCOSection.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include "../JunoUIHelpers.h"
+
+class JunoDCOSection : public juce::Component, public juce::AudioProcessorValueTreeState::Listener
+{
+public:
+    JunoDCOSection(juce::AudioProcessorValueTreeState& state, MidiLearnHandler& mlh)
+        : apvts(state)
+    {
+        // === Range (3 Vertical Buttons with LEDs) ===
+        addAndMakeVisible(range16);
+        addAndMakeVisible(range8);
+        addAndMakeVisible(range4);
+        
+        // Setup Range Buttons (Labels are usually above, but here buttons ARE the interface)
+        // Authentic: Label "RANGE" at top. Below: "16'", "8'", "4'" labels. Below: Buttons with LED.
+        // My ToggleButton draws LED + Cap. 
+        // I will trust tooltips or additional labels? 
+        // User asked for "3 Buttons (En Vertical)".
+        // I'll put text labels in resized() above each button if needed, or rely on button text (which I draw).
+        // My drawToggleButton draws text? Yes, line 114: g.drawText...
+        // Wait, my new drawToggleButton DOES NOT draw text!
+        // It draws LED and CAP.
+        // The text should be drawn by LookAndFeel? 
+        // Checked JunoUIHelpers.h: drawToggleButton (Line 101 replacement) -> NO TEXT DRAWING!
+        // I removed text drawing. "Layout: LED at top, Button at bottom".
+        // Authentic Juno has text printed on PANEL above the LED.
+        // So I need Labels for "16'", "8'", "4'".
+        
+        range16.setClickingTogglesState(true);
+        range8.setClickingTogglesState(true);
+        range4.setClickingTogglesState(true);
+        
+        // Logic: Mutex handled in callbacks
+        range16.onClick = [this] { if (range16.getToggleState()) setRange(0); else updateRangeUI(); };
+        range8.onClick  = [this] { if (range8.getToggleState())  setRange(1); else updateRangeUI(); };
+        range4.onClick  = [this] { if (range4.getToggleState())  setRange(2); else updateRangeUI(); };
+
+        JunoUI::setupLabel(rangeLabel, "RANGE", *this);
+        JunoUI::setupLabel(lbl16, "16'", *this);
+        JunoUI::setupLabel(lbl8, "8'", *this);
+        JunoUI::setupLabel(lbl4, "4'", *this);
+
+        // === Scaling (Sliders) ===
+        JunoUI::setupVerticalSlider(lfoSlider);
+        JunoUI::setupVerticalSlider(pwmSlider);
+        JunoUI::setupVerticalSlider(subSlider);
+        JunoUI::setupVerticalSlider(noiseSlider);
+
+        addAndMakeVisible(lfoSlider);
+        addAndMakeVisible(pwmSlider);
+        addAndMakeVisible(subSlider);
+        addAndMakeVisible(noiseSlider);
+
+        lfoAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "lfoToDCO", lfoSlider);
+        pwmAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "pwm", pwmSlider);
+        subAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "subOsc", subSlider);
+        noiseAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "noise", noiseSlider);
+
+        JunoUI::setupLabel(lfoLabel, "LFO", *this);
+        JunoUI::setupLabel(pwmLabel, "PWM", *this);
+        JunoUI::setupLabel(subLabel, "SUB", *this);
+        JunoUI::setupLabel(noiseLabel, "NOISE", *this);
+
+        // === PWM Mode (Switch) ===
+        addAndMakeVisible(pwmModeSwitch);
+        pwmModeSwitch.setSliderStyle(juce::Slider::LinearVertical);
+        pwmModeSwitch.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
+        pwmModeSwitch.setRange(0.0, 1.0, 1.0);
+        pwmModeSwitch.getProperties().set("isSwitch", true); // Trigger custom drawing
+        
+        pwmModeAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "pwmMode", pwmModeSwitch);
+        
+        JunoUI::setupLabel(modeLabel, "MODE", *this);
+        JunoUI::setupLabel(lblLFO, "LFO", *this); // Switch Position Labels
+        JunoUI::setupLabel(lblMAN, "MAN", *this);
+
+        // === Waveforms (Buttons with LEDs) ===
+        addAndMakeVisible(pulseButton);
+        addAndMakeVisible(sawButton);
+        
+        pulseAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(apvts, "pulseOn", pulseButton);
+        sawAttachment = std::make_unique<juce::AudioProcessorValueTreeState::ButtonAttachment>(apvts, "sawOn", sawButton);
+        
+        // Custom LED Colors
+        // Pulse = Red (Default)
+        // Saw = Blue (Authentic Mod / Visual)
+        sawButton.getProperties().set("ledColor", "0xff3399ff"); 
+
+        // Listeners for Range
+        apvts.addParameterListener("dcoRange", this);
+        updateRangeUI(); // Init state
+
+        // MIDI Learn
+        auto setup = [&](juce::Component& c, const juce::String& p) { JunoUI::setupMidiLearn(c, mlh, p, midiLearnListeners); };
+        setup(lfoSlider, "lfoToDCO");
+        setup(pwmSlider, "pwm");
+        setup(pwmModeSwitch, "pwmMode");
+        setup(pulseButton, "pulseOn");
+        setup(sawButton, "sawOn");
+        setup(subSlider, "subOsc");
+        setup(noiseSlider, "noise");
+
+        // Authentic Number Siding
+        lfoSlider.getProperties().set("numberSide", "Left");
+        pwmSlider.getProperties().set("numberSide", "Right");
+        subSlider.getProperties().set("numberSide", "Left");
+        noiseSlider.getProperties().set("numberSide", "Right");
+    }
+
+    ~JunoDCOSection() override {
+        apvts.removeParameterListener("dcoRange", this);
+    }
+
+    void parameterChanged(const juce::String& parameterID, float newValue) override {
+        if (parameterID == "dcoRange") {
+            juce::MessageManager::callAsync([this]() { updateRangeUI(); });
+        }
+    }
+
+    void setRange(int index) {
+        if (auto* p = apvts.getParameter("dcoRange")) {
+             p->setValueNotifyingHost(p->convertTo0to1((float)index));
+        }
+    }
+
+    void updateRangeUI() {
+        int val = (int)*apvts.getRawParameterValue("dcoRange");
+        range16.setToggleState(val == 0, juce::dontSendNotification);
+        range8.setToggleState(val == 1, juce::dontSendNotification);
+        range4.setToggleState(val == 2, juce::dontSendNotification);
+    }
+
+    void paint(juce::Graphics& g) override
+    {
+        JunoUI::drawSectionBackground(g, getLocalBounds(), "DCO");
+        
+        // Waveform Icons (Authentic)
+        // Pulse Icon above Pulse Button
+        // Saw Icon above Saw Button
+        g.setColour(JunoUI::kTextGrey);
+        
+        auto pulseArea = pulseButton.getBounds().translated(0, -15).toFloat();
+        juce::Path pulsePath;
+        pulsePath.startNewSubPath(pulseArea.getX() + 15, pulseArea.getY() + 8);
+        pulsePath.lineTo(pulseArea.getX() + 15, pulseArea.getY());
+        pulsePath.lineTo(pulseArea.getX() + 25, pulseArea.getY());
+        pulsePath.lineTo(pulseArea.getX() + 25, pulseArea.getY() + 8);
+        g.strokePath(pulsePath, juce::PathStrokeType(1.5f));
+
+        auto sawArea = sawButton.getBounds().translated(0, -15).toFloat();
+        juce::Path sawPath;
+        sawPath.startNewSubPath(sawArea.getX() + 15, sawArea.getY() + 8);
+        sawPath.lineTo(sawArea.getX() + 25, sawArea.getY());
+        sawPath.lineTo(sawArea.getX() + 25, sawArea.getY() + 8);
+        g.strokePath(sawPath, juce::PathStrokeType(1.5f));
+    }
+
+    void resized() override
+    {
+        auto area = getLocalBounds().reduced(2, 25); // Top header space
+        int colW = area.getWidth() / 6; 
+        int startX = area.getX();
+        
+        int btnW = 30;
+        int btnH = 40; // Combined LED + Cap
+
+        // Col 1: Range (3 Vertical Buttons)
+        rangeLabel.setBounds(startX, 25, colW, 15);
+        int yPos = 45;
+        
+        // 16'
+        lbl16.setBounds(startX, yPos, colW, 12);
+        range16.setBounds(startX + (colW - btnW)/2, yPos + 12, btnW, btnH);
+        
+        yPos += 55;
+        // 8'
+        lbl8.setBounds(startX, yPos, colW, 12);
+        range8.setBounds(startX + (colW - btnW)/2, yPos + 12, btnW, btnH);
+
+        yPos += 55;
+        // 4'
+        lbl4.setBounds(startX, yPos, colW, 12);
+        range4.setBounds(startX + (colW - btnW)/2, yPos + 12, btnW, btnH);
+        
+        startX += colW;
+
+        // Col 2: LFO
+        int labelH = 20;
+        int sliderY = 40 + labelH;
+        int sliderH = area.getHeight() - 40 - labelH;
+        
+        lfoLabel.setBounds(startX, 40, colW, labelH);
+        lfoSlider.setBounds(startX, sliderY, colW, sliderH);
+        startX += colW;
+
+        // Col 3: PWM
+        pwmLabel.setBounds(startX, 40, colW, labelH);
+        pwmSlider.setBounds(startX, sliderY, colW, sliderH);
+        startX += colW;
+
+        // Col 4: Mode & Waves (Switch + 2 Buttons)
+        // This column is crowded. Real Juno DCO is wide.
+        // I'll try to fit Mode, Pulse, Saw in one column?
+        // Or splitMode into Col 3.5?
+        // Layout: Mode Switch | Pulse | Saw
+        // They are adjacent.
+        // Actually, Mode Switch is next to PWM Slider.
+        // Then Waves.
+        // I will squeeze Mode Switch.
+        
+        // Mode Switch
+        modeLabel.setBounds(startX, 25, colW, 15);
+        lblLFO.setBounds(startX - 15, 50, 30, 15); 
+        pwmModeSwitch.setBounds(startX + 10, 50, 30, 50); // Vertical switch
+        lblMAN.setBounds(startX - 15, 85, 30, 15);
+        
+        // Wave Buttons below? No, standard is left-to-right.
+        // With limited width (6 cols), I might need to put Waves in Col 5 and Shift Sub/Noise.
+        // Let's assume Col 4 holds MODE and PULSE?
+        // Real Juno: [Range] [LFO] [PWM] [ModeSw] [Pulse] [Saw] [Sub] [Noise]
+        // That is 8 logical Slots. I have 6 cols.
+        // I'll put Pulse & Saw in Col 5. Sub in Col 6. Noise in Col 6 (stacked? No).
+        // I need more width or smarter packing.
+        // Let's pack Mode Switch tight.
+        
+        auto modeRect = juce::Rectangle<int>(startX, 40, 40, 80);
+        // ... handled manually above
+        
+        // Pulse & Saw below Mode Switch? Or in next col?
+        // I'll move Pulse/Saw to next col.
+        
+        startX += colW;
+        
+        // Col 5: Waves
+        // Pulse top, Saw bottom?
+        pulseButton.setBounds(startX + (colW-btnW)/2, 60, btnW, btnH);
+        sawButton.setBounds(startX + (colW-btnW)/2, 120, btnW, btnH);
+        
+        startX += colW;
+
+        // Col 6: Sub & Noise (Share column?)
+        // If I put Sub and Noise in same col, they must be thin or stacked.
+        // DCO section is usually 25% of width.
+        // How about I make slider columns thinner?
+        // Or simple: Sub and Noise in last col (half/half).
+        int halfW = colW / 2;
+        subSlider.setBounds(startX, 40, colW, area.getHeight() - 40); // Overlap?
+        // Let's just fit them.
+        subSlider.setBounds(startX, 40, colW, area.getHeight() - 40);
+        subLabel.setBounds(startX, subSlider.getBottom() - 15, colW, 15);
+        
+        // Wait, where is Noise?
+        // I ran out of columns?
+        // I will use 7 virtual stripes
+        colW = area.getWidth() / 7;
+        startX = area.getX();
+        
+        // Re-layout with 7 cols
+        // Col 1: Range
+        rangeLabel.setBounds(startX, 25, colW, 15);
+        lbl16.setBounds(startX, 45, colW, 12);
+        range16.setBounds(startX + (colW-btnW)/2, 57, btnW, btnH);
+        lbl8.setBounds(startX, 97, colW, 12);
+        range8.setBounds(startX + (colW-btnW)/2, 109, btnW, btnH);
+        lbl4.setBounds(startX, 149, colW, 12);
+        range4.setBounds(startX + (colW-btnW)/2, 161, btnW, btnH);
+        startX += colW;
+
+        // Col 2: LFO
+        lfoSlider.setBounds(startX, 40, colW, area.getHeight() - 55);
+        lfoLabel.setBounds(startX, lfoSlider.getBottom(), colW, 15);
+        startX += colW;
+
+        // Col 3: PWM
+        pwmSlider.setBounds(startX, 40, colW, area.getHeight() - 55);
+        pwmLabel.setBounds(startX, pwmSlider.getBottom(), colW, 15);
+        startX += colW;
+
+        // Col 4: Mode Switch
+        modeLabel.setBounds(startX, 25, colW, 15);
+        lblLFO.setBounds(startX, 45, colW, 12);
+        pwmModeSwitch.setBounds(startX + (colW-30)/2, 60, 30, 50);
+        lblMAN.setBounds(startX, 115, colW, 12);
+        startX += colW;
+
+        // Col 5: Waves
+        pulseButton.setBounds(startX + (colW-btnW)/2, 60, btnW, btnH);
+        sawButton.setBounds(startX + (colW-btnW)/2, 120, btnW, btnH);
+        startX += colW;
+
+        // Col 6: Sub
+        subLabel.setBounds(startX, 40, colW, labelH);
+        subSlider.setBounds(startX, 40 + labelH, colW, sliderH);
+        startX += colW;
+        
+        // Col 7: Noise
+        noiseLabel.setBounds(startX, 40, colW, labelH);
+        noiseSlider.setBounds(startX, 40 + labelH, colW, sliderH);
+    }
+
+private:
+    juce::AudioProcessorValueTreeState& apvts;
+
+    // Controls
+    juce::ToggleButton range16, range8, range4; // Range Buttons
+    juce::Slider lfoSlider, pwmSlider, subSlider, noiseSlider;
+    juce::Slider pwmModeSwitch; // Switch
+    juce::ToggleButton pulseButton, sawButton;
+
+    // Labels
+    juce::Label rangeLabel, lfoLabel, pwmLabel, subLabel, noiseLabel, modeLabel;
+    juce::Label lbl16, lbl8, lbl4, lblLFO, lblMAN;
+
+    // Attachments
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> lfoAttachment, pwmAttachment, subAttachment, noiseAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> pwmModeAttachment; // Switch is a slider
+    std::unique_ptr<juce::AudioProcessorValueTreeState::ButtonAttachment> pulseAttachment, sawAttachment;
+
+    juce::OwnedArray<JunoUI::MidiLearnMouseListener> midiLearnListeners;
+};
+
+================================================================================
+FILE: .\Source\UI\Sections\JunoENVSection.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include "../JunoUIHelpers.h"
+
+class JunoENVSection : public juce::Component
+{
+public:
+    JunoENVSection(juce::AudioProcessorValueTreeState& apvts, MidiLearnHandler& mlh)
+    {
+        auto setup = [&](juce::Slider& s, juce::Label& l, const char* id, const char* name) {
+            JunoUI::setupVerticalSlider(s);
+            addAndMakeVisible(s);
+            JunoUI::setupLabel(l, name, *this);
+            atts.push_back(std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, id, s));
+            JunoUI::setupMidiLearn(s, mlh, id, midiLearnListeners);
+        };
+
+        setup(aSlider, aLabel, "attack", "A");
+        setup(dSlider, dLabel, "decay", "D");
+        setup(sSlider, sLabel, "sustain", "S");
+        setup(rSlider, rLabel, "release", "R");
+
+        // Authentic Number Siding
+        aSlider.getProperties().set("numberSide", "Left");
+        dSlider.getProperties().set("numberSide", "Right");
+        sSlider.getProperties().set("numberSide", "Left");
+        rSlider.getProperties().set("numberSide", "Right");
+    }
+
+    void paint(juce::Graphics& g) override
+    {
+        JunoUI::drawSectionBackground(g, getLocalBounds(), "ENV");
+    }
+
+    void resized() override
+    {
+        auto area = getLocalBounds().reduced(10, 30);
+        int colW = area.getWidth() / 4;
+        int startX = area.getX();
+
+        auto place = [&](juce::Slider& s, juce::Label& l) {
+            int labelH = 20;
+            l.setBounds(startX, area.getY(), 50, labelH);
+            s.setBounds(startX, area.getY() + labelH, 50, area.getHeight() - labelH - 5);
+            startX += colW;
+        };
+
+        place(aSlider, aLabel);
+        place(dSlider, dLabel);
+        place(sSlider, sLabel);
+        place(rSlider, rLabel);
+    }
+
+private:
+    juce::Slider aSlider, dSlider, sSlider, rSlider;
+    juce::Label aLabel, dLabel, sLabel, rLabel;
+    std::vector<std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment>> atts;
+    juce::OwnedArray<JunoUI::MidiLearnMouseListener> midiLearnListeners;
+};
+
+================================================================================
+FILE: .\Source\UI\Sections\JunoHPFSection.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include "../JunoUIHelpers.h"
+
+class JunoHPFSection : public juce::Component
+{
+public:
+    JunoHPFSection(juce::AudioProcessorValueTreeState& apvts, MidiLearnHandler& mlh)
+    {
+        addAndMakeVisible(hpfSlider);
+        hpfSlider.setSliderStyle(juce::Slider::LinearVertical);
+        hpfSlider.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
+        hpfSlider.setRange(0, 3, 1);
+        
+        attachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "hpfFreq", hpfSlider);
+        JunoUI::setupLabel(label, "FREQ", *this);
+
+        JunoUI::setupMidiLearn(hpfSlider, mlh, "hpfFreq", midiLearnListeners);
+    }
+
+    void paint(juce::Graphics& g) override
+    {
+        auto area = getLocalBounds();
+        JunoUI::drawSectionBackground(g, area, "HPF");
+
+        // Authentic 0, 1, 2, 3 labels for the slider
+        g.setColour(juce::Colours::white);
+        g.setFont(juce::FontOptions(12.0f, juce::Font::bold));
+        
+        float sliderTop = 60.0f;
+        float sliderBottom = (float)getHeight() - 40.0f;
+        float step = (sliderBottom - sliderTop) / 3.0f;
+
+        for (int i = 0; i <= 3; ++i)
+        {
+            float y = sliderBottom - (i * step);
+            // Draw on left and right of slider
+            g.drawText(juce::String(i), 5, (int)y - 10, 15, 20, juce::Justification::centredRight);
+            g.drawText(juce::String(i), getWidth() - 20, (int)y - 10, 15, 20, juce::Justification::centredLeft);
+        }
+    }
+
+    void resized() override
+    {
+        auto area = getLocalBounds().reduced(5, 30);
+        label.setBounds(area.getX(), area.getY(), area.getWidth(), 20);
+        hpfSlider.setBounds(area.getX() + 15, area.getY() + 25, area.getWidth() - 30, area.getHeight() - 30);
+    }
+
+private:
+    juce::Slider hpfSlider;
+    juce::Label label;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> attachment;
+    juce::OwnedArray<JunoUI::MidiLearnMouseListener> midiLearnListeners;
+};
+
+================================================================================
+FILE: .\Source\UI\Sections\JunoLFOSection.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include "../JunoUIHelpers.h"
+
+class JunoLFOSection : public juce::Component
+{
+public:
+    JunoLFOSection(juce::AudioProcessorValueTreeState& apvts, MidiLearnHandler& mlh)
+    {
+        JunoUI::setupVerticalSlider(rateSlider);
+        JunoUI::setupVerticalSlider(delaySlider);
+
+        addAndMakeVisible(rateSlider);
+        addAndMakeVisible(delaySlider);
+
+        JunoUI::setupLabel(rateLabel, "RATE", *this);
+        JunoUI::setupLabel(delayLabel, "DELAY", *this);
+
+        rateAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "lfoRate", rateSlider);
+        delayAttachment = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "lfoDelay", delaySlider);
+
+        JunoUI::setupMidiLearn(rateSlider, mlh, "lfoRate", midiLearnListeners);
+        JunoUI::setupMidiLearn(delaySlider, mlh, "lfoDelay", midiLearnListeners);
+
+        // Authentic Number Siding
+        rateSlider.getProperties().set("numberSide", "Left");
+        delaySlider.getProperties().set("numberSide", "Right");
+    }
+
+    void paint(juce::Graphics& g) override
+    {
+        JunoUI::drawSectionBackground(g, getLocalBounds(), "LFO");
+    }
+
+    void resized() override
+    {
+        auto bounds = getLocalBounds().reduced(10, 30); // Margin top for title
+        // Simple 2-column layout
+        int sliderW = 50;
+        int gap = (bounds.getWidth() - (sliderW * 2)) / 3;
+
+        // Labels placed ABOVE sliders
+        int labelH = 20;
+        int sliderY = bounds.getY() + labelH;
+        int sliderH = bounds.getHeight() - labelH - 10;
+
+        rateLabel.setBounds(bounds.getX() + gap, bounds.getY(), sliderW, labelH);
+        rateSlider.setBounds(bounds.getX() + gap, sliderY, sliderW, sliderH);
+        
+        delayLabel.setBounds(rateSlider.getRight() + gap, bounds.getY(), sliderW, labelH);
+        delaySlider.setBounds(rateSlider.getRight() + gap, sliderY, sliderW, sliderH);
+    }
+
+private:
+    juce::Slider rateSlider, delaySlider;
+    juce::Label rateLabel, delayLabel;
+    
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> rateAttachment;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> delayAttachment;
+    
+    juce::OwnedArray<JunoUI::MidiLearnMouseListener> midiLearnListeners;
+};
+
+================================================================================
+FILE: .\Source\UI\Sections\JunoVCASection.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include "../JunoUIHelpers.h"
+
+class JunoVCASection : public juce::Component
+{
+public:
+    JunoVCASection(juce::AudioProcessorValueTreeState& apvts, MidiLearnHandler& mlh)
+    {
+        JunoUI::setupVerticalSlider(levelSlider);
+        addAndMakeVisible(levelSlider);
+        levelAtt = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "vcaLevel", levelSlider);
+        JunoUI::setupLabel(levelLabel, "LEVEL", *this);
+
+        // Gate Switch (Authentic: ENV up, GATE down)
+        addAndMakeVisible(gateSwitch);
+        gateSwitch.setSliderStyle(juce::Slider::LinearVertical);
+        gateSwitch.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
+        gateSwitch.setRange(0.0, 1.0, 1.0); // 0=ENV (usually down?), 1=GATE? 
+        // Wait, typical switch: Up is usually 1, Down is 0.
+        // User wants: "ENV" (Top), "GATE" (Bottom).
+        // Let's assume parameter: 0=ENV, 1=GATE. 
+        // If 0=ENV, then Down=ENV? 
+        // Let's rely on standard binding. If inverted, I drag invert.
+        // BUT, visually, I place "ENV" above and "GATE" below.
+        gateSwitch.getProperties().set("isSwitch", true); 
+        gateAtt = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "vcaMode", gateSwitch);
+
+        JunoUI::setupLabel(gateEnvLabel, "ENV", *this);
+        JunoUI::setupLabel(gateGateLabel, "GATE", *this);
+        
+        // Font adjustments for switch labels (smaller)
+        auto font = juce::FontOptions(10.0f, juce::Font::bold);
+        gateEnvLabel.setFont(font);
+        gateGateLabel.setFont(font);
+
+        JunoUI::setupMidiLearn(levelSlider, mlh, "vcaLevel", midiLearnListeners);
+        JunoUI::setupMidiLearn(gateSwitch, mlh, "vcaMode", midiLearnListeners);
+
+        levelSlider.getProperties().set("numberSide", "Right");
+    }
+
+    void paint(juce::Graphics& g) override
+    {
+        JunoUI::drawSectionBackground(g, getLocalBounds(), "VCA");
+        
+        // Draw Authentic Icons above/below literals
+        auto swBounds = gateSwitch.getBounds();
+        if (!swBounds.isEmpty()) {
+            g.setColour(JunoUI::kTextGrey);
+            juce::Path p;
+            
+            // Envelope Icon (Above "ENV" label)
+            // We need label bounds. Since labels are components, we can use their bounds relative to parent.
+            auto envBounds = gateEnvLabel.getBounds();
+            float x = (float)envBounds.getCentreX() - 5.0f;
+            float y = (float)envBounds.getY() - 12.0f; // Above label
+            
+            p.startNewSubPath(x, y + 10);
+            p.lineTo(x + 5, y);
+            p.lineTo(x + 10, y + 10);
+            
+            // Gate Icon (Below "GATE" label)
+            auto gateBounds = gateGateLabel.getBounds();
+            float x2 = (float)gateBounds.getCentreX() - 5.0f;
+            float y2 = (float)gateBounds.getBottom() + 2.0f; // Below label
+            
+            p.startNewSubPath(x2, y2 + 10);
+            p.lineTo(x2, y2);
+            p.lineTo(x2 + 10, y2);
+            p.lineTo(x2 + 10, y2 + 10);
+            
+            g.strokePath(p, juce::PathStrokeType(1.5f));
+        }
+    }
+
+    void resized() override
+    {
+        auto area = getLocalBounds().reduced(10, 30);
+        int halfW = area.getWidth() / 2;
+
+        // Switch Column (Left)
+        // Layout: Label "ENV" -> Switch -> Label "GATE"
+        int swX = area.getX();
+        int swW = 30; // switch width
+        int centerX = swX + (halfW - swW) / 2;
+        
+        int labelH = 15;
+        int swH = 40; 
+        
+        // Vertically center the group
+        int totalH = labelH + swH + labelH + 5;
+        int startY = area.getY() + (area.getHeight() - totalH) / 2;
+        
+        gateEnvLabel.setBounds(centerX - 10, startY, 50, labelH); // Wider to fit text
+        gateSwitch.setBounds(centerX, startY + labelH, swW, swH);
+        gateGateLabel.setBounds(centerX - 10, startY + labelH + swH, 50, labelH);
+        
+        // Slider Column (Right)
+        int sliderLabelH = 20;
+        levelLabel.setBounds(area.getX() + halfW, area.getY(), 50, sliderLabelH);
+        levelSlider.setBounds(area.getX() + halfW, area.getY() + sliderLabelH, 50, area.getHeight() - sliderLabelH - 5);
+    }
+
+private:
+    juce::Slider levelSlider;
+    juce::Slider gateSwitch;
+    juce::Label levelLabel;
+    juce::Label gateEnvLabel;
+    juce::Label gateGateLabel;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> levelAtt;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> gateAtt;
+    
+    juce::OwnedArray<JunoUI::MidiLearnMouseListener> midiLearnListeners;
+};
+
+================================================================================
+FILE: .\Source\UI\Sections\JunoVCFSection.h
+================================================================================
+#pragma once
+#include <JuceHeader.h>
+#include "../JunoUIHelpers.h"
+
+class JunoVCFSection : public juce::Component
+{
+public:
+    JunoVCFSection(juce::AudioProcessorValueTreeState& apvts, MidiLearnHandler& mlh)
+    {
+        JunoUI::setupVerticalSlider(cutoffSlider);
+        JunoUI::setupVerticalSlider(resSlider);
+        JunoUI::setupVerticalSlider(envSlider);
+        JunoUI::setupVerticalSlider(lfoSlider);
+        JunoUI::setupVerticalSlider(keySlider);
+
+        addAndMakeVisible(cutoffSlider);
+        addAndMakeVisible(resSlider);
+        addAndMakeVisible(envSlider);
+        addAndMakeVisible(lfoSlider);
+        addAndMakeVisible(keySlider);
+
+        // Polarity Switch (Authentic)
+        // Positioned between RES and ENV.
+        addAndMakeVisible(invSwitch);
+        invSwitch.setSliderStyle(juce::Slider::LinearVertical);
+        invSwitch.setTextBoxStyle(juce::Slider::NoTextBox, false, 0, 0);
+        invSwitch.setRange(0.0, 1.0, 1.0);
+        invSwitch.getProperties().set("isSwitch", true); 
+        
+        // Corrected Parameter IDs based on SynthParams.h / PluginProcessor.cpp
+        cutoffAtt = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "vcfFreq", cutoffSlider);
+        resAtt = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "resonance", resSlider);
+        envAtt = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "envAmount", envSlider); // Fixed ID
+        lfoAtt = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "lfoToVCF", lfoSlider); // Fixed ID
+        keyAtt = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "kybdTracking", keySlider);
+        invAtt = std::make_unique<juce::AudioProcessorValueTreeState::SliderAttachment>(apvts, "vcfPolarity", invSwitch); // Switch is Slider
+
+        JunoUI::setupLabel(cutoffLabel, "FREQ", *this);
+        JunoUI::setupLabel(resLabel, "RES", *this);
+        JunoUI::setupLabel(envLabel, "ENV", *this); // Added missing label
+        JunoUI::setupLabel(lfoLabel, "LFO", *this);
+        JunoUI::setupLabel(keyLabel, "KYBD", *this);
+        
+        // Switch Graphics (Polarity Icon?)
+        // Authentic: Polarity Graphic between RES and ENV.
+        // I will draw it or use labels? The image shows graphic.
+        // I'll add a label "POL" for now or just trust the switch.
+
+        // MIDI Learn
+        auto setup = [&](juce::Component& c, const juce::String& p) { JunoUI::setupMidiLearn(c, mlh, p, midiLearnListeners); };
+        setup(cutoffSlider, "vcfFreq");
+        setup(resSlider, "resonance");
+        setup(invSwitch, "vcfPolarity");
+        setup(envSlider, "envAmount");
+        setup(lfoSlider, "lfoToVCF");
+        setup(keySlider, "kybdTracking");
+
+        // Authentic Number Siding
+        cutoffSlider.getProperties().set("numberSide", "Left");
+        resSlider.getProperties().set("numberSide", "Right");
+        envSlider.getProperties().set("numberSide", "Left");
+        lfoSlider.getProperties().set("numberSide", "Right");
+        keySlider.getProperties().set("numberSide", "Left");
+    }
+
+    void paint(juce::Graphics& g) override
+    {
+        JunoUI::drawSectionBackground(g, getLocalBounds(), "VCF");
+        
+        // Draw Authentic Polarity Graphic (Normal / Inverted Envelope) near Switch
+        // Switch is in Column 3.
+        // Normal (Up): Envelope graphic
+        // Inverted (Down): Inverted Enevelope graphic
+        
+        // I need coordinates. I'll defer to resized if I store coords, or just hardcode relative.
+        // Let's assume layout is strict. If I move things, I must update this.
+        // Better: Find switch bounds.
+        
+        auto swBounds = invSwitch.getBounds();
+        if (swBounds.isEmpty()) return;
+        
+        g.setColour(JunoUI::kTextGrey);
+        juce::Path p;
+        
+        // Normal (Top) - Above Switch
+        float x = (float)swBounds.getCentreX() - 5.0f;
+        float y = (float)swBounds.getY() - 15.0f;
+        
+        // Small icon of envelope (Normal)
+        p.startNewSubPath(x, y + 10);
+        p.lineTo(x + 5, y);
+        p.lineTo(x + 10, y + 10);
+        
+        // Inverted (Bottom) - Below Switch
+        float y2 = (float)swBounds.getBottom() + 5.0f;
+        p.startNewSubPath(x, y2);
+        p.lineTo(x + 5, y2 + 10);
+        p.lineTo(x + 10, y2);
+        
+        g.strokePath(p, juce::PathStrokeType(1.5f));
+        
+        // Connection line from ENV slider to Switch? (As seen in image)
+        // Authentic image shows line from "ENV" label to Switch?
+        // Actually line connects Freq/Res and Env/LFO/Kybd groups?
+        // I'll skip complex lines for now to keep it clean.
+    }
+
+    void resized() override
+    {
+        auto area = getLocalBounds().reduced(10, 30);
+        // We have 6 elements: Freq, Res, Switch, Env, LFO, Kybd
+        // Switch takes less width.
+        // Let's allocate 5 main columns plus a thin one?
+        // Or 6 equal columns.
+        int colW = area.getWidth() / 6;
+        int startX = area.getX();
+        
+        auto place = [&](juce::Component& c, juce::Label* l) {
+            
+            if (l) {
+                int labelH = 20;
+                l->setBounds(startX, area.getY(), 50, labelH);
+                c.setBounds(startX + (colW - 50)/2, area.getY() + labelH, 50, area.getHeight() - labelH - 5);
+            } else {
+                 c.setBounds(startX + (colW - 50)/2, area.getY(), 50, area.getHeight() - 25);
+            }
+            
+            startX += colW;
+        };
+
+        // 1. Freq
+        place(cutoffSlider, &cutoffLabel);
+        
+        // 2. Res
+        place(resSlider, &resLabel);
+
+        // 3. Polarity Switch (Shorter, centered vertically, no label below)
+        // Switch height 40? No, authentic is small slider switch.
+        // Length 40-50 px.
+        int swH = 50;
+        int swW = 30;
+        int swY = area.getY() + (area.getHeight() - swH) / 2;
+        invSwitch.setBounds(startX + (colW - swW)/2, swY, swW, swH);
+        startX += colW;
+
+        // 4. Env
+        place(envSlider, &envLabel);
+
+        // 5. LFO
+        place(lfoSlider, &lfoLabel);
+
+        // Col 6: Kybd
+        place(keySlider, &keyLabel);
+    }
+
+private:
+    juce::Slider cutoffSlider, resSlider, envSlider, lfoSlider, keySlider;
+    juce::Slider invSwitch; // Was invButton
+    juce::Label cutoffLabel, resLabel, envLabel, lfoLabel, keyLabel;
+
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> cutoffAtt, resAtt, envAtt, lfoAtt, keyAtt;
+    std::unique_ptr<juce::AudioProcessorValueTreeState::SliderAttachment> invAtt;
+
+    juce::OwnedArray<JunoUI::MidiLearnMouseListener> midiLearnListeners;
+};
+
+================================================================================
+FILE: .\build_standalone.bat
+================================================================================
+@echo off
+setlocal
+
+echo ========================================
+echo ABDSimpleJuno106 Build Script (Standalone Only)
+echo ========================================
+echo.
+
+set BUILD_DIR=..\SimpleJuno106_Build
+set GENERATOR="Visual Studio 18 2026"
+set CMAKE_PATH="C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe"
+
+if not exist %CMAKE_PATH% (
+    echo [ERROR] CMake not found at %CMAKE_PATH%
+    echo Attempting to use cmake from PATH...
+    set CMAKE_PATH=cmake
+)
+
+echo 1. Configurando proyecto con CMake...
+if not exist %BUILD_DIR% mkdir %BUILD_DIR%
+
+%CMAKE_PATH% -B %BUILD_DIR% -G %GENERATOR% -A x64
+
+if %ERRORLEVEL% NEQ 0 (
+    echo.
+    echo [ERROR] CMake configuration failed.
+    pause
+    exit /b %ERRORLEVEL%
+)
+
+echo.
+echo 2. Compilando ABDSimpleJuno106 Standalone (Release)...
+%CMAKE_PATH% --build %BUILD_DIR% --config Release --target ABDSimpleJuno106_Standalone
+
+if %ERRORLEVEL% NEQ 0 (
+    echo.
+    echo [ERROR] Build failed.
+    pause
+    exit /b %ERRORLEVEL%
+)
+
+echo.
+echo 3. Buscando ejecutable...
+set EXE_SRC=%BUILD_DIR%\ABDSimpleJuno106_artefacts\Release\Standalone\ABDSimpleJuno106.exe
+if not exist "%EXE_SRC%" set EXE_SRC=%BUILD_DIR%\Release\ABDSimpleJuno106.exe
+
+if exist "%EXE_SRC%" (
+    copy /Y "%EXE_SRC%" "ABDSimpleJuno106.exe"
+    echo    Ejecutable copiado a la raiz: ABDSimpleJuno106.exe
+) else (
+    echo    ADVERTENCIA: No se encontro el ejecutable en las rutas esperadas.
+)
+
+echo.
+echo ========================================
+echo BUILD SUCCESSFUL!
+echo ========================================
+echo Quieres ejecutarlo ahora? [S,N]?
+set /p RESPUESTA=
+if /i "%RESPUESTA%"=="S" (
+    start ABDSimpleJuno106.exe
+)
+pause
+
+================================================================================
+FILE: .\CMakeLists.txt
+================================================================================
+cmake_minimum_required(VERSION 3.22)
+
+project(ABDSimpleJuno106 VERSION 0.0.1)
+
+# JUCE path
+set(JUCE_PATH "C:/JUCE" CACHE PATH "Path to JUCE")
+add_subdirectory(${JUCE_PATH} _juce)
+
+juce_add_plugin(ABDSimpleJuno106
+    # VERSION 0.0.1                     # The plugin's version
+    # ICON_BIG ""                       # Relevant for Standalone
+    # ICON_SMALL ""                     # Relevant for Standalone
+    # COMPANY_NAME "ABD"                # Your company name
+    IS_SYNTH TRUE                       # Is this a synth?
+    NEEDS_MIDI_INPUT TRUE               # Does it need MIDI input?
+    NEEDS_MIDI_OUTPUT TRUE              # Does it need MIDI output?
+    IS_MIDI_EFFECT FALSE                # Is it a MIDI effect?
+    EDITOR_WANTS_KEYBOARD_FOCUS TRUE    # Does the editor need keyboard focus?
+    # COPY_PLUGIN_AFTER_BUILD TRUE      # Whether to copy the plugin after building
+    PLUGIN_MANUFACTURER_CODE Abda       # A four-character manufacturer id
+    PLUGIN_CODE J106                    # A four-character unique plugin id
+    FORMATS Standalone                  # Only Standalone for now
+    PRODUCT_NAME "ABDSimpleJuno106"     # The name of the final executable/plugin
+)
+
+target_sources(ABDSimpleJuno106 PRIVATE
+    Source/Core/PluginProcessor.h
+    Source/Core/PluginProcessor.cpp
+    Source/Core/PluginEditor.h
+    Source/Core/PluginEditor.cpp
+    Source/Core/PresetManager.h
+    Source/Core/PresetManager.cpp
+    Source/Core/SynthParams.h
+    Source/Core/JunoVoiceManager.h
+    Source/Core/JunoVoiceManager.cpp
+    Source/Core/JunoTapeDecoder.h
+    Source/Core/JunoTapeDecoder.cpp
+    
+    Source/Synth/JunoADSR.h
+    Source/Synth/JunoADSR.cpp
+    Source/Synth/JunoDCO.h
+    Source/Synth/JunoDCO.cpp
+    Source/Synth/JunoLFO.h
+    Source/Synth/JunoLFO.cpp
+    Source/Synth/Voice.h
+    Source/Synth/Voice.cpp
+    
+    Source/UI/JunoBender.h
+    Source/UI/JunoBender.cpp
+    Source/UI/JunoUIHelpers.h
+    Source/UI/PresetBrowser.h
+    Source/UI/PresetBrowser.cpp
+    
+    Source/UI/Sections/JunoChorusSection.h
+    Source/UI/Sections/JunoControlSection.h
+    Source/UI/Sections/JunoDCOSection.h
+    Source/UI/Sections/JunoENVSection.h
+    Source/UI/Sections/JunoHPFSection.h
+    Source/UI/Sections/JunoLFOSection.h
+    Source/UI/Sections/JunoVCASection.h
+    Source/UI/Sections/JunoVCFSection.h
+)
+
+target_include_directories(ABDSimpleJuno106 PRIVATE Source)
+
+juce_generate_juce_header(ABDSimpleJuno106)
+
+target_compile_definitions(ABDSimpleJuno106
+    PUBLIC
+        # JUCE_WEB_BROWSER=0  # If you don't need a web browser
+        JUCE_USE_CURL=0    # If you don't need CURL
+        JUCE_VST3_CAN_REPLACE_VST2=0
+)
+
+target_link_libraries(ABDSimpleJuno106
+    PRIVATE
+        juce::juce_audio_utils
+        juce::juce_audio_processors
+        juce::juce_audio_formats
+        juce::juce_audio_devices
+        juce::juce_audio_basics
+        juce::juce_gui_extra
+        juce::juce_gui_basics
+        juce::juce_graphics
+        juce::juce_events
+        juce::juce_core
+        juce::juce_data_structures
+        juce::juce_dsp
+    PUBLIC
+        juce::juce_recommended_config_flags
+        juce::juce_recommended_lto_flags
+        juce::juce_recommended_warning_flags
+)
