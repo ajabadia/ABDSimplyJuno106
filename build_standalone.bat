@@ -6,7 +6,7 @@ echo ABDSimpleJuno106 Build Script (Standalone Only)
 echo ========================================
 echo.
 
-set BUILD_DIR=build
+set BUILD_DIR=..\SimpleJuno106_Build
 set GENERATOR="Visual Studio 18 2026"
 set CMAKE_PATH="C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe"
 
