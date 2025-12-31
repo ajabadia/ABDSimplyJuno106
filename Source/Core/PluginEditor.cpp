@@ -52,7 +52,7 @@ void SimpleJuno106AudioProcessorEditor::paint(juce::Graphics& g)
     
     g.setColour(juce::Colours::white);
     g.setFont(juce::FontOptions(22.0f, juce::Font::bold));
-    g.drawText("SIMPLE JUNO-106 v2", 20, 10, 300, 30, juce::Justification::left);
+    g.drawText("ABDSimplyJuno106", 20, 10, 300, 30, juce::Justification::left);
 }
 
 void SimpleJuno106AudioProcessorEditor::resized()
