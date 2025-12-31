@@ -44,25 +44,31 @@ public:
     {
         JunoUI::drawSectionBackground(g, getLocalBounds(), "VCA");
         
-        // Draw Authentic Envelope Graphic near Switch?
+        // Draw Authentic Icons above/below literals
         auto swBounds = gateSwitch.getBounds();
         if (!swBounds.isEmpty()) {
             g.setColour(JunoUI::kTextGrey);
             juce::Path p;
-            float x = (float)swBounds.getX() - 15.0f;
-            float y = (float)swBounds.getY() + 5.0f;
             
-            // Envelope Icon (Top)
+            // Envelope Icon (Above "ENV" label)
+            // We need label bounds. Since labels are components, we can use their bounds relative to parent.
+            auto envBounds = gateEnvLabel.getBounds();
+            float x = (float)envBounds.getCentreX() - 5.0f;
+            float y = (float)envBounds.getY() - 12.0f; // Above label
+            
             p.startNewSubPath(x, y + 10);
             p.lineTo(x + 5, y);
             p.lineTo(x + 10, y + 10);
             
-            // Gate Icon (Bottom)
-            float y2 = (float)swBounds.getBottom() - 15.0f;
-            p.startNewSubPath(x, y2 + 10);
-            p.lineTo(x, y2);
-            p.lineTo(x + 10, y2);
-            p.lineTo(x + 10, y2 + 10);
+            // Gate Icon (Below "GATE" label)
+            auto gateBounds = gateGateLabel.getBounds();
+            float x2 = (float)gateBounds.getCentreX() - 5.0f;
+            float y2 = (float)gateBounds.getBottom() + 2.0f; // Below label
+            
+            p.startNewSubPath(x2, y2 + 10);
+            p.lineTo(x2, y2);
+            p.lineTo(x2 + 10, y2);
+            p.lineTo(x2 + 10, y2 + 10);
             
             g.strokePath(p, juce::PathStrokeType(1.5f));
         }

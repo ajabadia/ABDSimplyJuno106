@@ -82,17 +82,17 @@ public:
         g.setColour(JunoUI::kTextGrey);
         juce::Path p;
         
-        // Normal (Top)
-        float x = (float)swBounds.getX() - 15.0f;
-        float y = (float)swBounds.getY();
+        // Normal (Top) - Above Switch
+        float x = (float)swBounds.getCentreX() - 5.0f;
+        float y = (float)swBounds.getY() - 15.0f;
         
-        // Small icon of envelope
+        // Small icon of envelope (Normal)
         p.startNewSubPath(x, y + 10);
         p.lineTo(x + 5, y);
         p.lineTo(x + 10, y + 10);
         
-        // Inverted (Bottom)
-        float y2 = (float)swBounds.getBottom() - 10;
+        // Inverted (Bottom) - Below Switch
+        float y2 = (float)swBounds.getBottom() + 5.0f;
         p.startNewSubPath(x, y2);
         p.lineTo(x + 5, y2 + 10);
         p.lineTo(x + 10, y2);
